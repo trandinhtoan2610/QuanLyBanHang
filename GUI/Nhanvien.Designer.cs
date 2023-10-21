@@ -58,14 +58,20 @@ namespace GUI
             this.lbThongtin = new System.Windows.Forms.Label();
             this.pnThemSuaXoa = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnLayhinh = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnExxport = new System.Windows.Forms.Button();
+            this.btnChon = new System.Windows.Forms.Button();
+            this.tbTimkiem = new System.Windows.Forms.TextBox();
             this.pnThongtin.SuspendLayout();
+            this.pnThemSuaXoa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbQuanly
             // 
-            this.lbQuanly.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbQuanly.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.lbQuanly.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQuanly.Location = new System.Drawing.Point(5, 0);
             this.lbQuanly.Name = "lbQuanly";
@@ -77,7 +83,8 @@ namespace GUI
             // 
             // pnThongtin
             // 
-            this.pnThongtin.BackColor = System.Drawing.Color.Fuchsia;
+            this.pnThongtin.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.pnThongtin.Controls.Add(this.btnChon);
             this.pnThongtin.Controls.Add(this.tbDiachi);
             this.pnThongtin.Controls.Add(this.lbDiachi);
             this.pnThongtin.Controls.Add(this.tbMatkhau);
@@ -99,7 +106,6 @@ namespace GUI
             this.pnThongtin.Controls.Add(this.lbNgaysinh);
             this.pnThongtin.Controls.Add(this.lbTenNV);
             this.pnThongtin.Controls.Add(this.lbMaNV);
-            this.pnThongtin.Controls.Add(this.btnLayhinh);
             this.pnThongtin.Controls.Add(this.panel2);
             this.pnThongtin.Controls.Add(this.lbThongtin);
             this.pnThongtin.Location = new System.Drawing.Point(3, 50);
@@ -260,7 +266,7 @@ namespace GUI
             this.dtNgaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgaysinh.Location = new System.Drawing.Point(261, 232);
             this.dtNgaysinh.Name = "dtNgaysinh";
-            this.dtNgaysinh.Size = new System.Drawing.Size(212, 24);
+            this.dtNgaysinh.Size = new System.Drawing.Size(246, 24);
             this.dtNgaysinh.TabIndex = 9;
             // 
             // tbTenNV
@@ -328,30 +334,83 @@ namespace GUI
             // 
             // pnThemSuaXoa
             // 
-            this.pnThemSuaXoa.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnThemSuaXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnThemSuaXoa.Controls.Add(this.tbTimkiem);
+            this.pnThemSuaXoa.Controls.Add(this.btnExxport);
+            this.pnThemSuaXoa.Controls.Add(this.btnDelete);
+            this.pnThemSuaXoa.Controls.Add(this.btnEdit);
+            this.pnThemSuaXoa.Controls.Add(this.btnAdd);
             this.pnThemSuaXoa.Location = new System.Drawing.Point(3, 358);
             this.pnThemSuaXoa.Name = "pnThemSuaXoa";
-            this.pnThemSuaXoa.Size = new System.Drawing.Size(1632, 87);
+            this.pnThemSuaXoa.Size = new System.Drawing.Size(1632, 106);
             this.pnThemSuaXoa.TabIndex = 16;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 451);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 470);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1632, 466);
+            this.dataGridView1.Size = new System.Drawing.Size(1632, 447);
             this.dataGridView1.TabIndex = 17;
             // 
-            // btnLayhinh
+            // btnAdd
             // 
-            this.btnLayhinh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLayhinh.BackgroundImage")));
-            this.btnLayhinh.Location = new System.Drawing.Point(83, 186);
-            this.btnLayhinh.Name = "btnLayhinh";
-            this.btnLayhinh.Size = new System.Drawing.Size(60, 54);
-            this.btnLayhinh.TabIndex = 2;
-            this.btnLayhinh.UseVisualStyleBackColor = true;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(83, 22);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(69, 60);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.Location = new System.Drawing.Point(261, 22);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(60, 60);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(438, 22);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(69, 60);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnExxport
+            // 
+            this.btnExxport.Image = ((System.Drawing.Image)(resources.GetObject("btnExxport.Image")));
+            this.btnExxport.Location = new System.Drawing.Point(629, 22);
+            this.btnExxport.Name = "btnExxport";
+            this.btnExxport.Size = new System.Drawing.Size(69, 60);
+            this.btnExxport.TabIndex = 7;
+            this.btnExxport.UseVisualStyleBackColor = true;
+            // 
+            // btnChon
+            // 
+            this.btnChon.Image = ((System.Drawing.Image)(resources.GetObject("btnChon.Image")));
+            this.btnChon.Location = new System.Drawing.Point(83, 198);
+            this.btnChon.Name = "btnChon";
+            this.btnChon.Size = new System.Drawing.Size(60, 60);
+            this.btnChon.TabIndex = 25;
+            this.btnChon.UseVisualStyleBackColor = true;
+            // 
+            // tbTimkiem
+            // 
+            this.tbTimkiem.BackColor = System.Drawing.Color.White;
+            this.tbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimkiem.Location = new System.Drawing.Point(875, 35);
+            this.tbTimkiem.Multiline = true;
+            this.tbTimkiem.Name = "tbTimkiem";
+            this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
+            this.tbTimkiem.TabIndex = 8;
+            this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
             // 
             // Nhanvien
             // 
@@ -365,6 +424,8 @@ namespace GUI
             this.Size = new System.Drawing.Size(1639, 920);
             this.pnThongtin.ResumeLayout(false);
             this.pnThongtin.PerformLayout();
+            this.pnThemSuaXoa.ResumeLayout(false);
+            this.pnThemSuaXoa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -399,7 +460,12 @@ namespace GUI
         private System.Windows.Forms.Label lbMatkhau;
         private System.Windows.Forms.Label lbDiachi;
         private System.Windows.Forms.TextBox tbDiachi;
-        private Button btnLayhinh;
+        private Button btnAdd;
+        private Button btnEdit;
+        private Button btnExxport;
+        private Button btnDelete;
+        private Button btnChon;
+        private TextBox tbTimkiem;
     }
     
 }

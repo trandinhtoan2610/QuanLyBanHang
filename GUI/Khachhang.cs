@@ -16,5 +16,15 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void lbThongtin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbGioitinh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

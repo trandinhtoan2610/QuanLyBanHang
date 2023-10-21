@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTableManager));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pnLogo = new System.Windows.Forms.Panel();
             this.pnDanhmuc = new System.Windows.Forms.Panel();
             this.btnPhanquyen = new System.Windows.Forms.Button();
             this.btnThongke = new System.Windows.Forms.Button();
@@ -44,22 +43,16 @@
             this.lbQLCH = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.pnUserControl = new System.Windows.Forms.Panel();
+            this.lbLogo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnDanhmuc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnLogo
-            // 
-            this.pnLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pnLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnLogo.BackgroundImage")));
-            this.pnLogo.Location = new System.Drawing.Point(-2, -1);
-            this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(279, 201);
-            this.pnLogo.TabIndex = 1;
             // 
             // pnDanhmuc
             // 
-            this.pnDanhmuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pnDanhmuc.BackColor = System.Drawing.Color.Silver;
             this.pnDanhmuc.Controls.Add(this.btnPhanquyen);
             this.pnDanhmuc.Controls.Add(this.btnThongke);
             this.pnDanhmuc.Controls.Add(this.btnQLHĐ);
@@ -166,12 +159,12 @@
             // 
             // lbQLCH
             // 
-            this.lbQLCH.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbQLCH.BackColor = System.Drawing.Color.Silver;
             this.lbQLCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQLCH.Location = new System.Drawing.Point(283, -1);
+            this.lbQLCH.Location = new System.Drawing.Point(269, -1);
             this.lbQLCH.Name = "lbQLCH";
-            this.lbQLCH.Padding = new System.Windows.Forms.Padding(300, 20, 0, 0);
-            this.lbQLCH.Size = new System.Drawing.Size(1639, 66);
+            this.lbQLCH.Padding = new System.Windows.Forms.Padding(500, 20, 0, 0);
+            this.lbQLCH.Size = new System.Drawing.Size(1653, 66);
             this.lbQLCH.TabIndex = 7;
             this.lbQLCH.Text = "Quản lý cửa hàng bán điện thoại";
             // 
@@ -182,26 +175,44 @@
             // 
             // pnUserControl
             // 
-            this.pnUserControl.BackColor = System.Drawing.Color.Silver;
+            this.pnUserControl.BackColor = System.Drawing.Color.Transparent;
             this.pnUserControl.Location = new System.Drawing.Point(283, 68);
             this.pnUserControl.Name = "pnUserControl";
             this.pnUserControl.Size = new System.Drawing.Size(1639, 920);
             this.pnUserControl.TabIndex = 8;
+            // 
+            // lbLogo
+            // 
+            this.lbLogo.Image = ((System.Drawing.Image)(resources.GetObject("lbLogo.Image")));
+            this.lbLogo.Location = new System.Drawing.Point(54, 24);
+            this.lbLogo.Name = "lbLogo";
+            this.lbLogo.Size = new System.Drawing.Size(160, 140);
+            this.lbLogo.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.lbLogo);
+            this.panel1.Location = new System.Drawing.Point(1, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(279, 209);
+            this.panel1.TabIndex = 1;
             // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 983);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnUserControl);
             this.Controls.Add(this.lbQLCH);
             this.Controls.Add(this.pnDanhmuc);
-            this.Controls.Add(this.pnLogo);
             this.Name = "fTableManager";
             this.Text = "fTableManager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnDanhmuc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -209,7 +220,6 @@
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Panel pnLogo;
         private System.Windows.Forms.Panel pnDanhmuc;
         private System.Windows.Forms.Button btnDanhmuc;
         private System.Windows.Forms.Label lbQLCH;
@@ -223,5 +233,7 @@
         private System.Windows.Forms.Button btnThongke;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel pnUserControl;
+        private System.Windows.Forms.Label lbLogo;
+        private System.Windows.Forms.Panel panel1;
     }
 }
