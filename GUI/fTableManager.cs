@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class DangNhap : Form
+    public partial class fTableManager : Form
     {
-        public DangNhap()
+        public fTableManager()
         {
             InitializeComponent();
         }
 
-        private void lbUser_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

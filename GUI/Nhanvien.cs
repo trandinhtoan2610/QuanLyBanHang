@@ -9,15 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
+
 {
-    public partial class DangNhap : Form
+    public partial class Nhanvien : UserControl
     {
-        public DangNhap()
+        public Nhanvien()
         {
             InitializeComponent();
         }
 
-        private void lbUser_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbQuanly_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class DangNhap : Form
+    public partial class Khachhang : UserControl
     {
-        public DangNhap()
+        public Khachhang()
         {
             InitializeComponent();
-        }
-
-        private void lbUser_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
