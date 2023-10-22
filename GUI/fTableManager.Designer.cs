@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTableManager));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnDanhmuc = new System.Windows.Forms.Panel();
@@ -43,25 +44,25 @@
             this.lbQLCH = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.pnUserControl = new System.Windows.Forms.Panel();
+            this.pnDropDown = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbLogo = new System.Windows.Forms.Label();
+
+            this.timerDropDown = new System.Windows.Forms.Timer(this.components);
             this.pnDanhmuc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.pnDropDown.SuspendLayout();
+
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnDanhmuc
             // 
             this.pnDanhmuc.BackColor = System.Drawing.Color.Silver;
+            this.pnDanhmuc.Controls.Add(this.pnDropDown);
             this.pnDanhmuc.Controls.Add(this.btnPhanquyen);
             this.pnDanhmuc.Controls.Add(this.btnThongke);
             this.pnDanhmuc.Controls.Add(this.btnQLHĐ);
-            this.pnDanhmuc.Controls.Add(this.btnSp);
-            this.pnDanhmuc.Controls.Add(this.btnLoaisp);
-            this.pnDanhmuc.Controls.Add(this.btnNCC);
-            this.pnDanhmuc.Controls.Add(this.btnKhachhang);
-            this.pnDanhmuc.Controls.Add(this.btnNhanvien);
-            this.pnDanhmuc.Controls.Add(this.btnDanhmuc);
             this.pnDanhmuc.Location = new System.Drawing.Point(1, 206);
             this.pnDanhmuc.Name = "pnDanhmuc";
             this.pnDanhmuc.Size = new System.Drawing.Size(279, 782);
@@ -99,65 +100,90 @@
             // 
             // btnSp
             // 
+            this.btnSp.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSp.FlatAppearance.BorderSize = 0;
+            this.btnSp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSp.Location = new System.Drawing.Point(57, 445);
+            this.btnSp.Location = new System.Drawing.Point(0, -205);
             this.btnSp.Name = "btnSp";
-            this.btnSp.Size = new System.Drawing.Size(143, 55);
+            this.btnSp.Size = new System.Drawing.Size(279, 50);
             this.btnSp.TabIndex = 5;
             this.btnSp.Text = "Sản phẩm";
-            this.btnSp.UseVisualStyleBackColor = true;
+            this.btnSp.UseVisualStyleBackColor = false;
             // 
             // btnLoaisp
             // 
+            this.btnLoaisp.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLoaisp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLoaisp.FlatAppearance.BorderSize = 0;
+            this.btnLoaisp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoaisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoaisp.Location = new System.Drawing.Point(57, 362);
+            this.btnLoaisp.Location = new System.Drawing.Point(0, -155);
             this.btnLoaisp.Name = "btnLoaisp";
-            this.btnLoaisp.Size = new System.Drawing.Size(143, 55);
+            this.btnLoaisp.Size = new System.Drawing.Size(279, 50);
             this.btnLoaisp.TabIndex = 4;
             this.btnLoaisp.Text = "Loại sản phẩm";
-            this.btnLoaisp.UseVisualStyleBackColor = true;
+            this.btnLoaisp.UseVisualStyleBackColor = false;
             // 
             // btnNCC
             // 
+            this.btnNCC.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNCC.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnNCC.FlatAppearance.BorderSize = 0;
+            this.btnNCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNCC.Location = new System.Drawing.Point(57, 284);
+            this.btnNCC.Location = new System.Drawing.Point(0, -50);
             this.btnNCC.Name = "btnNCC";
-            this.btnNCC.Size = new System.Drawing.Size(143, 55);
+            this.btnNCC.Size = new System.Drawing.Size(279, 50);
             this.btnNCC.TabIndex = 3;
             this.btnNCC.Text = "Nhà cung cấp";
-            this.btnNCC.UseVisualStyleBackColor = true;
+            this.btnNCC.UseVisualStyleBackColor = false;
             // 
             // btnKhachhang
             // 
+            this.btnKhachhang.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnKhachhang.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnKhachhang.FlatAppearance.BorderSize = 0;
+            this.btnKhachhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhachhang.Location = new System.Drawing.Point(57, 201);
+            this.btnKhachhang.Location = new System.Drawing.Point(0, 0);
             this.btnKhachhang.Name = "btnKhachhang";
-            this.btnKhachhang.Size = new System.Drawing.Size(143, 55);
+            this.btnKhachhang.Size = new System.Drawing.Size(279, 55);
             this.btnKhachhang.TabIndex = 2;
             this.btnKhachhang.Text = "Khách hàng";
-            this.btnKhachhang.UseVisualStyleBackColor = true;
+            this.btnKhachhang.UseVisualStyleBackColor = false;
             // 
             // btnNhanvien
             // 
+            this.btnNhanvien.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNhanvien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnNhanvien.FlatAppearance.BorderSize = 0;
+            this.btnNhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhanvien.Location = new System.Drawing.Point(57, 121);
+            this.btnNhanvien.Location = new System.Drawing.Point(0, -105);
             this.btnNhanvien.Name = "btnNhanvien";
-            this.btnNhanvien.Size = new System.Drawing.Size(143, 55);
+            this.btnNhanvien.Size = new System.Drawing.Size(279, 55);
             this.btnNhanvien.TabIndex = 1;
             this.btnNhanvien.Text = "Nhân viên";
-            this.btnNhanvien.UseVisualStyleBackColor = true;
-            this.btnNhanvien.Visible = false;
+            this.btnNhanvien.UseVisualStyleBackColor = false;
             // 
             // btnDanhmuc
             // 
+            this.btnDanhmuc.BackColor = System.Drawing.Color.White;
+            this.btnDanhmuc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDanhmuc.FlatAppearance.BorderSize = 0;
+            this.btnDanhmuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDanhmuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhmuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDanhmuc.Location = new System.Drawing.Point(57, 44);
+
+            this.btnDanhmuc.Location = new System.Drawing.Point(0, 0);
+
             this.btnDanhmuc.Name = "btnDanhmuc";
-            this.btnDanhmuc.Size = new System.Drawing.Size(143, 55);
+            this.btnDanhmuc.Size = new System.Drawing.Size(279, 55);
             this.btnDanhmuc.TabIndex = 0;
             this.btnDanhmuc.Text = "Danh mục";
-            this.btnDanhmuc.UseVisualStyleBackColor = true;
+            this.btnDanhmuc.UseVisualStyleBackColor = false;
+            this.btnDanhmuc.Click += new System.EventHandler(this.btnDanhmuc_Click);
             // 
             // lbQLCH
             // 
@@ -177,11 +203,28 @@
             // 
             // pnUserControl
             // 
-            this.pnUserControl.BackColor = System.Drawing.Color.Transparent;
+
+            this.pnUserControl.BackColor = System.Drawing.SystemColors.ControlLight;
+
             this.pnUserControl.Location = new System.Drawing.Point(283, 68);
             this.pnUserControl.Name = "pnUserControl";
             this.pnUserControl.Size = new System.Drawing.Size(1639, 920);
             this.pnUserControl.TabIndex = 8;
+            // 
+            // pnDropDown
+            // 
+            this.pnDropDown.Controls.Add(this.btnDanhmuc);
+            this.pnDropDown.Controls.Add(this.btnSp);
+            this.pnDropDown.Controls.Add(this.btnLoaisp);
+            this.pnDropDown.Controls.Add(this.btnNhanvien);
+            this.pnDropDown.Controls.Add(this.btnNCC);
+            this.pnDropDown.Controls.Add(this.btnKhachhang);
+            this.pnDropDown.Location = new System.Drawing.Point(0, 3);
+            this.pnDropDown.MaximumSize = new System.Drawing.Size(279, 315);
+            this.pnDropDown.MinimumSize = new System.Drawing.Size(279, 55);
+            this.pnDropDown.Name = "pnDropDown";
+            this.pnDropDown.Size = new System.Drawing.Size(279, 55);
+            this.pnDropDown.TabIndex = 0;
             // 
             // panel1
             // 
@@ -200,6 +243,13 @@
             this.lbLogo.Size = new System.Drawing.Size(160, 140);
             this.lbLogo.TabIndex = 0;
             // 
+
+            // timerDropDown
+            // 
+            this.timerDropDown.Interval = 1;
+            this.timerDropDown.Tick += new System.EventHandler(this.timerDropDown_Tick);
+            // 
+
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -214,6 +264,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnDanhmuc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+
+            this.pnDropDown.ResumeLayout(false);
+
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -237,5 +290,9 @@
         private System.Windows.Forms.Label lbLogo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDanhmuc;
+
+        private System.Windows.Forms.Panel pnDropDown;
+        private System.Windows.Forms.Timer timerDropDown;
+
     }
 }
