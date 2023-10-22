@@ -18,19 +18,25 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        
+
+        private void tbTimkiem_Enter(object sender, EventArgs e)
+        {
+            if(tbTimkiem.Text == "Tìm kiếm")
+            {
+                tbTimkiem.Text = "";
+                tbTimkiem.ForeColor = Color.Black;
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void tbTimkiem_Leave(object sender, EventArgs e)
         {
-
-        }
-
-        private void lbQuanly_Click(object sender, EventArgs e)
-        {
-
+            if (tbTimkiem.Text == "")
+            {
+                tbTimkiem.Text = "Tìm kiếm";
+                tbTimkiem.ForeColor = Color.White;
+            }
         }
     }
 }

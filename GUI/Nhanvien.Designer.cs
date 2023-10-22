@@ -64,6 +64,7 @@ namespace GUI
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dtaGVNV = new System.Windows.Forms.DataGridView();
+            this.lbDanhsach = new System.Windows.Forms.Label();
             this.pnThongtin.SuspendLayout();
             this.pnThemSuaXoa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGVNV)).BeginInit();
@@ -79,7 +80,6 @@ namespace GUI
             this.lbQuanly.Size = new System.Drawing.Size(1639, 47);
             this.lbQuanly.TabIndex = 4;
             this.lbQuanly.Text = "Quản lý nhân viên";
-            this.lbQuanly.Click += new System.EventHandler(this.lbQuanly_Click);
             // 
             // pnThongtin
             // 
@@ -130,7 +130,6 @@ namespace GUI
             this.tbDiachi.Name = "tbDiachi";
             this.tbDiachi.Size = new System.Drawing.Size(179, 112);
             this.tbDiachi.TabIndex = 24;
-            this.tbDiachi.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lbDiachi
             // 
@@ -141,7 +140,6 @@ namespace GUI
             this.lbDiachi.Size = new System.Drawing.Size(53, 18);
             this.lbDiachi.TabIndex = 23;
             this.lbDiachi.Text = "Địa chỉ";
-            this.lbDiachi.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbMatkhau
             // 
@@ -365,6 +363,8 @@ namespace GUI
             this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
             this.tbTimkiem.TabIndex = 8;
             this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
+            this.tbTimkiem.Enter += new System.EventHandler(this.tbTimkiem_Enter);
+            this.tbTimkiem.Leave += new System.EventHandler(this.tbTimkiem_Leave);
             // 
             // btnExport
             // 
@@ -414,17 +414,27 @@ namespace GUI
             // 
             this.dtaGVNV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtaGVNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtaGVNV.Location = new System.Drawing.Point(3, 470);
+            this.dtaGVNV.Location = new System.Drawing.Point(3, 507);
             this.dtaGVNV.Name = "dtaGVNV";
             this.dtaGVNV.RowHeadersWidth = 51;
             this.dtaGVNV.RowTemplate.Height = 24;
-            this.dtaGVNV.Size = new System.Drawing.Size(1639, 447);
+            this.dtaGVNV.Size = new System.Drawing.Size(1639, 410);
             this.dtaGVNV.TabIndex = 17;
+            // 
+            // lbDanhsach
+            // 
+            this.lbDanhsach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhsach.Location = new System.Drawing.Point(3, 479);
+            this.lbDanhsach.Name = "lbDanhsach";
+            this.lbDanhsach.Size = new System.Drawing.Size(223, 25);
+            this.lbDanhsach.TabIndex = 29;
+            this.lbDanhsach.Text = "Danh sách nhân viên";
             // 
             // Nhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbDanhsach);
             this.Controls.Add(this.dtaGVNV);
             this.Controls.Add(this.pnThemSuaXoa);
             this.Controls.Add(this.pnThongtin);
@@ -475,6 +485,7 @@ namespace GUI
         private Button btnDelete;
         private Button btnChon;
         private TextBox tbTimkiem;
+        private Label lbDanhsach;
     }
     
 }

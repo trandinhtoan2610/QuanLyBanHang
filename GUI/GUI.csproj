@@ -82,6 +82,12 @@
     <Compile Include="Nhanvien.Designer.cs">
       <DependentUpon>Nhanvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phanquyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Phanquyen.Designer.cs">
+      <DependentUpon>Phanquyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sanpham.cs">
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nhanvien.resx">
       <DependentUpon>Nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phanquyen.resx">
+      <DependentUpon>Phanquyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -51,6 +51,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lbDanhsach = new System.Windows.Forms.Label();
             this.pnThongtin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnThemSuaXoa.SuspendLayout();
@@ -210,11 +211,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 481);
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 509);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1639, 436);
+            this.dataGridView1.Size = new System.Drawing.Size(1639, 408);
             this.dataGridView1.TabIndex = 19;
             // 
             // pnThemSuaXoa
@@ -286,10 +287,20 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
+            // lbDanhsach
+            // 
+            this.lbDanhsach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhsach.Location = new System.Drawing.Point(3, 481);
+            this.lbDanhsach.Name = "lbDanhsach";
+            this.lbDanhsach.Size = new System.Drawing.Size(223, 25);
+            this.lbDanhsach.TabIndex = 29;
+            this.lbDanhsach.Text = "Danh sách nhà cung cấp";
+            // 
             // NCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbDanhsach);
             this.Controls.Add(this.pnThemSuaXoa);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pnThongtin);
@@ -329,5 +340,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lbDanhsach;
     }
 }

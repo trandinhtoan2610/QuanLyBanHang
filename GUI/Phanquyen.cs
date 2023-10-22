@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Sanpham : UserControl
+    public partial class Phanquyen : UserControl
     {
-        public Sanpham()
+        public Phanquyen()
         {
             InitializeComponent();
-        }
-
-        private void tbMatkhau_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
