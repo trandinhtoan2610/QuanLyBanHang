@@ -12,24 +12,38 @@ namespace GUI
 {
     public partial class fTableManager : Form
     {
+        private bool isCollapsed;
         public fTableManager()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnDanhmuc_Click(object sender, EventArgs e)
         {
-
+            timerDropDown.Start();
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void timerDropDown_Tick(object sender, EventArgs e)
         {
-
+            if (isCollapsed)
+            {
+                pnDropDown.Height += 20;
+                if(pnDropDown.Size == pnDropDown.MaximumSize)
+                {
+                    timerDropDown.Stop();
+                    isCollapsed = false;  
+                }
+            }
+            else
+            {
+                pnDropDown.Height -= 20;
+                if (pnDropDown.Size == pnDropDown.MinimumSize)
+                {
+                    timerDropDown.Stop();
+                    isCollapsed = true;
+                }
+            }
         }
 
-        private void nhanvien1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
