@@ -12,8 +12,8 @@ namespace GUI
 {
     public partial class fTableManager : Form
     {
-        private bool isCollapsed;
-        private bool isCollapsed2;
+        private bool isCollapsed = true;
+        private bool isCollapsed2 = true ;
         public fTableManager()
         {
             InitializeComponent();
@@ -72,9 +72,27 @@ namespace GUI
             }
         }
 
+       
+
+
+        private void btnLoaisp_Click(object sender, EventArgs e)
+        {
+            loaiSP1.BringToFront();
+        }
+
+        private void btnNCC_Click(object sender, EventArgs e)
+        {
+            ncc1.BringToFront();
+        }
+
+        private void btnKhachhang_Click(object sender, EventArgs e)
+        {
+            khachhang1.BringToFront();
+        }
+
         private void btnSp_Click(object sender, EventArgs e)
         {
-
+            sanpham1.BringToFront();
         }
 
         private void btnNhanvien_Click(object sender, EventArgs e)
