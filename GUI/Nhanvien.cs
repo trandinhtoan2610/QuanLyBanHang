@@ -27,10 +27,5 @@ namespace GUI
         {
 
         }
-
-        private void lbQuanly_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

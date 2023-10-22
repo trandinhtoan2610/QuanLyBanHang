@@ -73,13 +73,13 @@ namespace GUI
             // 
             this.lbQuanly.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.lbQuanly.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuanly.Location = new System.Drawing.Point(5, 0);
+            this.lbQuanly.Location = new System.Drawing.Point(0, 0);
+            this.lbQuanly.Margin = new System.Windows.Forms.Padding(0);
             this.lbQuanly.Name = "lbQuanly";
             this.lbQuanly.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
-            this.lbQuanly.Size = new System.Drawing.Size(1639, 47);
+            this.lbQuanly.Size = new System.Drawing.Size(1644, 47);
             this.lbQuanly.TabIndex = 4;
             this.lbQuanly.Text = "Quản lý nhân viên";
-            this.lbQuanly.Click += new System.EventHandler(this.lbQuanly_Click);
             // 
             // pnThongtin
             // 
@@ -108,17 +108,20 @@ namespace GUI
             this.pnThongtin.Controls.Add(this.lbMaNV);
             this.pnThongtin.Controls.Add(this.panel2);
             this.pnThongtin.Controls.Add(this.lbThongtin);
-            this.pnThongtin.Location = new System.Drawing.Point(3, 50);
+            this.pnThongtin.Location = new System.Drawing.Point(0, 50);
+            this.pnThongtin.Margin = new System.Windows.Forms.Padding(0);
             this.pnThongtin.Name = "pnThongtin";
-            this.pnThongtin.Size = new System.Drawing.Size(1639, 302);
+            this.pnThongtin.Size = new System.Drawing.Size(1644, 302);
             this.pnThongtin.TabIndex = 5;
             // 
             // btnChon
             // 
+            this.btnChon.FlatAppearance.BorderSize = 0;
+            this.btnChon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChon.Image = ((System.Drawing.Image)(resources.GetObject("btnChon.Image")));
             this.btnChon.Location = new System.Drawing.Point(83, 198);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(60, 60);
+            this.btnChon.Size = new System.Drawing.Size(70, 70);
             this.btnChon.TabIndex = 25;
             this.btnChon.UseVisualStyleBackColor = true;
             // 
@@ -349,9 +352,10 @@ namespace GUI
             this.pnThemSuaXoa.Controls.Add(this.btnDelete);
             this.pnThemSuaXoa.Controls.Add(this.btnEdit);
             this.pnThemSuaXoa.Controls.Add(this.btnAdd);
-            this.pnThemSuaXoa.Location = new System.Drawing.Point(3, 358);
+            this.pnThemSuaXoa.Location = new System.Drawing.Point(0, 355);
+            this.pnThemSuaXoa.Margin = new System.Windows.Forms.Padding(0);
             this.pnThemSuaXoa.Name = "pnThemSuaXoa";
-            this.pnThemSuaXoa.Size = new System.Drawing.Size(1639, 106);
+            this.pnThemSuaXoa.Size = new System.Drawing.Size(1644, 106);
             this.pnThemSuaXoa.TabIndex = 16;
             // 
             // tbTimkiem
@@ -414,11 +418,12 @@ namespace GUI
             // 
             this.dtaGVNV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtaGVNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtaGVNV.Location = new System.Drawing.Point(3, 470);
+            this.dtaGVNV.Location = new System.Drawing.Point(0, 461);
+            this.dtaGVNV.Margin = new System.Windows.Forms.Padding(0);
             this.dtaGVNV.Name = "dtaGVNV";
             this.dtaGVNV.RowHeadersWidth = 51;
             this.dtaGVNV.RowTemplate.Height = 24;
-            this.dtaGVNV.Size = new System.Drawing.Size(1639, 447);
+            this.dtaGVNV.Size = new System.Drawing.Size(1644, 447);
             this.dtaGVNV.TabIndex = 17;
             // 
             // Nhanvien
@@ -429,8 +434,9 @@ namespace GUI
             this.Controls.Add(this.pnThemSuaXoa);
             this.Controls.Add(this.pnThongtin);
             this.Controls.Add(this.lbQuanly);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Nhanvien";
-            this.Size = new System.Drawing.Size(1639, 920);
+            this.Size = new System.Drawing.Size(1644, 920);
             this.pnThongtin.ResumeLayout(false);
             this.pnThongtin.PerformLayout();
             this.pnThemSuaXoa.ResumeLayout(false);
