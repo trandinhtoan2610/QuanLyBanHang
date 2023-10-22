@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace GUI
+﻿namespace GUI
 {
-    partial class Nhanvien
+    partial class Sanpham
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +28,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nhanvien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sanpham));
             this.lbQuanly = new System.Windows.Forms.Label();
             this.pnThongtin = new System.Windows.Forms.Panel();
             this.btnChon = new System.Windows.Forms.Button();
@@ -54,32 +52,22 @@ namespace GUI
             this.tbMaNV = new System.Windows.Forms.TextBox();
             this.lbNgaysinh = new System.Windows.Forms.Label();
             this.lbTenNV = new System.Windows.Forms.Label();
-            this.lbMaNV = new System.Windows.Forms.Label();
+            this.lbMaSP = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbThongtin = new System.Windows.Forms.Label();
-            this.pnThemSuaXoa = new System.Windows.Forms.Panel();
-            this.tbTimkiem = new System.Windows.Forms.TextBox();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.dtaGVNV = new System.Windows.Forms.DataGridView();
             this.pnThongtin.SuspendLayout();
-            this.pnThemSuaXoa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtaGVNV)).BeginInit();
             this.SuspendLayout();
             // 
             // lbQuanly
             // 
             this.lbQuanly.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.lbQuanly.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuanly.Location = new System.Drawing.Point(5, 0);
+            this.lbQuanly.Location = new System.Drawing.Point(3, 0);
             this.lbQuanly.Name = "lbQuanly";
             this.lbQuanly.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
             this.lbQuanly.Size = new System.Drawing.Size(1639, 47);
-            this.lbQuanly.TabIndex = 4;
-            this.lbQuanly.Text = "Quản lý nhân viên";
-            this.lbQuanly.Click += new System.EventHandler(this.lbQuanly_Click);
+            this.lbQuanly.TabIndex = 5;
+            this.lbQuanly.Text = "Quản lý sản phẩm";
             // 
             // pnThongtin
             // 
@@ -105,13 +93,13 @@ namespace GUI
             this.pnThongtin.Controls.Add(this.tbMaNV);
             this.pnThongtin.Controls.Add(this.lbNgaysinh);
             this.pnThongtin.Controls.Add(this.lbTenNV);
-            this.pnThongtin.Controls.Add(this.lbMaNV);
+            this.pnThongtin.Controls.Add(this.lbMaSP);
             this.pnThongtin.Controls.Add(this.panel2);
             this.pnThongtin.Controls.Add(this.lbThongtin);
             this.pnThongtin.Location = new System.Drawing.Point(3, 50);
             this.pnThongtin.Name = "pnThongtin";
             this.pnThongtin.Size = new System.Drawing.Size(1639, 302);
-            this.pnThongtin.TabIndex = 5;
+            this.pnThongtin.TabIndex = 6;
             // 
             // btnChon
             // 
@@ -130,7 +118,6 @@ namespace GUI
             this.tbDiachi.Name = "tbDiachi";
             this.tbDiachi.Size = new System.Drawing.Size(179, 112);
             this.tbDiachi.TabIndex = 24;
-            this.tbDiachi.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lbDiachi
             // 
@@ -141,7 +128,6 @@ namespace GUI
             this.lbDiachi.Size = new System.Drawing.Size(53, 18);
             this.lbDiachi.TabIndex = 23;
             this.lbDiachi.Text = "Địa chỉ";
-            this.lbDiachi.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbMatkhau
             // 
@@ -314,15 +300,15 @@ namespace GUI
             this.lbTenNV.TabIndex = 4;
             this.lbTenNV.Text = "Tên nhân viên";
             // 
-            // lbMaNV
+            // lbMaSP
             // 
-            this.lbMaNV.AutoSize = true;
-            this.lbMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaNV.Location = new System.Drawing.Point(258, 30);
-            this.lbMaNV.Name = "lbMaNV";
-            this.lbMaNV.Size = new System.Drawing.Size(95, 18);
-            this.lbMaNV.TabIndex = 3;
-            this.lbMaNV.Text = "Mã nhân viên";
+            this.lbMaSP.AutoSize = true;
+            this.lbMaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaSP.Location = new System.Drawing.Point(258, 30);
+            this.lbMaSP.Name = "lbMaSP";
+            this.lbMaSP.Size = new System.Drawing.Size(98, 18);
+            this.lbMaSP.TabIndex = 3;
+            this.lbMaSP.Text = "Mã sản phẩm";
             // 
             // panel2
             // 
@@ -339,103 +325,18 @@ namespace GUI
             this.lbThongtin.Name = "lbThongtin";
             this.lbThongtin.Size = new System.Drawing.Size(223, 25);
             this.lbThongtin.TabIndex = 0;
-            this.lbThongtin.Text = "Thông tin nhân viên";
+            this.lbThongtin.Text = "Thông tin sản phẩm";
             // 
-            // pnThemSuaXoa
-            // 
-            this.pnThemSuaXoa.BackColor = System.Drawing.Color.White;
-            this.pnThemSuaXoa.Controls.Add(this.tbTimkiem);
-            this.pnThemSuaXoa.Controls.Add(this.btnExport);
-            this.pnThemSuaXoa.Controls.Add(this.btnDelete);
-            this.pnThemSuaXoa.Controls.Add(this.btnEdit);
-            this.pnThemSuaXoa.Controls.Add(this.btnAdd);
-            this.pnThemSuaXoa.Location = new System.Drawing.Point(3, 358);
-            this.pnThemSuaXoa.Name = "pnThemSuaXoa";
-            this.pnThemSuaXoa.Size = new System.Drawing.Size(1639, 106);
-            this.pnThemSuaXoa.TabIndex = 16;
-            // 
-            // tbTimkiem
-            // 
-            this.tbTimkiem.BackColor = System.Drawing.Color.White;
-            this.tbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimkiem.HideSelection = false;
-            this.tbTimkiem.Location = new System.Drawing.Point(875, 35);
-            this.tbTimkiem.Multiline = true;
-            this.tbTimkiem.Name = "tbTimkiem";
-            this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
-            this.tbTimkiem.TabIndex = 8;
-            this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
-            // 
-            // btnExport
-            // 
-            this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.Location = new System.Drawing.Point(629, 15);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 75);
-            this.btnExport.TabIndex = 7;
-            this.btnExport.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(449, 15);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 75);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(261, 15);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 75);
-            this.btnEdit.TabIndex = 5;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(83, 15);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 75);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // dtaGVNV
-            // 
-            this.dtaGVNV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtaGVNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtaGVNV.Location = new System.Drawing.Point(3, 470);
-            this.dtaGVNV.Name = "dtaGVNV";
-            this.dtaGVNV.RowHeadersWidth = 51;
-            this.dtaGVNV.RowTemplate.Height = 24;
-            this.dtaGVNV.Size = new System.Drawing.Size(1639, 447);
-            this.dtaGVNV.TabIndex = 17;
-            // 
-            // Nhanvien
+            // Sanpham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dtaGVNV);
-            this.Controls.Add(this.pnThemSuaXoa);
             this.Controls.Add(this.pnThongtin);
             this.Controls.Add(this.lbQuanly);
-            this.Name = "Nhanvien";
+            this.Name = "Sanpham";
             this.Size = new System.Drawing.Size(1639, 920);
             this.pnThongtin.ResumeLayout(false);
             this.pnThongtin.PerformLayout();
-            this.pnThemSuaXoa.ResumeLayout(false);
-            this.pnThemSuaXoa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtaGVNV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -444,6 +345,16 @@ namespace GUI
 
         private System.Windows.Forms.Label lbQuanly;
         private System.Windows.Forms.Panel pnThongtin;
+        private System.Windows.Forms.Button btnChon;
+        private System.Windows.Forms.TextBox tbDiachi;
+        private System.Windows.Forms.Label lbDiachi;
+        private System.Windows.Forms.TextBox tbMatkhau;
+        private System.Windows.Forms.Label lbMatkhau;
+        private System.Windows.Forms.RadioButton rb2;
+        private System.Windows.Forms.RadioButton rb1;
+        private System.Windows.Forms.Label lbGioitinh;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.TextBox tbCMND;
         private System.Windows.Forms.TextBox tbSđt;
         private System.Windows.Forms.ComboBox cbLoaiNV;
@@ -455,26 +366,8 @@ namespace GUI
         private System.Windows.Forms.TextBox tbMaNV;
         private System.Windows.Forms.Label lbNgaysinh;
         private System.Windows.Forms.Label lbTenNV;
-        private System.Windows.Forms.Label lbMaNV;
+        private System.Windows.Forms.Label lbMaSP;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbThongtin;
-        private System.Windows.Forms.Panel pnThemSuaXoa;
-        private System.Windows.Forms.DataGridView dtaGVNV;
-        private System.Windows.Forms.RadioButton rb2;
-        private System.Windows.Forms.RadioButton rb1;
-        private System.Windows.Forms.Label lbGioitinh;
-        private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.TextBox tbMatkhau;
-        private System.Windows.Forms.Label lbMatkhau;
-        private System.Windows.Forms.Label lbDiachi;
-        private System.Windows.Forms.TextBox tbDiachi;
-        private Button btnAdd;
-        private Button btnEdit;
-        private Button btnExport;
-        private Button btnDelete;
-        private Button btnChon;
-        private TextBox tbTimkiem;
     }
-    
 }

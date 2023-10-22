@@ -41,19 +41,19 @@
             this.lbGhichu = new System.Windows.Forms.Label();
             this.tbGhichu = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbMaKH = new System.Windows.Forms.Label();
             this.tbMaKH = new System.Windows.Forms.TextBox();
+            this.lbMaKH = new System.Windows.Forms.Label();
+            this.lbDanhsach = new System.Windows.Forms.Label();
+            this.dtaGVKhachang = new System.Windows.Forms.DataGridView();
             this.pnThemSuaXoa = new System.Windows.Forms.Panel();
             this.tbTimkiem = new System.Windows.Forms.TextBox();
-            this.btnExxport = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lbDanhsach = new System.Windows.Forms.Label();
-            this.dtaGVKhachang = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            this.pnThemSuaXoa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGVKhachang)).BeginInit();
+            this.pnThemSuaXoa.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbQuanly
@@ -184,6 +184,14 @@
             this.panel1.Size = new System.Drawing.Size(344, 702);
             this.panel1.TabIndex = 26;
             // 
+            // tbMaKH
+            // 
+            this.tbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMaKH.Location = new System.Drawing.Point(52, 70);
+            this.tbMaKH.Name = "tbMaKH";
+            this.tbMaKH.Size = new System.Drawing.Size(212, 24);
+            this.tbMaKH.TabIndex = 27;
+            // 
             // lbMaKH
             // 
             this.lbMaKH.AutoSize = true;
@@ -193,74 +201,6 @@
             this.lbMaKH.Size = new System.Drawing.Size(109, 18);
             this.lbMaKH.TabIndex = 8;
             this.lbMaKH.Text = "Mã khách hàng";
-            // 
-            // tbMaKH
-            // 
-            this.tbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaKH.Location = new System.Drawing.Point(52, 70);
-            this.tbMaKH.Name = "tbMaKH";
-            this.tbMaKH.Size = new System.Drawing.Size(212, 24);
-            this.tbMaKH.TabIndex = 27;
-            // 
-            // pnThemSuaXoa
-            // 
-            this.pnThemSuaXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnThemSuaXoa.Controls.Add(this.tbTimkiem);
-            this.pnThemSuaXoa.Controls.Add(this.btnExxport);
-            this.pnThemSuaXoa.Controls.Add(this.btnDelete);
-            this.pnThemSuaXoa.Controls.Add(this.btnEdit);
-            this.pnThemSuaXoa.Controls.Add(this.btnAdd);
-            this.pnThemSuaXoa.Location = new System.Drawing.Point(0, 814);
-            this.pnThemSuaXoa.Name = "pnThemSuaXoa";
-            this.pnThemSuaXoa.Size = new System.Drawing.Size(1639, 103);
-            this.pnThemSuaXoa.TabIndex = 27;
-            // 
-            // tbTimkiem
-            // 
-            this.tbTimkiem.BackColor = System.Drawing.Color.White;
-            this.tbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimkiem.Location = new System.Drawing.Point(896, 22);
-            this.tbTimkiem.Multiline = true;
-            this.tbTimkiem.Name = "tbTimkiem";
-            this.tbTimkiem.Size = new System.Drawing.Size(452, 65);
-            this.tbTimkiem.TabIndex = 8;
-            this.tbTimkiem.Text = "Tìm kiếm theo số điện thoại";
-            // 
-            // btnExxport
-            // 
-            this.btnExxport.Image = ((System.Drawing.Image)(resources.GetObject("btnExxport.Image")));
-            this.btnExxport.Location = new System.Drawing.Point(629, 22);
-            this.btnExxport.Name = "btnExxport";
-            this.btnExxport.Size = new System.Drawing.Size(69, 60);
-            this.btnExxport.TabIndex = 7;
-            this.btnExxport.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(438, 22);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(69, 60);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(261, 22);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(60, 60);
-            this.btnEdit.TabIndex = 5;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(83, 22);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(69, 60);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // lbDanhsach
             // 
@@ -282,13 +222,82 @@
             this.dtaGVKhachang.Size = new System.Drawing.Size(1236, 702);
             this.dtaGVKhachang.TabIndex = 29;
             // 
+            // pnThemSuaXoa
+            // 
+            this.pnThemSuaXoa.BackColor = System.Drawing.Color.White;
+            this.pnThemSuaXoa.Controls.Add(this.tbTimkiem);
+            this.pnThemSuaXoa.Controls.Add(this.btnExport);
+            this.pnThemSuaXoa.Controls.Add(this.btnDelete);
+            this.pnThemSuaXoa.Controls.Add(this.btnEdit);
+            this.pnThemSuaXoa.Controls.Add(this.btnAdd);
+            this.pnThemSuaXoa.Location = new System.Drawing.Point(3, 807);
+            this.pnThemSuaXoa.Name = "pnThemSuaXoa";
+            this.pnThemSuaXoa.Size = new System.Drawing.Size(1639, 110);
+            this.pnThemSuaXoa.TabIndex = 30;
+            // 
+            // tbTimkiem
+            // 
+            this.tbTimkiem.BackColor = System.Drawing.Color.White;
+            this.tbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimkiem.HideSelection = false;
+            this.tbTimkiem.Location = new System.Drawing.Point(875, 35);
+            this.tbTimkiem.Multiline = true;
+            this.tbTimkiem.Name = "tbTimkiem";
+            this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
+            this.tbTimkiem.TabIndex = 8;
+            this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
+            // 
+            // btnExport
+            // 
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.Location = new System.Drawing.Point(629, 15);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 75);
+            this.btnExport.TabIndex = 7;
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(449, 15);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 75);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.Location = new System.Drawing.Point(261, 15);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 75);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(83, 15);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 75);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
             // Khachhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnThemSuaXoa);
             this.Controls.Add(this.dtaGVKhachang);
             this.Controls.Add(this.lbDanhsach);
-            this.Controls.Add(this.pnThemSuaXoa);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbThongtin);
             this.Controls.Add(this.lbQuanly);
@@ -296,9 +305,9 @@
             this.Size = new System.Drawing.Size(1639, 920);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGVKhachang)).EndInit();
             this.pnThemSuaXoa.ResumeLayout(false);
             this.pnThemSuaXoa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtaGVKhachang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -318,13 +327,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox tbMaKH;
         private System.Windows.Forms.Label lbMaKH;
+        private System.Windows.Forms.Label lbDanhsach;
+        private System.Windows.Forms.DataGridView dtaGVKhachang;
         private System.Windows.Forms.Panel pnThemSuaXoa;
         private System.Windows.Forms.TextBox tbTimkiem;
-        private System.Windows.Forms.Button btnExxport;
+        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lbDanhsach;
-        private System.Windows.Forms.DataGridView dtaGVKhachang;
     }
 }

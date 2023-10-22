@@ -45,10 +45,8 @@
             this.pnUserControl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbLogo = new System.Windows.Forms.Label();
-            this.nhanvien1 = new GUI.Nhanvien();
             this.pnDanhmuc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            this.pnUserControl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,6 +151,7 @@
             // btnDanhmuc
             // 
             this.btnDanhmuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhmuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhmuc.Location = new System.Drawing.Point(57, 44);
             this.btnDanhmuc.Name = "btnDanhmuc";
             this.btnDanhmuc.Size = new System.Drawing.Size(143, 55);
@@ -179,7 +178,6 @@
             // pnUserControl
             // 
             this.pnUserControl.BackColor = System.Drawing.Color.Transparent;
-            this.pnUserControl.Controls.Add(this.nhanvien1);
             this.pnUserControl.Location = new System.Drawing.Point(283, 68);
             this.pnUserControl.Name = "pnUserControl";
             this.pnUserControl.Size = new System.Drawing.Size(1639, 920);
@@ -202,14 +200,6 @@
             this.lbLogo.Size = new System.Drawing.Size(160, 140);
             this.lbLogo.TabIndex = 0;
             // 
-            // nhanvien1
-            // 
-            this.nhanvien1.Location = new System.Drawing.Point(0, 3);
-            this.nhanvien1.Name = "nhanvien1";
-            this.nhanvien1.Size = new System.Drawing.Size(1639, 920);
-            this.nhanvien1.TabIndex = 0;
-            this.nhanvien1.Load += new System.EventHandler(this.nhanvien1_Load);
-            // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,7 +214,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnDanhmuc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
-            this.pnUserControl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -248,6 +237,5 @@
         private System.Windows.Forms.Label lbLogo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDanhmuc;
-        private Nhanvien nhanvien1;
     }
 }
