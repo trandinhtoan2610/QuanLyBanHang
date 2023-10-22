@@ -28,12 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lbQuanly = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lbQuanly
+            // 
+            this.lbQuanly.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbQuanly.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuanly.Location = new System.Drawing.Point(0, 437);
+            this.lbQuanly.Name = "lbQuanly";
+            this.lbQuanly.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.lbQuanly.Size = new System.Drawing.Size(1639, 47);
+            this.lbQuanly.TabIndex = 5;
+            this.lbQuanly.Text = "Quản lý loại sản phẩm";
             // 
             // LoaiSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbQuanly);
             this.Name = "LoaiSP";
             this.Size = new System.Drawing.Size(1639, 920);
             this.ResumeLayout(false);
@@ -41,5 +54,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbQuanly;
     }
 }
