@@ -26,5 +26,10 @@ namespace GUI
         {
 
         }
+
+        private void nhanvien1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -64,6 +64,18 @@
     <Compile Include="Khachhang.Designer.cs">
       <DependentUpon>Khachhang.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoaiSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoaiSP.Designer.cs">
+      <DependentUpon>LoaiSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NCC.Designer.cs">
+      <DependentUpon>NCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nhanvien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,6 +92,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Khachhang.resx">
       <DependentUpon>Khachhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoaiSP.resx">
+      <DependentUpon>LoaiSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NCC.resx">
+      <DependentUpon>NCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nhanvien.resx">
       <DependentUpon>Nhanvien.cs</DependentUpon>
