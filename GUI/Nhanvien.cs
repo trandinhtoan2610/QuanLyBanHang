@@ -32,11 +32,9 @@ namespace GUI
 
         private void tbTimkiem_Leave(object sender, EventArgs e)
         {
-            if (tbTimkiem.Text == "")
-            {
-                tbTimkiem.Text = "Tìm kiếm";
-                tbTimkiem.ForeColor = Color.White;
-            }
+
+
+
         }
     }
 }

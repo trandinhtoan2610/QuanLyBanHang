@@ -64,7 +64,7 @@
             this.lbQuanly.Location = new System.Drawing.Point(0, 0);
             this.lbQuanly.Name = "lbQuanly";
             this.lbQuanly.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
-            this.lbQuanly.Size = new System.Drawing.Size(1639, 47);
+            this.lbQuanly.Size = new System.Drawing.Size(1644, 47);
             this.lbQuanly.TabIndex = 5;
             this.lbQuanly.Text = "Quản lý nhà cung cấp";
             // 
@@ -86,7 +86,7 @@
             this.pnThongtin.Controls.Add(this.lbThongtin);
             this.pnThongtin.Location = new System.Drawing.Point(3, 61);
             this.pnThongtin.Name = "pnThongtin";
-            this.pnThongtin.Size = new System.Drawing.Size(1639, 302);
+            this.pnThongtin.Size = new System.Drawing.Size(1644, 302);
             this.pnThongtin.TabIndex = 18;
             // 
             // tbGhichu
@@ -210,12 +210,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 509);
+
+            this.dataGridView1.Location = new System.Drawing.Point(5, 481);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1639, 408);
+            this.dataGridView1.Size = new System.Drawing.Size(1644, 436);
+
             this.dataGridView1.TabIndex = 19;
             // 
             // pnThemSuaXoa
@@ -228,7 +231,7 @@
             this.pnThemSuaXoa.Controls.Add(this.btnAdd);
             this.pnThemSuaXoa.Location = new System.Drawing.Point(3, 369);
             this.pnThemSuaXoa.Name = "pnThemSuaXoa";
-            this.pnThemSuaXoa.Size = new System.Drawing.Size(1639, 106);
+            this.pnThemSuaXoa.Size = new System.Drawing.Size(1644, 106);
             this.pnThemSuaXoa.TabIndex = 20;
             // 
             // tbTimkiem
@@ -306,7 +309,7 @@
             this.Controls.Add(this.pnThongtin);
             this.Controls.Add(this.lbQuanly);
             this.Name = "NCC";
-            this.Size = new System.Drawing.Size(1639, 920);
+            this.Size = new System.Drawing.Size(1644, 920);
             this.pnThongtin.ResumeLayout(false);
             this.pnThongtin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
