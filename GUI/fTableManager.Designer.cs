@@ -438,7 +438,6 @@
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTableManager";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.pnDanhmuc.ResumeLayout(false);
             this.pnQuanlyhoadon.ResumeLayout(false);
             this.pnDropDown.ResumeLayout(false);
