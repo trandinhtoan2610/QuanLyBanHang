@@ -21,33 +21,6 @@ namespace DAL
 
     public class DatabaseAccess
     {
-        public static string CheckLoginDTO(TaiKhoanDTO taikhoan)
-        {
-            string user = null;
-            SqlConnection conn = SqlConnectionData.Connect();
-            conn.Open();
-            SqlCommand command = new SqlCommand("proc_login", conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@user", taikhoan.UserName);
-            command.Parameters.AddWithValue("@pass", taikhoan.Password);
-
-            command.Connection = conn;
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    user = reader.GetString(0);
-                    return user;
-                }
-                reader.Close();
-                conn.Close();
-            }
-            else
-            {
-                return "Tài khoản mật khẩu không chính xác";
-            }
-            return user;
-        }
+        
     }
 } 
