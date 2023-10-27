@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
+
 {
     public partial class Khachhang : UserControl
     {
@@ -17,14 +19,22 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void lbThongtin_Click(object sender, EventArgs e)
+        private void tbTimkiem_Enter(object sender, EventArgs e)
         {
-
+            if (tbTimkiem.Text == "Tìm kiếm")
+            {
+                tbTimkiem.Text = "";
+                tbTimkiem.ForeColor = Color.Black;
+            }
         }
 
-        private void lbGioitinh_Click(object sender, EventArgs e)
+        private void tbTimkiem_Leave(object sender, EventArgs e)
         {
-
+            if (tbTimkiem.Text == "")
+            {
+                tbTimkiem.Text = "Tìm Kiếm";
+                tbTimkiem.ForeColor = Color.LightGray;
+            }
         }
     }
 }

@@ -14,6 +14,8 @@ namespace GUI
     {
         private bool isCollapsed;
         private bool isCollapsed2;
+        
+
         public fTableManager()
         {
             InitializeComponent();
@@ -79,7 +81,7 @@ namespace GUI
 
         private void btnNhanvien_Click(object sender, EventArgs e)
         {
-            nhanvien1.BringToFront();
+            
         }
     }
 }
