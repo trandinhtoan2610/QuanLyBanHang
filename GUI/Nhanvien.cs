@@ -23,11 +23,7 @@ namespace GUI
 
         private void tbTimkiem_Enter(object sender, EventArgs e)
         {
-            if(tbTimkiem.Text == "Tìm kiếm")
-            {
-                tbTimkiem.Text = "";
-                tbTimkiem.ForeColor = Color.Black;
-            }
+            
         }
 
         private void tbTimkiem_Leave(object sender, EventArgs e)

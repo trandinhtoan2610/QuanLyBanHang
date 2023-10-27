@@ -75,7 +75,6 @@
             this.lbThongtin.Size = new System.Drawing.Size(223, 25);
             this.lbThongtin.TabIndex = 6;
             this.lbThongtin.Text = "Thông tin khách hàng";
-            this.lbThongtin.Click += new System.EventHandler(this.lbThongtin_Click);
             // 
             // lbHoten
             // 
@@ -122,7 +121,6 @@
             this.lbGioitinh.Size = new System.Drawing.Size(62, 18);
             this.lbGioitinh.TabIndex = 19;
             this.lbGioitinh.Text = "Giới tính";
-            this.lbGioitinh.Click += new System.EventHandler(this.lbGioitinh_Click);
             // 
             // rb1
             // 
@@ -246,6 +244,8 @@
             this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
             this.tbTimkiem.TabIndex = 8;
             this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
+            this.tbTimkiem.Enter += new System.EventHandler(this.tbTimkiem_Enter);
+            this.tbTimkiem.Leave += new System.EventHandler(this.tbTimkiem_Leave);
             // 
             // btnExport
             // 

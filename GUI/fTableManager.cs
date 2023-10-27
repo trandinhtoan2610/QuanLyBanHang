@@ -12,8 +12,15 @@ namespace GUI
 {
     public partial class fTableManager : Form
     {
+<<<<<<< HEAD
+        private bool isCollapsed;
+        private bool isCollapsed2;
+        
+
+=======
         private bool isCollapsed = true;
         private bool isCollapsed2 = true ;
+>>>>>>> 0bddaebdb8b795e979810219ad5939b97b015e4d
         public fTableManager()
         {
             InitializeComponent();
@@ -97,7 +104,7 @@ namespace GUI
 
         private void btnNhanvien_Click(object sender, EventArgs e)
         {
-            nhanvien1.BringToFront();
+            
         }
     }
 }
