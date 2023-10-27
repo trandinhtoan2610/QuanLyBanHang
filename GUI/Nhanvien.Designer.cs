@@ -419,14 +419,12 @@ namespace GUI
             // 
             this.dtaGVNV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtaGVNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
             this.dtaGVNV.Location = new System.Drawing.Point(0, 461);
             this.dtaGVNV.Margin = new System.Windows.Forms.Padding(0);
             this.dtaGVNV.Name = "dtaGVNV";
             this.dtaGVNV.RowHeadersWidth = 51;
             this.dtaGVNV.RowTemplate.Height = 24;
             this.dtaGVNV.Size = new System.Drawing.Size(1644, 447);
-
             this.dtaGVNV.TabIndex = 17;
             // 
             // lbDanhsach
