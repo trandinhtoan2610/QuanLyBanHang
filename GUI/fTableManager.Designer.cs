@@ -53,6 +53,7 @@
             this.timerDropDown2 = new System.Windows.Forms.Timer(this.components);
             this.lbLogo = new System.Windows.Forms.Label();
             this.lbQLCH = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.sanpham1 = new GUI.Sanpham();
             this.phanquyen1 = new GUI.Phanquyen();
             this.khachhang1 = new GUI.Khachhang();
@@ -255,9 +256,12 @@
             this.btnSp.FlatAppearance.BorderSize = 0;
             this.btnSp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSp.Image = ((System.Drawing.Image)(resources.GetObject("btnSp.Image")));
+            this.btnSp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSp.Location = new System.Drawing.Point(0, -205);
             this.btnSp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSp.Name = "btnSp";
+            this.btnSp.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnSp.Size = new System.Drawing.Size(279, 50);
             this.btnSp.TabIndex = 5;
             this.btnSp.Text = "Sản phẩm";
@@ -271,9 +275,12 @@
             this.btnLoaisp.FlatAppearance.BorderSize = 0;
             this.btnLoaisp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoaisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaisp.Image = ((System.Drawing.Image)(resources.GetObject("btnLoaisp.Image")));
+            this.btnLoaisp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLoaisp.Location = new System.Drawing.Point(0, -155);
             this.btnLoaisp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLoaisp.Name = "btnLoaisp";
+            this.btnLoaisp.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnLoaisp.Size = new System.Drawing.Size(279, 50);
             this.btnLoaisp.TabIndex = 4;
             this.btnLoaisp.Text = "Loại sản phẩm";
@@ -306,9 +313,12 @@
             this.btnNCC.FlatAppearance.BorderSize = 0;
             this.btnNCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNCC.Image = ((System.Drawing.Image)(resources.GetObject("btnNCC.Image")));
+            this.btnNCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNCC.Location = new System.Drawing.Point(0, -50);
             this.btnNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNCC.Name = "btnNCC";
+            this.btnNCC.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnNCC.Size = new System.Drawing.Size(279, 50);
             this.btnNCC.TabIndex = 3;
             this.btnNCC.Text = "Nhà cung cấp";
@@ -369,20 +379,29 @@
             this.lbLogo.Image = ((System.Drawing.Image)(resources.GetObject("lbLogo.Image")));
             this.lbLogo.Location = new System.Drawing.Point(0, 0);
             this.lbLogo.Name = "lbLogo";
-            this.lbLogo.Size = new System.Drawing.Size(279, 209);
+            this.lbLogo.Size = new System.Drawing.Size(186, 204);
             this.lbLogo.TabIndex = 9;
             // 
             // lbQLCH
             // 
             this.lbQLCH.BackColor = System.Drawing.Color.Silver;
             this.lbQLCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbQLCH.Location = new System.Drawing.Point(280, 2);
+            this.lbQLCH.Location = new System.Drawing.Point(283, 2);
+            this.lbQLCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbQLCH.Name = "lbQLCH";
             this.lbQLCH.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbQLCH.Size = new System.Drawing.Size(1644, 63);
+            this.lbQLCH.Size = new System.Drawing.Size(1641, 63);
             this.lbQLCH.TabIndex = 10;
             this.lbQLCH.Text = "Quản lý cửa hàng điện thoại";
             this.lbQLCH.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(161, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 120);
+            this.label1.TabIndex = 11;
             // 
             // sanpham1
             // 
@@ -437,6 +456,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 983);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbQLCH);
             this.Controls.Add(this.lbLogo);
             this.Controls.Add(this.pnUserControl);
@@ -490,5 +510,6 @@
         private LoaiSP loaiSP1;
         private System.Windows.Forms.Label lbLogo;
         private System.Windows.Forms.Label lbQLCH;
+        private System.Windows.Forms.Label label1;
     }
 }
