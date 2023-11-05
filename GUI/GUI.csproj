@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banhang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Banhang.Designer.cs">
+      <DependentUpon>Banhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,24 @@
     </Compile>
     <Compile Include="fTableManager.Designer.cs">
       <DependentUpon>fTableManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTimkiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fTimkiem.Designer.cs">
+      <DependentUpon>fTimkiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HDban.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HDban.Designer.cs">
+      <DependentUpon>HDban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HDnhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HDnhap.Designer.cs">
+      <DependentUpon>HDnhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Khachhang.cs">
       <SubType>UserControl</SubType>
@@ -82,6 +106,12 @@
     <Compile Include="Nhanvien.Designer.cs">
       <DependentUpon>Nhanvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nhaphang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Nhaphang.Designer.cs">
+      <DependentUpon>Nhaphang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Phanquyen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,12 +126,30 @@
     <Compile Include="Sanpham.Designer.cs">
       <DependentUpon>Sanpham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Thongke.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Thongke.Designer.cs">
+      <DependentUpon>Thongke.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Banhang.resx">
+      <DependentUpon>Banhang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTableManager.resx">
       <DependentUpon>fTableManager.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTimkiem.resx">
+      <DependentUpon>fTimkiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDban.resx">
+      <DependentUpon>HDban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDnhap.resx">
+      <DependentUpon>HDnhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Khachhang.resx">
       <DependentUpon>Khachhang.cs</DependentUpon>
@@ -114,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nhanvien.resx">
       <DependentUpon>Nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhaphang.resx">
+      <DependentUpon>Nhaphang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Phanquyen.resx">
       <DependentUpon>Phanquyen.cs</DependentUpon>
@@ -130,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="Sanpham.resx">
       <DependentUpon>Sanpham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thongke.resx">
+      <DependentUpon>Thongke.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

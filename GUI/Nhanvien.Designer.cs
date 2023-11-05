@@ -424,7 +424,7 @@ namespace GUI
             this.dtaGVNV.Name = "dtaGVNV";
             this.dtaGVNV.RowHeadersWidth = 51;
             this.dtaGVNV.RowTemplate.Height = 24;
-            this.dtaGVNV.Size = new System.Drawing.Size(1644, 447);
+            this.dtaGVNV.Size = new System.Drawing.Size(1644, 459);
             this.dtaGVNV.TabIndex = 17;
             // 
             // lbDanhsach

@@ -32,34 +32,34 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTableManager));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnDanhmuc = new System.Windows.Forms.Panel();
-            this.btnPhanquyen = new System.Windows.Forms.Button();
-            this.btnThongke = new System.Windows.Forms.Button();
             this.pnQuanlyhoadon = new System.Windows.Forms.Panel();
             this.btnHoadonnhap = new System.Windows.Forms.Button();
             this.btnNhaphang = new System.Windows.Forms.Button();
             this.btnHoadonban = new System.Windows.Forms.Button();
             this.btnBanhang = new System.Windows.Forms.Button();
-            this.btnQuanlyhoadon = new System.Windows.Forms.Button();
             this.pnDropDown = new System.Windows.Forms.Panel();
-            this.btnDanhmuc = new System.Windows.Forms.Button();
-            this.btnSp = new System.Windows.Forms.Button();
-            this.btnLoaisp = new System.Windows.Forms.Button();
-            this.btnNhanvien = new System.Windows.Forms.Button();
-            this.btnNCC = new System.Windows.Forms.Button();
-            this.btnKhachhang = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.pnUserControl = new System.Windows.Forms.Panel();
             this.timerDropDown = new System.Windows.Forms.Timer(this.components);
             this.timerDropDown2 = new System.Windows.Forms.Timer(this.components);
-            this.lbLogo = new System.Windows.Forms.Label();
             this.lbQLCH = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.sanpham1 = new GUI.Sanpham();
             this.phanquyen1 = new GUI.Phanquyen();
             this.khachhang1 = new GUI.Khachhang();
             this.loaiSP1 = new GUI.LoaiSP();
             this.ncc1 = new GUI.NCC();
             this.nhanvien1 = new GUI.Nhanvien();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbLogo = new System.Windows.Forms.Label();
+            this.btnPhanquyen = new System.Windows.Forms.Button();
+            this.btnThongke = new System.Windows.Forms.Button();
+            this.btnQuanlyhoadon = new System.Windows.Forms.Button();
+            this.btnDanhmuc = new System.Windows.Forms.Button();
+            this.btnSp = new System.Windows.Forms.Button();
+            this.btnLoaisp = new System.Windows.Forms.Button();
+            this.btnNhanvien = new System.Windows.Forms.Button();
+            this.btnNCC = new System.Windows.Forms.Button();
+            this.btnKhachhang = new System.Windows.Forms.Button();
             this.pnDanhmuc.SuspendLayout();
             this.pnQuanlyhoadon.SuspendLayout();
             this.pnDropDown.SuspendLayout();
@@ -79,6 +79,218 @@
             this.pnDanhmuc.Name = "pnDanhmuc";
             this.pnDanhmuc.Size = new System.Drawing.Size(279, 782);
             this.pnDanhmuc.TabIndex = 2;
+            // 
+            // pnQuanlyhoadon
+            // 
+            this.pnQuanlyhoadon.Controls.Add(this.btnHoadonnhap);
+            this.pnQuanlyhoadon.Controls.Add(this.btnNhaphang);
+            this.pnQuanlyhoadon.Controls.Add(this.btnHoadonban);
+            this.pnQuanlyhoadon.Controls.Add(this.btnBanhang);
+            this.pnQuanlyhoadon.Controls.Add(this.btnQuanlyhoadon);
+            this.pnQuanlyhoadon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnQuanlyhoadon.Location = new System.Drawing.Point(0, 55);
+            this.pnQuanlyhoadon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnQuanlyhoadon.MaximumSize = new System.Drawing.Size(279, 276);
+            this.pnQuanlyhoadon.MinimumSize = new System.Drawing.Size(279, 55);
+            this.pnQuanlyhoadon.Name = "pnQuanlyhoadon";
+            this.pnQuanlyhoadon.Size = new System.Drawing.Size(279, 55);
+            this.pnQuanlyhoadon.TabIndex = 7;
+            // 
+            // btnHoadonnhap
+            // 
+            this.btnHoadonnhap.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnHoadonnhap.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHoadonnhap.FlatAppearance.BorderSize = 0;
+            this.btnHoadonnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoadonnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoadonnhap.Image = ((System.Drawing.Image)(resources.GetObject("btnHoadonnhap.Image")));
+            this.btnHoadonnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoadonnhap.Location = new System.Drawing.Point(0, 220);
+            this.btnHoadonnhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHoadonnhap.Name = "btnHoadonnhap";
+            this.btnHoadonnhap.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnHoadonnhap.Size = new System.Drawing.Size(279, 57);
+            this.btnHoadonnhap.TabIndex = 9;
+            this.btnHoadonnhap.Text = "Hóa đơn nhập";
+            this.btnHoadonnhap.UseVisualStyleBackColor = false;
+            // 
+            // btnNhaphang
+            // 
+            this.btnNhaphang.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNhaphang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNhaphang.FlatAppearance.BorderSize = 0;
+            this.btnNhaphang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhaphang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhaphang.Image = ((System.Drawing.Image)(resources.GetObject("btnNhaphang.Image")));
+            this.btnNhaphang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhaphang.Location = new System.Drawing.Point(0, 165);
+            this.btnNhaphang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNhaphang.Name = "btnNhaphang";
+            this.btnNhaphang.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnNhaphang.Size = new System.Drawing.Size(279, 55);
+            this.btnNhaphang.TabIndex = 8;
+            this.btnNhaphang.Text = "Nhập hàng";
+            this.btnNhaphang.UseVisualStyleBackColor = false;
+            // 
+            // btnHoadonban
+            // 
+            this.btnHoadonban.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnHoadonban.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHoadonban.FlatAppearance.BorderSize = 0;
+            this.btnHoadonban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoadonban.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoadonban.Image = ((System.Drawing.Image)(resources.GetObject("btnHoadonban.Image")));
+            this.btnHoadonban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoadonban.Location = new System.Drawing.Point(0, 110);
+            this.btnHoadonban.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHoadonban.Name = "btnHoadonban";
+            this.btnHoadonban.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnHoadonban.Size = new System.Drawing.Size(279, 55);
+            this.btnHoadonban.TabIndex = 10;
+            this.btnHoadonban.Text = "Hóa đơn bán";
+            this.btnHoadonban.UseVisualStyleBackColor = false;
+            // 
+            // btnBanhang
+            // 
+            this.btnBanhang.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnBanhang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBanhang.FlatAppearance.BorderSize = 0;
+            this.btnBanhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBanhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBanhang.Image = ((System.Drawing.Image)(resources.GetObject("btnBanhang.Image")));
+            this.btnBanhang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBanhang.Location = new System.Drawing.Point(0, 55);
+            this.btnBanhang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBanhang.Name = "btnBanhang";
+            this.btnBanhang.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnBanhang.Size = new System.Drawing.Size(279, 55);
+            this.btnBanhang.TabIndex = 7;
+            this.btnBanhang.Text = "Bán hàng";
+            this.btnBanhang.UseVisualStyleBackColor = false;
+            // 
+            // pnDropDown
+            // 
+            this.pnDropDown.Controls.Add(this.btnDanhmuc);
+            this.pnDropDown.Controls.Add(this.btnSp);
+            this.pnDropDown.Controls.Add(this.btnLoaisp);
+            this.pnDropDown.Controls.Add(this.btnNhanvien);
+            this.pnDropDown.Controls.Add(this.btnNCC);
+            this.pnDropDown.Controls.Add(this.btnKhachhang);
+            this.pnDropDown.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnDropDown.Location = new System.Drawing.Point(0, 0);
+            this.pnDropDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnDropDown.MaximumSize = new System.Drawing.Size(279, 315);
+            this.pnDropDown.MinimumSize = new System.Drawing.Size(279, 55);
+            this.pnDropDown.Name = "pnDropDown";
+            this.pnDropDown.Size = new System.Drawing.Size(279, 55);
+            this.pnDropDown.TabIndex = 0;
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // pnUserControl
+            // 
+            this.pnUserControl.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnUserControl.Controls.Add(this.sanpham1);
+            this.pnUserControl.Controls.Add(this.phanquyen1);
+            this.pnUserControl.Controls.Add(this.khachhang1);
+            this.pnUserControl.Controls.Add(this.loaiSP1);
+            this.pnUserControl.Controls.Add(this.ncc1);
+            this.pnUserControl.Controls.Add(this.nhanvien1);
+            this.pnUserControl.Location = new System.Drawing.Point(280, 65);
+            this.pnUserControl.Margin = new System.Windows.Forms.Padding(0);
+            this.pnUserControl.Name = "pnUserControl";
+            this.pnUserControl.Size = new System.Drawing.Size(1644, 921);
+            this.pnUserControl.TabIndex = 8;
+            // 
+            // timerDropDown
+            // 
+            this.timerDropDown.Interval = 1;
+            this.timerDropDown.Tick += new System.EventHandler(this.timerDropDown_Tick);
+            // 
+            // timerDropDown2
+            // 
+            this.timerDropDown2.Interval = 15;
+            this.timerDropDown2.Tick += new System.EventHandler(this.timerDropDown2_Tick);
+            // 
+            // lbQLCH
+            // 
+            this.lbQLCH.BackColor = System.Drawing.Color.Silver;
+            this.lbQLCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbQLCH.Location = new System.Drawing.Point(283, 2);
+            this.lbQLCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbQLCH.Name = "lbQLCH";
+            this.lbQLCH.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbQLCH.Size = new System.Drawing.Size(1641, 63);
+            this.lbQLCH.TabIndex = 10;
+            this.lbQLCH.Text = "Quản lý cửa hàng điện thoại";
+            this.lbQLCH.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // sanpham1
+            // 
+            this.sanpham1.Location = new System.Drawing.Point(0, 0);
+            this.sanpham1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sanpham1.Name = "sanpham1";
+            this.sanpham1.Size = new System.Drawing.Size(1644, 921);
+            this.sanpham1.TabIndex = 4;
+            // 
+            // phanquyen1
+            // 
+            this.phanquyen1.Location = new System.Drawing.Point(0, 0);
+            this.phanquyen1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phanquyen1.Name = "phanquyen1";
+            this.phanquyen1.Size = new System.Drawing.Size(1639, 921);
+            this.phanquyen1.TabIndex = 0;
+            // 
+            // khachhang1
+            // 
+            this.khachhang1.Location = new System.Drawing.Point(0, 0);
+            this.khachhang1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.khachhang1.Name = "khachhang1";
+            this.khachhang1.Size = new System.Drawing.Size(1639, 921);
+            this.khachhang1.TabIndex = 3;
+            // 
+            // loaiSP1
+            // 
+            this.loaiSP1.Location = new System.Drawing.Point(0, 0);
+            this.loaiSP1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.loaiSP1.Name = "loaiSP1";
+            this.loaiSP1.Size = new System.Drawing.Size(1639, 921);
+            this.loaiSP1.TabIndex = 2;
+            // 
+            // ncc1
+            // 
+            this.ncc1.Location = new System.Drawing.Point(0, 0);
+            this.ncc1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ncc1.Name = "ncc1";
+            this.ncc1.Size = new System.Drawing.Size(1644, 921);
+            this.ncc1.TabIndex = 1;
+            // 
+            // nhanvien1
+            // 
+            this.nhanvien1.Location = new System.Drawing.Point(0, 4);
+            this.nhanvien1.Margin = new System.Windows.Forms.Padding(0);
+            this.nhanvien1.Name = "nhanvien1";
+            this.nhanvien1.Size = new System.Drawing.Size(1644, 921);
+            this.nhanvien1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(161, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 120);
+            this.label1.TabIndex = 11;
+            // 
+            // lbLogo
+            // 
+            this.lbLogo.Image = ((System.Drawing.Image)(resources.GetObject("lbLogo.Image")));
+            this.lbLogo.Location = new System.Drawing.Point(0, 0);
+            this.lbLogo.Name = "lbLogo";
+            this.lbLogo.Size = new System.Drawing.Size(186, 204);
+            this.lbLogo.TabIndex = 9;
             // 
             // btnPhanquyen
             // 
@@ -116,82 +328,6 @@
             this.btnThongke.Text = "Thống kê";
             this.btnThongke.UseVisualStyleBackColor = false;
             // 
-            // pnQuanlyhoadon
-            // 
-            this.pnQuanlyhoadon.Controls.Add(this.btnHoadonnhap);
-            this.pnQuanlyhoadon.Controls.Add(this.btnNhaphang);
-            this.pnQuanlyhoadon.Controls.Add(this.btnHoadonban);
-            this.pnQuanlyhoadon.Controls.Add(this.btnBanhang);
-            this.pnQuanlyhoadon.Controls.Add(this.btnQuanlyhoadon);
-            this.pnQuanlyhoadon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnQuanlyhoadon.Location = new System.Drawing.Point(0, 55);
-            this.pnQuanlyhoadon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnQuanlyhoadon.MaximumSize = new System.Drawing.Size(279, 276);
-            this.pnQuanlyhoadon.MinimumSize = new System.Drawing.Size(279, 55);
-            this.pnQuanlyhoadon.Name = "pnQuanlyhoadon";
-            this.pnQuanlyhoadon.Size = new System.Drawing.Size(279, 55);
-            this.pnQuanlyhoadon.TabIndex = 7;
-            // 
-            // btnHoadonnhap
-            // 
-            this.btnHoadonnhap.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnHoadonnhap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHoadonnhap.FlatAppearance.BorderSize = 0;
-            this.btnHoadonnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoadonnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoadonnhap.Location = new System.Drawing.Point(0, 220);
-            this.btnHoadonnhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHoadonnhap.Name = "btnHoadonnhap";
-            this.btnHoadonnhap.Size = new System.Drawing.Size(279, 57);
-            this.btnHoadonnhap.TabIndex = 9;
-            this.btnHoadonnhap.Text = "Hóa đơn nhập";
-            this.btnHoadonnhap.UseVisualStyleBackColor = false;
-            // 
-            // btnNhaphang
-            // 
-            this.btnNhaphang.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNhaphang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNhaphang.FlatAppearance.BorderSize = 0;
-            this.btnNhaphang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhaphang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhaphang.Location = new System.Drawing.Point(0, 165);
-            this.btnNhaphang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNhaphang.Name = "btnNhaphang";
-            this.btnNhaphang.Size = new System.Drawing.Size(279, 55);
-            this.btnNhaphang.TabIndex = 8;
-            this.btnNhaphang.Text = "Nhập hàng";
-            this.btnNhaphang.UseVisualStyleBackColor = false;
-            // 
-            // btnHoadonban
-            // 
-            this.btnHoadonban.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnHoadonban.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHoadonban.FlatAppearance.BorderSize = 0;
-            this.btnHoadonban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoadonban.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoadonban.Location = new System.Drawing.Point(0, 110);
-            this.btnHoadonban.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHoadonban.Name = "btnHoadonban";
-            this.btnHoadonban.Size = new System.Drawing.Size(279, 55);
-            this.btnHoadonban.TabIndex = 10;
-            this.btnHoadonban.Text = "Hóa đơn bán";
-            this.btnHoadonban.UseVisualStyleBackColor = false;
-            // 
-            // btnBanhang
-            // 
-            this.btnBanhang.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnBanhang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBanhang.FlatAppearance.BorderSize = 0;
-            this.btnBanhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBanhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBanhang.Location = new System.Drawing.Point(0, 55);
-            this.btnBanhang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBanhang.Name = "btnBanhang";
-            this.btnBanhang.Size = new System.Drawing.Size(279, 55);
-            this.btnBanhang.TabIndex = 7;
-            this.btnBanhang.Text = "Bán hàng";
-            this.btnBanhang.UseVisualStyleBackColor = false;
-            // 
             // btnQuanlyhoadon
             // 
             this.btnQuanlyhoadon.BackColor = System.Drawing.Color.White;
@@ -212,23 +348,6 @@
             this.btnQuanlyhoadon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanlyhoadon.UseVisualStyleBackColor = false;
             this.btnQuanlyhoadon.Click += new System.EventHandler(this.btnQuanlyhoadon_Click);
-            // 
-            // pnDropDown
-            // 
-            this.pnDropDown.Controls.Add(this.btnDanhmuc);
-            this.pnDropDown.Controls.Add(this.btnSp);
-            this.pnDropDown.Controls.Add(this.btnLoaisp);
-            this.pnDropDown.Controls.Add(this.btnNhanvien);
-            this.pnDropDown.Controls.Add(this.btnNCC);
-            this.pnDropDown.Controls.Add(this.btnKhachhang);
-            this.pnDropDown.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnDropDown.Location = new System.Drawing.Point(0, 0);
-            this.pnDropDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnDropDown.MaximumSize = new System.Drawing.Size(279, 315);
-            this.pnDropDown.MinimumSize = new System.Drawing.Size(279, 55);
-            this.pnDropDown.Name = "pnDropDown";
-            this.pnDropDown.Size = new System.Drawing.Size(279, 55);
-            this.pnDropDown.TabIndex = 0;
             // 
             // btnDanhmuc
             // 
@@ -343,113 +462,6 @@
             this.btnKhachhang.Text = "Khách hàng";
             this.btnKhachhang.UseVisualStyleBackColor = false;
             this.btnKhachhang.Click += new System.EventHandler(this.btnKhachhang_Click);
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // pnUserControl
-            // 
-            this.pnUserControl.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnUserControl.Controls.Add(this.sanpham1);
-            this.pnUserControl.Controls.Add(this.phanquyen1);
-            this.pnUserControl.Controls.Add(this.khachhang1);
-            this.pnUserControl.Controls.Add(this.loaiSP1);
-            this.pnUserControl.Controls.Add(this.ncc1);
-            this.pnUserControl.Controls.Add(this.nhanvien1);
-            this.pnUserControl.Location = new System.Drawing.Point(280, 65);
-            this.pnUserControl.Margin = new System.Windows.Forms.Padding(0);
-            this.pnUserControl.Name = "pnUserControl";
-            this.pnUserControl.Size = new System.Drawing.Size(1644, 921);
-            this.pnUserControl.TabIndex = 8;
-            // 
-            // timerDropDown
-            // 
-            this.timerDropDown.Interval = 1;
-            this.timerDropDown.Tick += new System.EventHandler(this.timerDropDown_Tick);
-            // 
-            // timerDropDown2
-            // 
-            this.timerDropDown2.Interval = 15;
-            this.timerDropDown2.Tick += new System.EventHandler(this.timerDropDown2_Tick);
-            // 
-            // lbLogo
-            // 
-            this.lbLogo.Image = ((System.Drawing.Image)(resources.GetObject("lbLogo.Image")));
-            this.lbLogo.Location = new System.Drawing.Point(0, 0);
-            this.lbLogo.Name = "lbLogo";
-            this.lbLogo.Size = new System.Drawing.Size(186, 204);
-            this.lbLogo.TabIndex = 9;
-            // 
-            // lbQLCH
-            // 
-            this.lbQLCH.BackColor = System.Drawing.Color.Silver;
-            this.lbQLCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbQLCH.Location = new System.Drawing.Point(283, 2);
-            this.lbQLCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lbQLCH.Name = "lbQLCH";
-            this.lbQLCH.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbQLCH.Size = new System.Drawing.Size(1641, 63);
-            this.lbQLCH.TabIndex = 10;
-            this.lbQLCH.Text = "Quản lý cửa hàng điện thoại";
-            this.lbQLCH.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(161, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 120);
-            this.label1.TabIndex = 11;
-            // 
-            // sanpham1
-            // 
-            this.sanpham1.Location = new System.Drawing.Point(0, 0);
-            this.sanpham1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sanpham1.Name = "sanpham1";
-            this.sanpham1.Size = new System.Drawing.Size(1644, 921);
-            this.sanpham1.TabIndex = 4;
-            // 
-            // phanquyen1
-            // 
-            this.phanquyen1.Location = new System.Drawing.Point(0, 0);
-            this.phanquyen1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.phanquyen1.Name = "phanquyen1";
-            this.phanquyen1.Size = new System.Drawing.Size(1639, 921);
-            this.phanquyen1.TabIndex = 0;
-            // 
-            // khachhang1
-            // 
-            this.khachhang1.Location = new System.Drawing.Point(0, 0);
-            this.khachhang1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.khachhang1.Name = "khachhang1";
-            this.khachhang1.Size = new System.Drawing.Size(1639, 921);
-            this.khachhang1.TabIndex = 3;
-            // 
-            // loaiSP1
-            // 
-            this.loaiSP1.Location = new System.Drawing.Point(0, 0);
-            this.loaiSP1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.loaiSP1.Name = "loaiSP1";
-            this.loaiSP1.Size = new System.Drawing.Size(1639, 921);
-            this.loaiSP1.TabIndex = 2;
-            // 
-            // ncc1
-            // 
-            this.ncc1.Location = new System.Drawing.Point(0, 0);
-            this.ncc1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ncc1.Name = "ncc1";
-            this.ncc1.Size = new System.Drawing.Size(1644, 921);
-            this.ncc1.TabIndex = 1;
-            // 
-            // nhanvien1
-            // 
-            this.nhanvien1.Location = new System.Drawing.Point(0, 4);
-            this.nhanvien1.Margin = new System.Windows.Forms.Padding(0);
-            this.nhanvien1.Name = "nhanvien1";
-            this.nhanvien1.Size = new System.Drawing.Size(1644, 921);
-            this.nhanvien1.TabIndex = 0;
             // 
             // fTableManager
             // 
