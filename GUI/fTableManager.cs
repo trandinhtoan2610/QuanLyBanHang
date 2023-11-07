@@ -101,5 +101,10 @@ namespace GUI
         {
             
         }
+
+        private void fTableManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
