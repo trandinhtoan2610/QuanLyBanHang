@@ -28,13 +28,19 @@ namespace BLL
 
         public bool InsertSP(SanPhamDTO sanpham)
         {
-            dssp = readDB();
-           
+            dssp = readDB();         
             dssp.Add(sanpham);
             return qlspDAL.InsertSP(sanpham);
         }
 
-       
+        public bool InsertSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh)
+        {
+            sp = new SanPhamDTO(id ,tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh);
+            return InsertSP(sp);
+        }
+
+
+
 
         public bool UpdateSP(int id, string tensanpham,int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh)
         {

@@ -12,27 +12,61 @@ using DTO;
 namespace GUI
 {
     public partial class Sanpham : UserControl
-    {
-        List<SanPhamDTO> sp;
-        SanPhamBLL bus = new SanPhamBLL();
+    {        
+        SanPhamBLL qlspBLL = new SanPhamBLL();
+        SanPhamDTO sp = new SanPhamDTO();
+        List<SanPhamDTO> spv;
+    
         public Sanpham()
         {
             InitializeComponent();
             loadData();
+            addSanPhamBinding();
+        }
+
+        void addSanPhamBinding()
+        {
+            tbMaSP.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "id"));
+            tbTenSP.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "tensanpham"));
+            tbMaLoaiSP.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "IdLoaiSanPham"));
+            cbHangSX.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "HangSanXuat"));
+            tbGia.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Gia"));
+            tbSoluong.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Soluong"));
+            tbDonvitinh.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Donvitinh"));
         }
 
         public void loadData()
         {
-            sp = bus.readDB();
-            dataGridView1.DataSource = sp;
+            spv = qlspBLL.readDB();
+            dataGridView1.DataSource = spv;
+        }
+
+        public void Clear()
+        {
+            tbMaSP.Text = tbTenSP.Text = tbMaLoaiSP.Text = tbGia.Text = tbSoluong.Text = tbDonvitinh.Text = string.Empty;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SanPhamDTO sp = new SanPhamDTO(tbTenSP.Text,int.Parse(tbMaLoaiSP.Text), cbHangSX.Text, int.Parse(tbGia.Text), int.Parse(tbSoluong.Text) , tbDonvitinh.Text);
-            SanPhamBLL spbll = new SanPhamBLL();
-            spbll.InsertSP(sp);
+            sp.Id = Convert.ToInt32(tbMaSP.Text);
+            sp.Tensanpham = tbTenSP.Text;
+            sp.IdLoaiSanPham = Convert.ToInt32(tbMaLoaiSP.Text);
+            sp.Hangsanxuat = cbHangSX.Text;
+            sp.Gia = Convert.ToInt32(tbGia.Text);
+            sp.Soluong = Convert.ToInt32(tbSoluong.Text);
+            sp.Donvitinh = tbDonvitinh.Text;
+            if(qlspBLL.InsertSP(sp.Id ,sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh))
+            {
+               MessageBox.Show("thêm thành công!");
+            }
             loadData();
+            Clear();
+            
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

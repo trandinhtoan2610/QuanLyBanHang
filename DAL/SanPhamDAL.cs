@@ -12,9 +12,8 @@ namespace DAL
 {
     public class SanPhamDAL
     {
-        private List<SanPhamDTO> dssp, found;
         SqlConnection conn = SqlConnectionData.Connect();
-        public SanPhamDAL() { }
+        private List<SanPhamDTO> dssp, found;
 
 
         public List<SanPhamDTO> readDB() 
@@ -53,20 +52,19 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"Insert into SanPham (tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh) values ({sp.Tensanpham}, {sp.IdLoaiSanPham}, {sp.Hangsanxuat},{sp.Gia},{sp.Soluong},{sp.Donvitinh})";
+                string query = $"Insert into SanPham (id,tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh) values ({sp.Id},'{sp.Tensanpham}', {sp.IdLoaiSanPham}, '{sp.Hangsanxuat}',{sp.Gia},{sp.Soluong},'{sp.Donvitinh}')";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                //Thêm khách hàng mới vào CSDL
                 cmd.ExecuteNonQuery();
                 return true;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
+                MessageBox.Show("Error: " + ex);    
                 return false;
             }
             finally
             {
-                conn.Close();   //Đóng kết nối
+                conn.Close();   
             }
         }
 
