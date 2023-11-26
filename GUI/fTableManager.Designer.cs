@@ -49,17 +49,22 @@
             this.btnKhachhang = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.pnUserControl = new System.Windows.Forms.Panel();
-            this.sanpham1 = new GUI.Sanpham();
-            this.phanquyen1 = new GUI.Phanquyen();
-            this.khachhang1 = new GUI.Khachhang();
-            this.loaiSP1 = new GUI.LoaiSP();
-            this.ncc1 = new GUI.NCC();
-            this.nhanvien1 = new GUI.Nhanvien();
             this.timerDropDown = new System.Windows.Forms.Timer(this.components);
             this.timerDropDown2 = new System.Windows.Forms.Timer(this.components);
             this.lbQLCH = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbLogo = new System.Windows.Forms.Label();
+            this.sanpham1 = new GUI.Sanpham();
+            this.thongke1 = new GUI.Thongke();
+            this.phanquyen1 = new GUI.Phanquyen();
+            this.nhaphang1 = new GUI.Nhaphang();
+            this.nhanvien1 = new GUI.Nhanvien();
+            this.ncc1 = new GUI.NCC();
+            this.loaiSP1 = new GUI.LoaiSP();
+            this.khachhang1 = new GUI.Khachhang();
+            this.hDnhap1 = new GUI.HDnhap();
+            this.hDban1 = new GUI.HDban();
+            this.banhang1 = new GUI.Banhang();
             this.pnDanhmuc.SuspendLayout();
             this.pnQuanlyhoadon.SuspendLayout();
             this.pnDropDown.SuspendLayout();
@@ -74,10 +79,10 @@
             this.pnDanhmuc.Controls.Add(this.btnThongke);
             this.pnDanhmuc.Controls.Add(this.pnQuanlyhoadon);
             this.pnDanhmuc.Controls.Add(this.pnDropDown);
-            this.pnDanhmuc.Location = new System.Drawing.Point(1, 206);
+            this.pnDanhmuc.Location = new System.Drawing.Point(1, 204);
             this.pnDanhmuc.Margin = new System.Windows.Forms.Padding(0);
             this.pnDanhmuc.Name = "pnDanhmuc";
-            this.pnDanhmuc.Size = new System.Drawing.Size(279, 782);
+            this.pnDanhmuc.Size = new System.Drawing.Size(280, 609);
             this.pnDanhmuc.TabIndex = 2;
             // 
             // btnPhanquyen
@@ -93,10 +98,11 @@
             this.btnPhanquyen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPhanquyen.Name = "btnPhanquyen";
             this.btnPhanquyen.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnPhanquyen.Size = new System.Drawing.Size(279, 55);
+            this.btnPhanquyen.Size = new System.Drawing.Size(280, 55);
             this.btnPhanquyen.TabIndex = 9;
             this.btnPhanquyen.Text = "Phân quyền";
             this.btnPhanquyen.UseVisualStyleBackColor = false;
+            this.btnPhanquyen.Click += new System.EventHandler(this.btnPhanquyen_Click);
             // 
             // btnThongke
             // 
@@ -111,10 +117,11 @@
             this.btnThongke.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongke.Name = "btnThongke";
             this.btnThongke.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnThongke.Size = new System.Drawing.Size(279, 55);
+            this.btnThongke.Size = new System.Drawing.Size(280, 55);
             this.btnThongke.TabIndex = 8;
             this.btnThongke.Text = "Thống kê";
             this.btnThongke.UseVisualStyleBackColor = false;
+            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
             // 
             // pnQuanlyhoadon
             // 
@@ -149,6 +156,7 @@
             this.btnHoadonnhap.TabIndex = 9;
             this.btnHoadonnhap.Text = "Hóa đơn nhập";
             this.btnHoadonnhap.UseVisualStyleBackColor = false;
+            this.btnHoadonnhap.Click += new System.EventHandler(this.btnHoadonnhap_Click);
             // 
             // btnNhaphang
             // 
@@ -167,6 +175,7 @@
             this.btnNhaphang.TabIndex = 8;
             this.btnNhaphang.Text = "Nhập hàng";
             this.btnNhaphang.UseVisualStyleBackColor = false;
+            this.btnNhaphang.Click += new System.EventHandler(this.btnNhaphang_Click);
             // 
             // btnHoadonban
             // 
@@ -185,6 +194,7 @@
             this.btnHoadonban.TabIndex = 10;
             this.btnHoadonban.Text = "Hóa đơn bán";
             this.btnHoadonban.UseVisualStyleBackColor = false;
+            this.btnHoadonban.Click += new System.EventHandler(this.btnHoadonban_Click);
             // 
             // btnBanhang
             // 
@@ -203,6 +213,7 @@
             this.btnBanhang.TabIndex = 7;
             this.btnBanhang.Text = "Bán hàng";
             this.btnBanhang.UseVisualStyleBackColor = false;
+            this.btnBanhang.Click += new System.EventHandler(this.btnBanhang_Click);
             // 
             // btnQuanlyhoadon
             // 
@@ -365,64 +376,21 @@
             // 
             this.pnUserControl.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnUserControl.Controls.Add(this.sanpham1);
+            this.pnUserControl.Controls.Add(this.thongke1);
             this.pnUserControl.Controls.Add(this.phanquyen1);
-            this.pnUserControl.Controls.Add(this.khachhang1);
-            this.pnUserControl.Controls.Add(this.loaiSP1);
-            this.pnUserControl.Controls.Add(this.ncc1);
+            this.pnUserControl.Controls.Add(this.nhaphang1);
             this.pnUserControl.Controls.Add(this.nhanvien1);
+            this.pnUserControl.Controls.Add(this.ncc1);
+            this.pnUserControl.Controls.Add(this.loaiSP1);
+            this.pnUserControl.Controls.Add(this.khachhang1);
+            this.pnUserControl.Controls.Add(this.hDnhap1);
+            this.pnUserControl.Controls.Add(this.hDban1);
+            this.pnUserControl.Controls.Add(this.banhang1);
             this.pnUserControl.Location = new System.Drawing.Point(280, 65);
             this.pnUserControl.Margin = new System.Windows.Forms.Padding(0);
             this.pnUserControl.Name = "pnUserControl";
-            this.pnUserControl.Size = new System.Drawing.Size(1644, 921);
+            this.pnUserControl.Size = new System.Drawing.Size(1233, 748);
             this.pnUserControl.TabIndex = 8;
-            // 
-            // sanpham1
-            // 
-            this.sanpham1.Location = new System.Drawing.Point(0, 0);
-            this.sanpham1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sanpham1.Name = "sanpham1";
-            this.sanpham1.Size = new System.Drawing.Size(1644, 921);
-            this.sanpham1.TabIndex = 4;
-            // 
-            // phanquyen1
-            // 
-            this.phanquyen1.Location = new System.Drawing.Point(0, 0);
-            this.phanquyen1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.phanquyen1.Name = "phanquyen1";
-            this.phanquyen1.Size = new System.Drawing.Size(1639, 921);
-            this.phanquyen1.TabIndex = 0;
-            // 
-            // khachhang1
-            // 
-            this.khachhang1.Location = new System.Drawing.Point(0, 0);
-            this.khachhang1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.khachhang1.Name = "khachhang1";
-            this.khachhang1.Size = new System.Drawing.Size(1639, 921);
-            this.khachhang1.TabIndex = 3;
-            // 
-            // loaiSP1
-            // 
-            this.loaiSP1.Location = new System.Drawing.Point(0, 0);
-            this.loaiSP1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.loaiSP1.Name = "loaiSP1";
-            this.loaiSP1.Size = new System.Drawing.Size(1639, 921);
-            this.loaiSP1.TabIndex = 2;
-            // 
-            // ncc1
-            // 
-            this.ncc1.Location = new System.Drawing.Point(0, 0);
-            this.ncc1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ncc1.Name = "ncc1";
-            this.ncc1.Size = new System.Drawing.Size(1644, 921);
-            this.ncc1.TabIndex = 1;
-            // 
-            // nhanvien1
-            // 
-            this.nhanvien1.Location = new System.Drawing.Point(0, 4);
-            this.nhanvien1.Margin = new System.Windows.Forms.Padding(0);
-            this.nhanvien1.Name = "nhanvien1";
-            this.nhanvien1.Size = new System.Drawing.Size(1644, 921);
-            this.nhanvien1.TabIndex = 0;
             // 
             // timerDropDown
             // 
@@ -438,14 +406,14 @@
             // 
             this.lbQLCH.BackColor = System.Drawing.Color.Silver;
             this.lbQLCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbQLCH.Location = new System.Drawing.Point(283, 2);
+            this.lbQLCH.Location = new System.Drawing.Point(280, 0);
             this.lbQLCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbQLCH.Name = "lbQLCH";
             this.lbQLCH.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbQLCH.Size = new System.Drawing.Size(1641, 63);
+            this.lbQLCH.Size = new System.Drawing.Size(1233, 65);
             this.lbQLCH.TabIndex = 10;
             this.lbQLCH.Text = "Quản lý cửa hàng điện thoại";
-            this.lbQLCH.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbQLCH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -463,10 +431,98 @@
             this.lbLogo.Size = new System.Drawing.Size(186, 204);
             this.lbLogo.TabIndex = 9;
             // 
+            // sanpham1
+            // 
+            this.sanpham1.Location = new System.Drawing.Point(0, 0);
+            this.sanpham1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sanpham1.Name = "sanpham1";
+            this.sanpham1.Size = new System.Drawing.Size(1229, 748);
+            this.sanpham1.TabIndex = 10;
+            // 
+            // thongke1
+            // 
+            this.thongke1.Location = new System.Drawing.Point(0, 0);
+            this.thongke1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.thongke1.Name = "thongke1";
+            this.thongke1.Size = new System.Drawing.Size(1233, 748);
+            this.thongke1.TabIndex = 9;
+            // 
+            // phanquyen1
+            // 
+            this.phanquyen1.Location = new System.Drawing.Point(0, 0);
+            this.phanquyen1.Margin = new System.Windows.Forms.Padding(2);
+            this.phanquyen1.Name = "phanquyen1";
+            this.phanquyen1.Size = new System.Drawing.Size(1229, 748);
+            this.phanquyen1.TabIndex = 8;
+            // 
+            // nhaphang1
+            // 
+            this.nhaphang1.Location = new System.Drawing.Point(0, 0);
+            this.nhaphang1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nhaphang1.Name = "nhaphang1";
+            this.nhaphang1.Size = new System.Drawing.Size(1233, 748);
+            this.nhaphang1.TabIndex = 7;
+            // 
+            // nhanvien1
+            // 
+            this.nhanvien1.Location = new System.Drawing.Point(0, 0);
+            this.nhanvien1.Margin = new System.Windows.Forms.Padding(0);
+            this.nhanvien1.Name = "nhanvien1";
+            this.nhanvien1.Size = new System.Drawing.Size(1233, 748);
+            this.nhanvien1.TabIndex = 6;
+            // 
+            // ncc1
+            // 
+            this.ncc1.Location = new System.Drawing.Point(0, 0);
+            this.ncc1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ncc1.Name = "ncc1";
+            this.ncc1.Size = new System.Drawing.Size(1233, 748);
+            this.ncc1.TabIndex = 5;
+            // 
+            // loaiSP1
+            // 
+            this.loaiSP1.Location = new System.Drawing.Point(0, 0);
+            this.loaiSP1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loaiSP1.Name = "loaiSP1";
+            this.loaiSP1.Size = new System.Drawing.Size(1229, 748);
+            this.loaiSP1.TabIndex = 4;
+            // 
+            // khachhang1
+            // 
+            this.khachhang1.Location = new System.Drawing.Point(0, 0);
+            this.khachhang1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.khachhang1.Name = "khachhang1";
+            this.khachhang1.Size = new System.Drawing.Size(1229, 748);
+            this.khachhang1.TabIndex = 3;
+            // 
+            // hDnhap1
+            // 
+            this.hDnhap1.Location = new System.Drawing.Point(0, 0);
+            this.hDnhap1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hDnhap1.Name = "hDnhap1";
+            this.hDnhap1.Size = new System.Drawing.Size(1233, 748);
+            this.hDnhap1.TabIndex = 2;
+            // 
+            // hDban1
+            // 
+            this.hDban1.Location = new System.Drawing.Point(0, 0);
+            this.hDban1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hDban1.Name = "hDban1";
+            this.hDban1.Size = new System.Drawing.Size(1233, 748);
+            this.hDban1.TabIndex = 1;
+            // 
+            // banhang1
+            // 
+            this.banhang1.Location = new System.Drawing.Point(0, 0);
+            this.banhang1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.banhang1.Name = "banhang1";
+            this.banhang1.Size = new System.Drawing.Size(1233, 748);
+            this.banhang1.TabIndex = 0;
+            // 
             // fTableManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1924, 983);
+            this.ClientSize = new System.Drawing.Size(1513, 813);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbQLCH);
             this.Controls.Add(this.lbLogo);
@@ -513,15 +569,19 @@
         private System.Windows.Forms.Button btnPhanquyen;
         private System.Windows.Forms.Button btnThongke;
         private System.Windows.Forms.Timer timerDropDown2;
-        private Nhanvien nhanvien1;
-
-        private NCC ncc1;
-        private Sanpham sanpham1;
-        private Phanquyen phanquyen1;
-        private Khachhang khachhang1;
-        private LoaiSP loaiSP1;
         private System.Windows.Forms.Label lbLogo;
         private System.Windows.Forms.Label lbQLCH;
         private System.Windows.Forms.Label label1;
+        private Sanpham sanpham1;
+        private Thongke thongke1;
+        private Phanquyen phanquyen1;
+        private Nhaphang nhaphang1;
+        private Nhanvien nhanvien1;
+        private NCC ncc1;
+        private LoaiSP loaiSP1;
+        private Khachhang khachhang1;
+        private HDnhap hDnhap1;
+        private HDban hDban1;
+        private Banhang banhang1;
     }
 }

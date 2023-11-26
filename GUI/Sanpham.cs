@@ -13,44 +13,63 @@ namespace GUI
 {
     public partial class Sanpham : UserControl
     {        
+        BindingSource splist = new BindingSource();
         SanPhamBLL qlspBLL = new SanPhamBLL();
         SanPhamDTO sp = new SanPhamDTO();
         List<SanPhamDTO> spv;
-    
+
+        
         public Sanpham()
         {
             InitializeComponent();
+            load();
+            
+        }
+        
+        void load()
+        {
+            dataGridView1.DataSource = splist;
+
             loadData();
-            addSanPhamBinding();
+            loadcbb();
+            addSanPhamBinding();           
         }
 
-        void addSanPhamBinding()
+        public void loadData()
+        {
+            spv = qlspBLL.readDB();
+            splist.DataSource = spv;
+        }
+        void loadcbb()
+        {
+            LoaiSanPhamBLL lspbll = new LoaiSanPhamBLL();
+            List<LoaiSanPhamDTO> llsp;
+            llsp = lspbll.readDB();
+            cbTenloaisanpham.DisplayMember = "TenLoai";
+            cbTenloaisanpham.ValueMember = "Id";
+            cbTenloaisanpham.DataSource = llsp;
+        }
+        public void addSanPhamBinding()
         {
             tbMaSP.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "id"));
             tbTenSP.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "tensanpham"));
-            tbMaLoaiSP.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "IdLoaiSanPham"));
+            cbTenloaisanpham.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "IdLoaiSanPham"));
             cbHangSX.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "HangSanXuat"));
             tbGia.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Gia"));
             tbSoluong.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Soluong"));
             tbDonvitinh.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Donvitinh"));
         }
 
-        public void loadData()
-        {
-            spv = qlspBLL.readDB();
-            dataGridView1.DataSource = spv;
-        }
-
         public void Clear()
         {
-            tbMaSP.Text = tbTenSP.Text = tbMaLoaiSP.Text = tbGia.Text = tbSoluong.Text = tbDonvitinh.Text = string.Empty;
+            tbMaSP.Text = tbTenSP.Text = cbTenloaisanpham.Text = tbGia.Text = tbSoluong.Text = tbDonvitinh.Text = string.Empty;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             sp.Id = Convert.ToInt32(tbMaSP.Text);
             sp.Tensanpham = tbTenSP.Text;
-            sp.IdLoaiSanPham = Convert.ToInt32(tbMaLoaiSP.Text);
+            sp.IdLoaiSanPham = Convert.ToInt32(cbTenloaisanpham.SelectedValue);
             sp.Hangsanxuat = cbHangSX.Text;
             sp.Gia = Convert.ToInt32(tbGia.Text);
             sp.Soluong = Convert.ToInt32(tbSoluong.Text);
@@ -61,7 +80,7 @@ namespace GUI
             }
             loadData();
             Clear();
-            
+      
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

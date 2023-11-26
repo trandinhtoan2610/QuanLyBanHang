@@ -99,12 +99,45 @@ namespace GUI
 
         private void btnNhanvien_Click(object sender, EventArgs e)
         {
-            
+            nhanvien1.BringToFront();
         }
+
 
         private void fTableManager_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void btnNhaphang_Click(object sender, EventArgs e)
+        {
+            nhaphang1.BringToFront();
+        }
+
+        private void btnBanhang_Click(object sender, EventArgs e)
+        {
+            banhang1.BringToFront();
+        }
+
+        private void btnHoadonban_Click(object sender, EventArgs e)
+        {
+            hDban1.BringToFront();
+        }
+
+        private void btnHoadonnhap_Click(object sender, EventArgs e)
+        {
+            hDnhap1.BringToFront();
+        }
+
+        private void btnThongke_Click(object sender, EventArgs e)
+        {
+            thongke1.BringToFront();
+        }
+
+        private void btnPhanquyen_Click(object sender, EventArgs e)
+        {
+            phanquyen1.BringToFront();
+        }
+
+        
     }
 }
