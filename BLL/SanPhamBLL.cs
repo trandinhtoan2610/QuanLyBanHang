@@ -20,11 +20,7 @@ namespace BLL
             return qlspDAL.readDB();
         }
 
-        public DataTable Display()
-        {
-            dssp = readDB();
-            return qlspDAL.Display(dssp);
-        }
+        
 
         public bool InsertSP(SanPhamDTO sanpham)
         {
@@ -50,6 +46,7 @@ namespace BLL
             {
                 if (sp.Id.Equals(id))
                 {
+                    sp.Id = id;
                     sp.Tensanpham = tensanpham;
                     sp.IdLoaiSanPham = idLoaiSanPham;
                     sp.Hangsanxuat = hangsanxuat;
@@ -63,18 +60,18 @@ namespace BLL
 
         
 
-        public bool DeleteKH(string index)
+        public bool DeleteSP(int id)
         {
             
-            return qlspDAL.DeleteSP(index);
+            return qlspDAL.DeleteSP(id);
         }
 
-        public DataTable Show(string text)
+        public List<SanPhamDTO> Search(string text)
         {
-            List<SanPhamDTO> dssp_tk = new List<SanPhamDTO>();
-            dssp_tk = qlspDAL.Search(text);
+            //List<SanPhamDTO> dssp_tk = new List<SanPhamDTO>();
+            //dssp_tk = qlspDAL.Search(text);
             //Tìm kiếm theo chuỗi nhập vào
-            return qlspDAL.Show(dssp_tk);
+            return qlspDAL.Search(text);
         }
     }
 }

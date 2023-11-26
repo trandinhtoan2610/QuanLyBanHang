@@ -53,10 +53,10 @@
             // 
             this.lbQuanly.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.lbQuanly.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuanly.Location = new System.Drawing.Point(3, 0);
+            this.lbQuanly.Location = new System.Drawing.Point(0, 0);
             this.lbQuanly.Name = "lbQuanly";
             this.lbQuanly.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
-            this.lbQuanly.Size = new System.Drawing.Size(1639, 47);
+            this.lbQuanly.Size = new System.Drawing.Size(1642, 47);
             this.lbQuanly.TabIndex = 5;
             this.lbQuanly.Text = "Quản lý loại sản phẩm";
             // 

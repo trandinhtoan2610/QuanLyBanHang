@@ -279,6 +279,7 @@ namespace GUI
             this.dtNgaysinh.Name = "dtNgaysinh";
             this.dtNgaysinh.Size = new System.Drawing.Size(273, 24);
             this.dtNgaysinh.TabIndex = 9;
+            this.dtNgaysinh.Value = new System.DateTime(2023, 11, 15, 0, 0, 0, 0);
             // 
             // tbTenNV
             // 

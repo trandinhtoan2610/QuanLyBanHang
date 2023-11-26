@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using System.Windows.Forms;
+
+namespace GUI
 {
     partial class Sanpham
     {
@@ -31,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sanpham));
             this.lbQuanly = new System.Windows.Forms.Label();
             this.pnThongtin = new System.Windows.Forms.Panel();
+            this.cbTenloaisanpham = new System.Windows.Forms.ComboBox();
             this.cbHangSX = new System.Windows.Forms.ComboBox();
             this.lbMaLoaiSP = new System.Windows.Forms.Label();
             this.tbDonvitinh = new System.Windows.Forms.TextBox();
@@ -59,8 +62,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbDanhsach = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cbTenloaisanpham = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.pnThongtin.SuspendLayout();
             this.pnThemSuaXoa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -81,7 +82,6 @@
             // pnThongtin
             // 
             this.pnThongtin.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.pnThongtin.Controls.Add(this.comboBox2);
             this.pnThongtin.Controls.Add(this.cbTenloaisanpham);
             this.pnThongtin.Controls.Add(this.cbHangSX);
             this.pnThongtin.Controls.Add(this.lbMaLoaiSP);
@@ -108,6 +108,14 @@
             this.pnThongtin.Name = "pnThongtin";
             this.pnThongtin.Size = new System.Drawing.Size(1229, 245);
             this.pnThongtin.TabIndex = 6;
+            // 
+            // cbTenloaisanpham
+            // 
+            this.cbTenloaisanpham.FormattingEnabled = true;
+            this.cbTenloaisanpham.Location = new System.Drawing.Point(422, 49);
+            this.cbTenloaisanpham.Name = "cbTenloaisanpham";
+            this.cbTenloaisanpham.Size = new System.Drawing.Size(160, 21);
+            this.cbTenloaisanpham.TabIndex = 30;
             // 
             // cbHangSX
             // 
@@ -335,11 +343,10 @@
             this.tbTimkiem.HideSelection = false;
             this.tbTimkiem.Location = new System.Drawing.Point(656, 28);
             this.tbTimkiem.Margin = new System.Windows.Forms.Padding(2);
-            this.tbTimkiem.Multiline = true;
             this.tbTimkiem.Name = "tbTimkiem";
-            this.tbTimkiem.Size = new System.Drawing.Size(340, 39);
+            this.tbTimkiem.Size = new System.Drawing.Size(340, 21);
             this.tbTimkiem.TabIndex = 8;
-            this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
+            this.tbTimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTimkiem_KeyDown);
             // 
             // btnExport
             // 
@@ -364,6 +371,7 @@
             this.btnDelete.Size = new System.Drawing.Size(56, 61);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -403,6 +411,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 413);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -411,22 +420,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1229, 332);
             this.dataGridView1.TabIndex = 31;
-            // 
-            // cbTenloaisanpham
-            // 
-            this.cbTenloaisanpham.FormattingEnabled = true;
-            this.cbTenloaisanpham.Location = new System.Drawing.Point(422, 49);
-            this.cbTenloaisanpham.Name = "cbTenloaisanpham";
-            this.cbTenloaisanpham.Size = new System.Drawing.Size(160, 21);
-            this.cbTenloaisanpham.TabIndex = 30;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(622, 153);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 31;
             // 
             // Sanpham
             // 
@@ -481,7 +474,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lbDanhsach;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox cbTenloaisanpham;
     }
 }

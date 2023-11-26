@@ -49,11 +49,6 @@
             this.btnKhachhang = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.pnUserControl = new System.Windows.Forms.Panel();
-            this.timerDropDown = new System.Windows.Forms.Timer(this.components);
-            this.timerDropDown2 = new System.Windows.Forms.Timer(this.components);
-            this.lbQLCH = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbLogo = new System.Windows.Forms.Label();
             this.sanpham1 = new GUI.Sanpham();
             this.thongke1 = new GUI.Thongke();
             this.phanquyen1 = new GUI.Phanquyen();
@@ -65,6 +60,11 @@
             this.hDnhap1 = new GUI.HDnhap();
             this.hDban1 = new GUI.HDban();
             this.banhang1 = new GUI.Banhang();
+            this.timerDropDown = new System.Windows.Forms.Timer(this.components);
+            this.timerDropDown2 = new System.Windows.Forms.Timer(this.components);
+            this.lbQLCH = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbLogo = new System.Windows.Forms.Label();
             this.pnDanhmuc.SuspendLayout();
             this.pnQuanlyhoadon.SuspendLayout();
             this.pnDropDown.SuspendLayout();
@@ -392,49 +392,10 @@
             this.pnUserControl.Size = new System.Drawing.Size(1233, 748);
             this.pnUserControl.TabIndex = 8;
             // 
-            // timerDropDown
-            // 
-            this.timerDropDown.Interval = 1;
-            this.timerDropDown.Tick += new System.EventHandler(this.timerDropDown_Tick);
-            // 
-            // timerDropDown2
-            // 
-            this.timerDropDown2.Interval = 15;
-            this.timerDropDown2.Tick += new System.EventHandler(this.timerDropDown2_Tick);
-            // 
-            // lbQLCH
-            // 
-            this.lbQLCH.BackColor = System.Drawing.Color.Silver;
-            this.lbQLCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbQLCH.Location = new System.Drawing.Point(280, 0);
-            this.lbQLCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lbQLCH.Name = "lbQLCH";
-            this.lbQLCH.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lbQLCH.Size = new System.Drawing.Size(1233, 65);
-            this.lbQLCH.TabIndex = 10;
-            this.lbQLCH.Text = "Quản lý cửa hàng điện thoại";
-            this.lbQLCH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(161, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 120);
-            this.label1.TabIndex = 11;
-            // 
-            // lbLogo
-            // 
-            this.lbLogo.Image = ((System.Drawing.Image)(resources.GetObject("lbLogo.Image")));
-            this.lbLogo.Location = new System.Drawing.Point(0, 0);
-            this.lbLogo.Name = "lbLogo";
-            this.lbLogo.Size = new System.Drawing.Size(186, 204);
-            this.lbLogo.TabIndex = 9;
-            // 
             // sanpham1
             // 
             this.sanpham1.Location = new System.Drawing.Point(0, 0);
-            this.sanpham1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sanpham1.Margin = new System.Windows.Forms.Padding(2);
             this.sanpham1.Name = "sanpham1";
             this.sanpham1.Size = new System.Drawing.Size(1229, 748);
             this.sanpham1.TabIndex = 10;
@@ -490,7 +451,7 @@
             // khachhang1
             // 
             this.khachhang1.Location = new System.Drawing.Point(0, 0);
-            this.khachhang1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.khachhang1.Margin = new System.Windows.Forms.Padding(2);
             this.khachhang1.Name = "khachhang1";
             this.khachhang1.Size = new System.Drawing.Size(1229, 748);
             this.khachhang1.TabIndex = 3;
@@ -518,6 +479,45 @@
             this.banhang1.Name = "banhang1";
             this.banhang1.Size = new System.Drawing.Size(1233, 748);
             this.banhang1.TabIndex = 0;
+            // 
+            // timerDropDown
+            // 
+            this.timerDropDown.Interval = 1;
+            this.timerDropDown.Tick += new System.EventHandler(this.timerDropDown_Tick);
+            // 
+            // timerDropDown2
+            // 
+            this.timerDropDown2.Interval = 15;
+            this.timerDropDown2.Tick += new System.EventHandler(this.timerDropDown2_Tick);
+            // 
+            // lbQLCH
+            // 
+            this.lbQLCH.BackColor = System.Drawing.Color.Silver;
+            this.lbQLCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbQLCH.Location = new System.Drawing.Point(280, 0);
+            this.lbQLCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbQLCH.Name = "lbQLCH";
+            this.lbQLCH.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lbQLCH.Size = new System.Drawing.Size(1233, 65);
+            this.lbQLCH.TabIndex = 10;
+            this.lbQLCH.Text = "Quản lý cửa hàng điện thoại";
+            this.lbQLCH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(161, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 120);
+            this.label1.TabIndex = 11;
+            // 
+            // lbLogo
+            // 
+            this.lbLogo.Image = ((System.Drawing.Image)(resources.GetObject("lbLogo.Image")));
+            this.lbLogo.Location = new System.Drawing.Point(0, 0);
+            this.lbLogo.Name = "lbLogo";
+            this.lbLogo.Size = new System.Drawing.Size(186, 204);
+            this.lbLogo.TabIndex = 9;
             // 
             // fTableManager
             // 

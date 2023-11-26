@@ -21,7 +21,7 @@ namespace DAL
             try
             {
                 conn.Open();
-                String query = "Select * From SanPham";
+                String query = "Select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader read = cmd.ExecuteReader();
                 dssp = new List<SanPhamDTO>();
@@ -31,10 +31,11 @@ namespace DAL
                     sp.Id = read.GetInt32(0);
                     sp.Tensanpham = read.GetString(1);
                     sp.IdLoaiSanPham = read.GetInt32(2);
-                    sp.Hangsanxuat = read.GetString(3);
-                    sp.Gia = read.GetInt32(4);
-                    sp.Soluong = read.GetInt32(5);
-                    sp.Donvitinh = read.GetString(6);
+                    sp.Tenloai = read.GetString(3);
+                    sp.Hangsanxuat = read.GetString(4);
+                    sp.Gia = read.GetInt32(5);
+                    sp.Soluong = read.GetInt32(6);
+                    sp.Donvitinh = read.GetString(7);
                     dssp.Add(sp);
                 }
                 conn.Close();
@@ -82,7 +83,7 @@ namespace DAL
                     + "',gia = '" + gia
                     + "',soluong = '" + soluong
                     + "',donvitinh = '" + donvitinh
-                    + "' where tensanpham='" + tensanpham + "'";
+                    + "' where id =" + id ;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
                 cmd.ExecuteNonQuery();
@@ -100,16 +101,16 @@ namespace DAL
 
         }
         //Xoá theo số điện thoại
-        public bool DeleteSP(string index)
+        public bool DeleteSP(int id)
         {
             conn.Open();
             try
             {
                 foreach (SanPhamDTO sp in dssp)
                 {
-                    if (sp.Tensanpham.Equals(index)) //Nếu số điện thoại bằng giá trị ô được chọn của cột "Số điện thoại" thì mới cập nhật lại status
+                    if (sp.Id.Equals(id)) 
                     {
-                        string query = "Delete From SanPham  WHERE tensanpham = '" + index + "' or id = '" + index + "'";
+                        string query = "Delete From SanPham  WHERE id = " + id ;
                         SqlCommand cmd = new SqlCommand(query, conn);
                         cmd.ExecuteNonQuery();
                     }
@@ -134,7 +135,7 @@ namespace DAL
                 foreach (SanPhamDTO sp in dssp)
                 {
                     conn.Open();
-                    string query = "SELECT * FROM SanPham WHERE tensanpham LIKE '" + text + "' OR hangsanxuat LIKE '" + text + "'";
+                    string query = "select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id where tensanpham like '%" + text + "%'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader read = cmd.ExecuteReader();
                     found = new List<SanPhamDTO>();
@@ -142,12 +143,13 @@ namespace DAL
                     {
                         sp.Id = read.GetInt32(0);
                         sp.Tensanpham = read.GetString(1);
-                        sp.IdLoaiSanPham = read.GetInt32(3);
+                        sp.IdLoaiSanPham = read.GetInt32(2);
+                        sp.Tenloai = read.GetString(3);
                         sp.Hangsanxuat = read.GetString(4);
                         sp.Gia = read.GetInt32(5);
                         sp.Soluong = read.GetInt32(6);
                         sp.Donvitinh = read.GetString(7);
-                        found.Add(sp);   //Thêm đối tượng vừa đọc vào List
+                        found.Add(sp);   
                     }
                     conn.Close(); //Sau mỗi lần đọc lần đóng kết nối lại
                 }
@@ -164,44 +166,9 @@ namespace DAL
         }
 
         //Hiển thị + Reload dữ liệu vào DataGridView
-        public DataTable Display(List<SanPhamDTO> ds)
-        {
-            ds = readDB();
-            return Show(ds);
-        }
+      
 
-        public DataTable Show(List<SanPhamDTO> ds)
-        {
-            DataTable dtb = new DataTable();    //Khởi tạo bảng, sau đó thêm các cột và gán kiểu dữ liệu
-            dtb.Columns.Add("ID", typeof(int));
-            dtb.Columns.Add("Tên sản phẩm", typeof(string));
-            dtb.Columns.Add("Loại sản phẩm", typeof(string));
-            dtb.Columns.Add("Hãng sản xuất", typeof(string));
-            dtb.Columns.Add("Giá", typeof(int));
-            dtb.Columns.Add("Số lương", typeof(int));
-            dtb.Columns.Add("Đơn vị tính", typeof(string));
 
-            foreach (SanPhamDTO sp in ds)
-            {
-                DataRow data = dtb.NewRow();
-                data["id"] = sp.Tensanpham;
-                data["Tên sản phâmr"] = sp.Tensanpham;
-                data["Loại sản phẩm"] = sp.IdLoaiSanPham;
-                data["Hãng sản xuất"] = sp.Hangsanxuat;
-                data["Giá"] = sp.Gia;
-                data["Số lương"] = sp.Soluong;
-                data["Đơn vị tính"] = sp.Donvitinh;
-
-                dtb.Rows.Add(data); //Thêm đối tượng vào bảng
-
-                    for (int i = 0; i < dtb.Rows.Count; i++)
-                    {
-                        data["STT"] = i + 1;    //set số thứ tự tăng dần cho bảng
-                    }
-                
-            }
-            return dtb;
-        }
         
     }
 }

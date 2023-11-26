@@ -12,6 +12,7 @@ namespace DTO
         public int Id { get; set; }
         public string Tensanpham { get; set; }
         public int IdLoaiSanPham { get; set; }
+        public string Tenloai { get; set; }
         public string Hangsanxuat { get; set; }
         public int Gia { get; set; }
         public int Soluong { get; set; }
@@ -19,13 +20,13 @@ namespace DTO
         public SanPhamDTO() { }
         public SanPhamDTO(int id,string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh) 
         {   
-            this.Id = id;
-            this.Tensanpham = tensanpham;
-            this.IdLoaiSanPham = idLoaiSanPham;  
-            this.Hangsanxuat = hangsanxuat;
-            this.Gia = gia;
-            this.Soluong = soluong;
-            this.Donvitinh = donvitinh;
+            Id = id;
+            Tensanpham = tensanpham;
+            IdLoaiSanPham = idLoaiSanPham;    
+            Hangsanxuat = hangsanxuat;
+            Gia = gia;
+            Soluong = soluong;
+            Donvitinh = donvitinh;
         }
         
     }
