@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,8 +21,7 @@ namespace DAL
 
     public class DatabaseAccess
     {
-        private string connectionSTR = "Data Source=TOÀN;Initial Catalog=PhoneManage;Integrated Security=True";
-
+        private string connectionSTR = @"Data Source=TOÀN;Initial Catalog=PhoneManage;Integrated Security=True";
         public DataTable ExecuteQuery(string query)
         {
             DataTable data = new DataTable();
@@ -38,4 +37,4 @@ namespace DAL
             return data;
         }
     }
-} 
+}

@@ -279,6 +279,7 @@ namespace GUI
             this.dtNgaysinh.Name = "dtNgaysinh";
             this.dtNgaysinh.Size = new System.Drawing.Size(273, 24);
             this.dtNgaysinh.TabIndex = 9;
+            this.dtNgaysinh.Value = new System.DateTime(2023, 11, 15, 0, 0, 0, 0);
             // 
             // tbTenNV
             // 
@@ -424,7 +425,7 @@ namespace GUI
             this.dtaGVNV.Name = "dtaGVNV";
             this.dtaGVNV.RowHeadersWidth = 51;
             this.dtaGVNV.RowTemplate.Height = 24;
-            this.dtaGVNV.Size = new System.Drawing.Size(1644, 447);
+            this.dtaGVNV.Size = new System.Drawing.Size(1644, 459);
             this.dtaGVNV.TabIndex = 17;
             // 
             // lbDanhsach
