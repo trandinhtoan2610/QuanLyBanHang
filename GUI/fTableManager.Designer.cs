@@ -94,8 +94,8 @@
             this.btnPhanquyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhanquyen.Image = ((System.Drawing.Image)(resources.GetObject("btnPhanquyen.Image")));
             this.btnPhanquyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhanquyen.Location = new System.Drawing.Point(0, 145);
-            this.btnPhanquyen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPhanquyen.Location = new System.Drawing.Point(0, 165);
+            this.btnPhanquyen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPhanquyen.Name = "btnPhanquyen";
             this.btnPhanquyen.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnPhanquyen.Size = new System.Drawing.Size(280, 55);
@@ -113,8 +113,8 @@
             this.btnThongke.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongke.Image = ((System.Drawing.Image)(resources.GetObject("btnThongke.Image")));
             this.btnThongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongke.Location = new System.Drawing.Point(0, 90);
-            this.btnThongke.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThongke.Location = new System.Drawing.Point(0, 110);
+            this.btnThongke.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongke.Name = "btnThongke";
             this.btnThongke.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnThongke.Size = new System.Drawing.Size(280, 55);
@@ -131,12 +131,12 @@
             this.pnQuanlyhoadon.Controls.Add(this.btnBanhang);
             this.pnQuanlyhoadon.Controls.Add(this.btnQuanlyhoadon);
             this.pnQuanlyhoadon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnQuanlyhoadon.Location = new System.Drawing.Point(0, 45);
-            this.pnQuanlyhoadon.Margin = new System.Windows.Forms.Padding(2);
-            this.pnQuanlyhoadon.MaximumSize = new System.Drawing.Size(209, 224);
-            this.pnQuanlyhoadon.MinimumSize = new System.Drawing.Size(209, 45);
+            this.pnQuanlyhoadon.Location = new System.Drawing.Point(0, 55);
+            this.pnQuanlyhoadon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnQuanlyhoadon.MaximumSize = new System.Drawing.Size(279, 276);
+            this.pnQuanlyhoadon.MinimumSize = new System.Drawing.Size(279, 55);
             this.pnQuanlyhoadon.Name = "pnQuanlyhoadon";
-            this.pnQuanlyhoadon.Size = new System.Drawing.Size(209, 45);
+            this.pnQuanlyhoadon.Size = new System.Drawing.Size(279, 55);
             this.pnQuanlyhoadon.TabIndex = 7;
             // 
             // btnHoadonnhap
@@ -148,11 +148,11 @@
             this.btnHoadonnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoadonnhap.Image = ((System.Drawing.Image)(resources.GetObject("btnHoadonnhap.Image")));
             this.btnHoadonnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoadonnhap.Location = new System.Drawing.Point(0, 210);
+            this.btnHoadonnhap.Location = new System.Drawing.Point(0, 220);
             this.btnHoadonnhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHoadonnhap.Name = "btnHoadonnhap";
             this.btnHoadonnhap.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnHoadonnhap.Size = new System.Drawing.Size(209, 57);
+            this.btnHoadonnhap.Size = new System.Drawing.Size(279, 57);
             this.btnHoadonnhap.TabIndex = 9;
             this.btnHoadonnhap.Text = "Hóa đơn nhập";
             this.btnHoadonnhap.UseVisualStyleBackColor = false;
@@ -167,11 +167,11 @@
             this.btnNhaphang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhaphang.Image = ((System.Drawing.Image)(resources.GetObject("btnNhaphang.Image")));
             this.btnNhaphang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhaphang.Location = new System.Drawing.Point(0, 155);
+            this.btnNhaphang.Location = new System.Drawing.Point(0, 165);
             this.btnNhaphang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhaphang.Name = "btnNhaphang";
             this.btnNhaphang.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnNhaphang.Size = new System.Drawing.Size(209, 55);
+            this.btnNhaphang.Size = new System.Drawing.Size(279, 55);
             this.btnNhaphang.TabIndex = 8;
             this.btnNhaphang.Text = "Nhập hàng";
             this.btnNhaphang.UseVisualStyleBackColor = false;
@@ -186,11 +186,11 @@
             this.btnHoadonban.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoadonban.Image = ((System.Drawing.Image)(resources.GetObject("btnHoadonban.Image")));
             this.btnHoadonban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoadonban.Location = new System.Drawing.Point(0, 100);
+            this.btnHoadonban.Location = new System.Drawing.Point(0, 110);
             this.btnHoadonban.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHoadonban.Name = "btnHoadonban";
             this.btnHoadonban.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnHoadonban.Size = new System.Drawing.Size(209, 55);
+            this.btnHoadonban.Size = new System.Drawing.Size(279, 55);
             this.btnHoadonban.TabIndex = 10;
             this.btnHoadonban.Text = "Hóa đơn bán";
             this.btnHoadonban.UseVisualStyleBackColor = false;
@@ -205,11 +205,11 @@
             this.btnBanhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBanhang.Image = ((System.Drawing.Image)(resources.GetObject("btnBanhang.Image")));
             this.btnBanhang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBanhang.Location = new System.Drawing.Point(0, 45);
+            this.btnBanhang.Location = new System.Drawing.Point(0, 55);
             this.btnBanhang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBanhang.Name = "btnBanhang";
             this.btnBanhang.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnBanhang.Size = new System.Drawing.Size(209, 55);
+            this.btnBanhang.Size = new System.Drawing.Size(279, 55);
             this.btnBanhang.TabIndex = 7;
             this.btnBanhang.Text = "Bán hàng";
             this.btnBanhang.UseVisualStyleBackColor = false;
@@ -225,10 +225,10 @@
             this.btnQuanlyhoadon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanlyhoadon.Image")));
             this.btnQuanlyhoadon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanlyhoadon.Location = new System.Drawing.Point(0, 0);
-            this.btnQuanlyhoadon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQuanlyhoadon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQuanlyhoadon.Name = "btnQuanlyhoadon";
-            this.btnQuanlyhoadon.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnQuanlyhoadon.Size = new System.Drawing.Size(209, 45);
+            this.btnQuanlyhoadon.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnQuanlyhoadon.Size = new System.Drawing.Size(279, 55);
             this.btnQuanlyhoadon.TabIndex = 6;
             this.btnQuanlyhoadon.Text = "Quản lý hóa đơn";
             this.btnQuanlyhoadon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -246,11 +246,11 @@
             this.pnDropDown.Controls.Add(this.btnKhachhang);
             this.pnDropDown.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnDropDown.Location = new System.Drawing.Point(0, 0);
-            this.pnDropDown.Margin = new System.Windows.Forms.Padding(2);
-            this.pnDropDown.MaximumSize = new System.Drawing.Size(209, 256);
-            this.pnDropDown.MinimumSize = new System.Drawing.Size(209, 45);
+            this.pnDropDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnDropDown.MaximumSize = new System.Drawing.Size(279, 315);
+            this.pnDropDown.MinimumSize = new System.Drawing.Size(279, 55);
             this.pnDropDown.Name = "pnDropDown";
-            this.pnDropDown.Size = new System.Drawing.Size(209, 45);
+            this.pnDropDown.Size = new System.Drawing.Size(279, 55);
             this.pnDropDown.TabIndex = 0;
             // 
             // btnDanhmuc
@@ -263,10 +263,10 @@
             this.btnDanhmuc.Image = ((System.Drawing.Image)(resources.GetObject("btnDanhmuc.Image")));
             this.btnDanhmuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDanhmuc.Location = new System.Drawing.Point(0, 0);
-            this.btnDanhmuc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDanhmuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDanhmuc.Name = "btnDanhmuc";
-            this.btnDanhmuc.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnDanhmuc.Size = new System.Drawing.Size(209, 45);
+            this.btnDanhmuc.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnDanhmuc.Size = new System.Drawing.Size(279, 55);
             this.btnDanhmuc.TabIndex = 0;
             this.btnDanhmuc.Text = "Danh mục";
             this.btnDanhmuc.UseVisualStyleBackColor = false;
@@ -281,11 +281,11 @@
             this.btnSp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSp.Image = ((System.Drawing.Image)(resources.GetObject("btnSp.Image")));
             this.btnSp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSp.Location = new System.Drawing.Point(0, -195);
+            this.btnSp.Location = new System.Drawing.Point(0, -205);
             this.btnSp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSp.Name = "btnSp";
             this.btnSp.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSp.Size = new System.Drawing.Size(209, 50);
+            this.btnSp.Size = new System.Drawing.Size(279, 50);
             this.btnSp.TabIndex = 5;
             this.btnSp.Text = "Sản phẩm";
             this.btnSp.UseVisualStyleBackColor = false;
@@ -300,11 +300,11 @@
             this.btnLoaisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoaisp.Image = ((System.Drawing.Image)(resources.GetObject("btnLoaisp.Image")));
             this.btnLoaisp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoaisp.Location = new System.Drawing.Point(0, -145);
+            this.btnLoaisp.Location = new System.Drawing.Point(0, -155);
             this.btnLoaisp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLoaisp.Name = "btnLoaisp";
             this.btnLoaisp.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnLoaisp.Size = new System.Drawing.Size(209, 50);
+            this.btnLoaisp.Size = new System.Drawing.Size(279, 50);
             this.btnLoaisp.TabIndex = 4;
             this.btnLoaisp.Text = "Loại sản phẩm";
             this.btnLoaisp.UseVisualStyleBackColor = false;
@@ -319,11 +319,11 @@
             this.btnNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanvien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanvien.Image")));
             this.btnNhanvien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhanvien.Location = new System.Drawing.Point(0, -95);
-            this.btnNhanvien.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNhanvien.Location = new System.Drawing.Point(0, -105);
+            this.btnNhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhanvien.Name = "btnNhanvien";
-            this.btnNhanvien.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnNhanvien.Size = new System.Drawing.Size(209, 45);
+            this.btnNhanvien.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnNhanvien.Size = new System.Drawing.Size(279, 55);
             this.btnNhanvien.TabIndex = 1;
             this.btnNhanvien.Text = "Nhân viên";
             this.btnNhanvien.UseVisualStyleBackColor = false;
@@ -342,7 +342,7 @@
             this.btnNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNCC.Name = "btnNCC";
             this.btnNCC.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnNCC.Size = new System.Drawing.Size(209, 50);
+            this.btnNCC.Size = new System.Drawing.Size(279, 50);
             this.btnNCC.TabIndex = 3;
             this.btnNCC.Text = "Nhà cung cấp";
             this.btnNCC.UseVisualStyleBackColor = false;
@@ -358,10 +358,10 @@
             this.btnKhachhang.Image = ((System.Drawing.Image)(resources.GetObject("btnKhachhang.Image")));
             this.btnKhachhang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhachhang.Location = new System.Drawing.Point(0, 0);
-            this.btnKhachhang.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKhachhang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKhachhang.Name = "btnKhachhang";
-            this.btnKhachhang.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnKhachhang.Size = new System.Drawing.Size(209, 45);
+            this.btnKhachhang.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnKhachhang.Size = new System.Drawing.Size(279, 55);
             this.btnKhachhang.TabIndex = 2;
             this.btnKhachhang.Text = "Khách hàng";
             this.btnKhachhang.UseVisualStyleBackColor = false;
@@ -515,7 +515,6 @@
             // 
             this.lbLogo.Image = ((System.Drawing.Image)(resources.GetObject("lbLogo.Image")));
             this.lbLogo.Location = new System.Drawing.Point(0, 0);
-            this.lbLogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLogo.Name = "lbLogo";
             this.lbLogo.Size = new System.Drawing.Size(186, 204);
             this.lbLogo.TabIndex = 9;
@@ -529,7 +528,7 @@
             this.Controls.Add(this.lbLogo);
             this.Controls.Add(this.pnUserControl);
             this.Controls.Add(this.pnDanhmuc);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTableManager";
@@ -556,11 +555,11 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel pnUserControl;
         private System.Windows.Forms.Button btnDanhmuc;
-        
+
         private System.Windows.Forms.Panel pnDropDown;
         private System.Windows.Forms.Timer timerDropDown;
 
-        
+
 
         private System.Windows.Forms.Panel pnQuanlyhoadon;
         private System.Windows.Forms.Button btnHoadonnhap;
