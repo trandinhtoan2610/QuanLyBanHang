@@ -20,11 +20,7 @@ namespace BLL
             return qllspDAL.readDB();
         }
 
-        public DataTable Display()
-        {
-            dslsp = readDB();
-            return qllspDAL.Display(dslsp);
-        }
+       
 
         public bool InsertSP(LoaiSanPhamDTO loaisanpham)
         {
@@ -65,12 +61,6 @@ namespace BLL
             return qllspDAL.DeleteLSP(index);
         }
 
-        public DataTable Show(string text)
-        {
-            List<LoaiSanPhamDTO> dssp_tk = new List<LoaiSanPhamDTO>();
-            dssp_tk = qllspDAL.Search(text);
-            //Tìm kiếm theo chuỗi nhập vào
-            return qllspDAL.Show(dssp_tk);
-        }
+        
     }
 }

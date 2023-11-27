@@ -15,19 +15,19 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace GUI
 {
     public partial class Sanpham : UserControl
-    {        
+    {
         BindingSource splist = new BindingSource();
         SanPhamBLL qlspBLL = new SanPhamBLL();
         SanPhamDTO sp = new SanPhamDTO();
-        List<SanPhamDTO> spv,found;
+        List<SanPhamDTO> spv, found;
 
-        
+
         public Sanpham()
         {
-            InitializeComponent();      
+            InitializeComponent();
             load();
         }
-        
+
         void load()
         {
             dataGridView1.DataSource = splist;
@@ -86,18 +86,18 @@ namespace GUI
             llsp = lspbll.readDB();
             sp.Id = Convert.ToInt32(tbMaSP.Text);
             sp.Tensanpham = tbTenSP.Text;
-            sp.IdLoaiSanPham = Convert.ToInt32(cbTenloaisanpham.SelectedValue);           
+            sp.IdLoaiSanPham = Convert.ToInt32(cbTenloaisanpham.SelectedValue);
             sp.Hangsanxuat = cbHangSX.Text;
             sp.Gia = Convert.ToInt32(tbGia.Text);
             sp.Soluong = Convert.ToInt32(tbSoluong.Text);
             sp.Donvitinh = tbDonvitinh.Text;
-            if(qlspBLL.InsertSP(sp.Id ,sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh))
+            if (qlspBLL.InsertSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh))
             {
-               MessageBox.Show("thêm thành công!");
+                MessageBox.Show("thêm thành công!");
             }
             loadData();
             Clear();
-      
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace GUI
                 MessageBox.Show("Cập nhật thành công!");
             }
             loadData();
-            
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -139,11 +139,11 @@ namespace GUI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if(string.IsNullOrWhiteSpace(tbTimkiem.Text))
+                if (string.IsNullOrWhiteSpace(tbTimkiem.Text))
                 {
                     loadData();
                 }
-                else 
+                else
                 {
                     SearchSP();
                 }

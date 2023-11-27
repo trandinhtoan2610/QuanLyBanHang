@@ -16,7 +16,7 @@ namespace DAL
         private List<SanPhamDTO> dssp, found;
 
 
-        public List<SanPhamDTO> readDB() 
+        public List<SanPhamDTO> readDB()
         {
             try
             {
@@ -41,7 +41,7 @@ namespace DAL
                 conn.Close();
             }
             catch (SqlException ex)
-            { 
+            {
                 MessageBox.Show("Error: " + ex);
             }
             finally { conn.Close(); }
@@ -60,12 +60,12 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error: " + ex);    
+                MessageBox.Show("Error: " + ex);
                 return false;
             }
             finally
             {
-                conn.Close();   
+                conn.Close();
             }
         }
 
@@ -75,7 +75,7 @@ namespace DAL
         {
             conn.Open();
             try
-            {           
+            {
                 string query = "UPDATE SanPham SET "
                     + "tensanpham = '" + tensanpham
                     + "',idLoaiSanPham = '" + idLoaiSanPham
@@ -83,7 +83,7 @@ namespace DAL
                     + "',gia = '" + gia
                     + "',soluong = '" + soluong
                     + "',donvitinh = '" + donvitinh
-                    + "' where id =" + id ;
+                    + "' where id =" + id;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
                 cmd.ExecuteNonQuery();
@@ -108,9 +108,9 @@ namespace DAL
             {
                 foreach (SanPhamDTO sp in dssp)
                 {
-                    if (sp.Id.Equals(id)) 
+                    if (sp.Id.Equals(id))
                     {
-                        string query = "Delete From SanPham  WHERE id = " + id ;
+                        string query = "Delete From SanPham  WHERE id = " + id;
                         SqlCommand cmd = new SqlCommand(query, conn);
                         cmd.ExecuteNonQuery();
                     }
@@ -149,26 +149,21 @@ namespace DAL
                         sp.Gia = read.GetInt32(5);
                         sp.Soluong = read.GetInt32(6);
                         sp.Donvitinh = read.GetString(7);
-                        found.Add(sp);   
+                        found.Add(sp);
                     }
-                    conn.Close(); //Sau mỗi lần đọc lần đóng kết nối lại
+                    conn.Close(); 
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
+                MessageBox.Show("Error: " + ex);    
             }
             finally
             {
-                conn.Close();   //Đóng kết nối
+                conn.Close();   
             }
             return found;
         }
 
-        //Hiển thị + Reload dữ liệu vào DataGridView
-      
-
-
-        
     }
 }
