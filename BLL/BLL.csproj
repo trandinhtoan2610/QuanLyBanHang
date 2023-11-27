@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoaiSanPhamBLL.cs" />
+    <Compile Include="NCCBLL.cs" />
+    <Compile Include="NhanVienBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamBLL.cs" />
     <Compile Include="TaiKhoanBLL.cs" />

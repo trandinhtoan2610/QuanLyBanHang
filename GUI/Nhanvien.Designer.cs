@@ -63,8 +63,8 @@ namespace GUI
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dtaGVNV = new System.Windows.Forms.DataGridView();
             this.lbDanhsach = new System.Windows.Forms.Label();
+            this.dtaGVNV = new System.Windows.Forms.DataGridView();
             this.pnThongtin.SuspendLayout();
             this.pnThemSuaXoa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGVNV)).BeginInit();
@@ -274,11 +274,15 @@ namespace GUI
             // 
             // dtNgaysinh
             // 
+            this.dtNgaysinh.CalendarForeColor = System.Drawing.Color.CornflowerBlue;
+            this.dtNgaysinh.CustomFormat = "";
             this.dtNgaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNgaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNgaysinh.Location = new System.Drawing.Point(261, 232);
             this.dtNgaysinh.Name = "dtNgaysinh";
             this.dtNgaysinh.Size = new System.Drawing.Size(273, 24);
             this.dtNgaysinh.TabIndex = 9;
+            this.dtNgaysinh.Value = new System.DateTime(2023, 11, 23, 0, 0, 0, 0);
             // 
             // tbTenNV
             // 
@@ -368,8 +372,6 @@ namespace GUI
             this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
             this.tbTimkiem.TabIndex = 8;
             this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
-            this.tbTimkiem.Enter += new System.EventHandler(this.tbTimkiem_Enter);
-            this.tbTimkiem.Leave += new System.EventHandler(this.tbTimkiem_Leave);
             // 
             // btnExport
             // 
@@ -414,27 +416,26 @@ namespace GUI
             this.btnAdd.Size = new System.Drawing.Size(75, 75);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // dtaGVNV
-            // 
-            this.dtaGVNV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtaGVNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtaGVNV.Location = new System.Drawing.Point(0, 461);
-            this.dtaGVNV.Margin = new System.Windows.Forms.Padding(0);
-            this.dtaGVNV.Name = "dtaGVNV";
-            this.dtaGVNV.RowHeadersWidth = 51;
-            this.dtaGVNV.RowTemplate.Height = 24;
-            this.dtaGVNV.Size = new System.Drawing.Size(1644, 459);
-            this.dtaGVNV.TabIndex = 17;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbDanhsach
             // 
             this.lbDanhsach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDanhsach.Location = new System.Drawing.Point(3, 479);
+            this.lbDanhsach.Location = new System.Drawing.Point(3, 485);
             this.lbDanhsach.Name = "lbDanhsach";
             this.lbDanhsach.Size = new System.Drawing.Size(223, 25);
             this.lbDanhsach.TabIndex = 29;
             this.lbDanhsach.Text = "Danh sách nhân viên";
+            // 
+            // dtaGVNV
+            // 
+            this.dtaGVNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtaGVNV.Location = new System.Drawing.Point(0, 527);
+            this.dtaGVNV.Name = "dtaGVNV";
+            this.dtaGVNV.RowHeadersWidth = 51;
+            this.dtaGVNV.RowTemplate.Height = 24;
+            this.dtaGVNV.Size = new System.Drawing.Size(1647, 390);
+            this.dtaGVNV.TabIndex = 17;
             // 
             // Nhanvien
             // 
@@ -476,9 +477,6 @@ namespace GUI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbThongtin;
         private System.Windows.Forms.Panel pnThemSuaXoa;
-        private System.Windows.Forms.DataGridView dtaGVNV;
-        private System.Windows.Forms.RadioButton rb2;
-        private System.Windows.Forms.RadioButton rb1;
         private System.Windows.Forms.Label lbGioitinh;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label lbEmail;
@@ -493,6 +491,9 @@ namespace GUI
         private Button btnChon;
         private TextBox tbTimkiem;
         private Label lbDanhsach;
+        private DataGridView dtaGVNV;
+        private RadioButton rb2;
+        private RadioButton rb1;
     }
     
 }

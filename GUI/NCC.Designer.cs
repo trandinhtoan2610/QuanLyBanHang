@@ -44,7 +44,7 @@
             this.lbTenNCC = new System.Windows.Forms.Label();
             this.lbMaNCC = new System.Windows.Forms.Label();
             this.lbThongtin = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtaGVNCC = new System.Windows.Forms.DataGridView();
             this.pnThemSuaXoa = new System.Windows.Forms.Panel();
             this.tbTimkiem = new System.Windows.Forms.TextBox();
             this.btnExport = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbDanhsach = new System.Windows.Forms.Label();
             this.pnThongtin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGVNCC)).BeginInit();
             this.pnThemSuaXoa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,18 +208,16 @@
             this.lbThongtin.TabIndex = 0;
             this.lbThongtin.Text = "Thông tin cơ bản";
             // 
-            // dataGridView1
+            // dtaGVNCC
             // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
-            this.dataGridView1.Location = new System.Drawing.Point(5, 481);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1644, 436);
-
-            this.dataGridView1.TabIndex = 19;
+            this.dtaGVNCC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtaGVNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtaGVNCC.Location = new System.Drawing.Point(5, 534);
+            this.dtaGVNCC.Name = "dtaGVNCC";
+            this.dtaGVNCC.RowHeadersWidth = 51;
+            this.dtaGVNCC.RowTemplate.Height = 24;
+            this.dtaGVNCC.Size = new System.Drawing.Size(1644, 383);
+            this.dtaGVNCC.TabIndex = 19;
             // 
             // pnThemSuaXoa
             // 
@@ -256,6 +254,7 @@
             this.btnExport.Size = new System.Drawing.Size(75, 75);
             this.btnExport.TabIndex = 7;
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnDelete
             // 
@@ -289,6 +288,7 @@
             this.btnAdd.Size = new System.Drawing.Size(75, 75);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbDanhsach
             // 
@@ -305,14 +305,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbDanhsach);
             this.Controls.Add(this.pnThemSuaXoa);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtaGVNCC);
             this.Controls.Add(this.pnThongtin);
             this.Controls.Add(this.lbQuanly);
             this.Name = "NCC";
             this.Size = new System.Drawing.Size(1644, 920);
             this.pnThongtin.ResumeLayout(false);
             this.pnThongtin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGVNCC)).EndInit();
             this.pnThemSuaXoa.ResumeLayout(false);
             this.pnThemSuaXoa.PerformLayout();
             this.ResumeLayout(false);
@@ -336,7 +336,7 @@
         private System.Windows.Forms.Label lbThongtin;
         private System.Windows.Forms.Label lbGhichu;
         private System.Windows.Forms.TextBox tbGhichu;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtaGVNCC;
         private System.Windows.Forms.Panel pnThemSuaXoa;
         private System.Windows.Forms.TextBox tbTimkiem;
         private System.Windows.Forms.Button btnExport;

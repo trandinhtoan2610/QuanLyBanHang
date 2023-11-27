@@ -82,7 +82,7 @@ namespace DAL
                     + "',gia = '" + gia
                     + "',soluong = '" + soluong
                     + "',donvitinh = '" + donvitinh
-                    + "' where tensanpham='" + tensanpham + "'";
+                    + "' where ='" + tensanpham + "'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
                 cmd.ExecuteNonQuery();

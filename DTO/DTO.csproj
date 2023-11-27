@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoaiSanPham.cs" />
+    <Compile Include="NCCDTO.cs" />
+    <Compile Include="NhanVienDTO.cs" />
     <Compile Include="PhanQuyenDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamDTO.cs" />
