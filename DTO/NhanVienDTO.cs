@@ -12,7 +12,7 @@ namespace DTO
         public int Id { get; set; }
         public string Tennhanvien { get; set; }
 
-        public DateTime Ngaysinh { get; set; }
+        public string Ngaysinh { get; set; }
         public int IdLoainhanvien { get; set; }
         public string Sodienthoai { get; set; }
         public string Cmnd { get; set; }
@@ -20,7 +20,7 @@ namespace DTO
         public string Gioitinh { get; set; }
         public string Diachi { get; set; }
         public NhanVienDTO() { }
-        public NhanVienDTO(int id, string tennhanvien, DateTime ngaysinh, int IdLoainhanvien, string sodienthoai, string cmnd, string email, string gioitinh, string diachi)
+        public NhanVienDTO(int id, string tennhanvien, string ngaysinh, int IdLoainhanvien, string sodienthoai, string cmnd, string email, string gioitinh, string diachi)
         {
             this.Id = id;
             this.Tennhanvien = tennhanvien;

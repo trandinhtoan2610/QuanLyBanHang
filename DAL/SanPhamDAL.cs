@@ -151,16 +151,16 @@ namespace DAL
                         sp.Donvitinh = read.GetString(7);
                         found.Add(sp);
                     }
-                    conn.Close(); 
+                    conn.Close(); //Sau mỗi lần đọc lần đóng kết nối lại
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error: " + ex);    
+                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
             }
             finally
             {
-                conn.Close();   
+                conn.Close();   //Đóng kết nối
             }
             return found;
         }

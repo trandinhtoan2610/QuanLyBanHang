@@ -68,7 +68,7 @@ namespace BLL
 
         public List<SanPhamDTO> Search(string text)
         {
-
+           
             return qlspDAL.Search(text);
         }
     }
