@@ -45,7 +45,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"Insert into LoaiSanPham (id,tenloai) values ({lsp.Id},'{lsp.TenLoai}')";
+                string query = $"Insert into LoaiSanPham (tenloai) values ('{lsp.TenLoai}')";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -63,14 +63,14 @@ namespace DAL
 
 
 
-        public bool UpdateLSP(int id, string tensanpham)
+        public bool UpdateLSP(int id, string tenloaisanpham)
         {
             conn.Open();
             try
             {
-                string query = "UPDATE SanPham SET "
-                    + "tensanpham = '" + tensanpham
-                    + "' where id='" + id ;
+                string query = "UPDATE LoaiSanPham SET "
+                    + "tenloai = '" + tenloaisanpham
+                    + "' where id = " + id ;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
                 cmd.ExecuteNonQuery();
@@ -88,16 +88,16 @@ namespace DAL
 
         }
         //Xoá theo số điện thoại
-        public bool DeleteLSP(string index)
+        public bool DeleteLSP(int id)
         {
             conn.Open();
             try
             {
                 foreach (LoaiSanPhamDTO lsp in dslsp)
                 {
-                    if (lsp.TenLoai.Equals(index))
+                    if (lsp.Id.Equals(id))
                     {
-                        string query = "Delete From LoaiSanPham  WHERE tenloai = '" + index + "' or id = '" + index + "'";
+                        string query = "Delete From LoaiSanPham  WHERE  id = " + id;
                         SqlCommand cmd = new SqlCommand(query, conn);
                         cmd.ExecuteNonQuery();
                     }
@@ -122,7 +122,7 @@ namespace DAL
                 foreach (LoaiSanPhamDTO lsp in dslsp)
                 {
                     conn.Open();
-                    string query = "SELECT * FROM LoaiSanPham WHERE tenloai LIKE '" + text + "' OR hangsanxuat LIKE '" + text + "'";
+                    string query = "SELECT * FROM LoaiSanPham WHERE tenloai LIKE '%" + text + "%'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader read = cmd.ExecuteReader();
                     found = new List<LoaiSanPhamDTO>();

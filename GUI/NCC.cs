@@ -19,43 +19,61 @@ namespace GUI
         NCCBLL qlNCCBLL = new NCCBLL();
         NCCDTO ncc = new NCCDTO();
         List<NCCDTO> listNCC;
+
         public NCC()
         {
             InitializeComponent();
-            loadData();
+            load();
+            loadHeaderText();
+
+        }
+        public void load()
+        {
+
+            dtaGVNCC.DataSource = ncclist;
+            listNCC = qlNCCBLL.readDB();
+            ncclist.DataSource = listNCC;
             addNCCBinding();
         }
         public void loadData()
         {
-           
-            dtaGVNCC.DataSource = ncclist;
             listNCC = qlNCCBLL.readDB();
-            ncclist.DataSource = listNCC; 
+            ncclist.DataSource = listNCC;
+        }
+
+        public void loadHeaderText()
+        {
+            dtaGVNCC.Columns["id"].HeaderText = "ID";
+            dtaGVNCC.Columns["tennhacungcap"].HeaderText = "Tên nhà cung cấp";
+            dtaGVNCC.Columns["sodienthoai"].HeaderText = "Số điện thoại";
+            dtaGVNCC.Columns["diachi"].HeaderText = "Địa chỉ";
+            dtaGVNCC.Columns["email"].HeaderText = "Email";
 
         }
 
+
         public void addNCCBinding()
         {
-            tbMaNCC.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "id"));
-            tbTenNCC.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "tennhacungcap"));
-            tbSđt.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "sodienthoai"));
-            tbDiachi.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "diachi"));
-            tbEmail.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "email"));
+            tbMaNCC.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "id", true, DataSourceUpdateMode.Never));
+            tbTenNCC.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "tennhacungcap", true, DataSourceUpdateMode.Never));
+            tbSđt.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "sodienthoai", true, DataSourceUpdateMode.Never));
+            tbDiachi.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "diachi", true, DataSourceUpdateMode.Never));
+            tbEmail.DataBindings.Add(new Binding("Text", dtaGVNCC.DataSource, "email", true, DataSourceUpdateMode.Never));
         }
 
         public void Clear()
         {
-            tbMaNCC.Text = tbTenNCC.Text = tbSđt.Text = tbDiachi.Text = tbEmail.Text  = string.Empty;
+            tbMaNCC.Text = tbTenNCC.Text = tbSđt.Text = tbDiachi.Text = tbEmail.Text = string.Empty;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
+
             ncc.Tennhacungcap = tbTenNCC.Text;
             ncc.Sodienthoai = tbSđt.Text;
             ncc.Diachi = tbDiachi.Text;
             ncc.Email = tbEmail.Text;
-            
-           
+
+
             if (qlNCCBLL.InsertNCC(ncc.Id, ncc.Tennhacungcap, ncc.Sodienthoai, ncc.Diachi, ncc.Email))
             {
                 MessageBox.Show("thêm thành công!");
@@ -64,24 +82,33 @@ namespace GUI
             Clear();
         }
 
-        //private void btnExport_Click(object sender, EventArgs e)
-        //{
-        //    dtaGVNCC.SelectAll();
-        //    DataObject copydata = dtaGVNCC.GetClipboardContent();
-        //    if (copydata != null) Clipboard.SetDataObject(copydata);
-        //    Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
-        //    xlapp.Visible = true;
-        //    Microsoft.Office.Interop.Excel.Workbook xlWbook;
-        //    Microsoft.Office.Interop.Excel.Worksheet xlsheet;
-        //    object miseddata = System.Reflection.Missing.Value;
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ncc.Id = Convert.ToInt32(tbMaNCC.Text);
+            ncc.Tennhacungcap = tbTenNCC.Text;
+            ncc.Sodienthoai = tbSđt.Text;
+            ncc.Diachi = tbDiachi.Text;
+            ncc.Email = tbEmail.Text;
 
-        //    xlWbook = xlapp.Workbooks.Add(miseddata);
-        //    xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWbook.Worksheets.get_Item(1);
+            if (qlNCCBLL.UpdateNCC(ncc.Id, ncc.Tennhacungcap, ncc.Sodienthoai, ncc.Diachi, ncc.Email))
+            {
+                MessageBox.Show("Cập nhật thành công!");
+            }
+            loadData();
 
-        //    Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1,1];
-        //    xlr.Select();
+        }
 
-        //    xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-        //}
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            ncc.Id = Convert.ToInt32(tbMaNCC.Text);
+            if (qlNCCBLL.DeleteNCC(ncc.Id))
+            {
+                MessageBox.Show("Xóa thành công!");
+            }
+            loadData();
+        }
+        
+
+
     }
 }

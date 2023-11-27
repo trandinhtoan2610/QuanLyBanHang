@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DAL
 {
-    
+
     public class NCCDAL
     {
         SqlConnection conn = SqlConnectionData.Connect();
@@ -32,7 +32,7 @@ namespace DAL
                     ncc.Sodienthoai = read.GetString(2);
                     ncc.Diachi = read.GetString(3);
                     ncc.Email = read.GetString(4);
-                    
+
                     dsNCC.Add(ncc);
                 }
                 conn.Close();
@@ -63,6 +63,64 @@ namespace DAL
             finally
             {
                 conn.Close();
+            }
+        }
+
+        public bool UpdateNCC(int id, string tenNCC, string sodienthoai, string diachi, string email)
+        {
+            conn.Open();
+            try
+            {
+                string query = "UPDATE NhaCungCap SET "
+
+
+                    + "tennhacungcap = '" + tenNCC
+                    + "',sodienthoai = '" + sodienthoai
+                    + "',diachi = '" + diachi
+                    + "',email = '" + email
+                    + "' where id =" + id;
+                SqlCommand cmd = new SqlCommand(query, conn);
+                //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
+                return false;
+            }
+            finally
+            {
+                conn.Close();   //Đóng kết nối
+            }
+
+        }
+
+        //Xoá theo số điện thoại
+        public bool DeleteNCC(int id)
+        {
+            conn.Open();
+            try
+            {
+                foreach (NCCDTO ncc in dsNCC)
+                {
+                    if (ncc.Id.Equals(id))
+                    {
+                        string query = "Delete From NhaCungCap  WHERE id = " + id;
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
+                return false;
+            }
+            finally
+            {
+                conn.Close();   //Đóng kết nối
             }
         }
     }

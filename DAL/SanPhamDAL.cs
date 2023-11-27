@@ -71,7 +71,7 @@ namespace DAL
 
 
 
-        public bool UpdateSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, float gia, int soluong, string donvitinh)
+        public bool UpdateSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh)
         {
             conn.Open();
             try

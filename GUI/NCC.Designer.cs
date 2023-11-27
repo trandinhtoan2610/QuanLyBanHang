@@ -104,7 +104,7 @@
             this.lbGhichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGhichu.Location = new System.Drawing.Point(1209, 85);
             this.lbGhichu.Name = "lbGhichu";
-            this.lbGhichu.Size = new System.Drawing.Size(59, 18);
+            this.lbGhichu.Size = new System.Drawing.Size(49, 15);
             this.lbGhichu.TabIndex = 25;
             this.lbGhichu.Text = "Ghi chú";
             // 
@@ -123,7 +123,7 @@
             this.lbDiachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiachi.Location = new System.Drawing.Point(930, 85);
             this.lbDiachi.Name = "lbDiachi";
-            this.lbDiachi.Size = new System.Drawing.Size(53, 18);
+            this.lbDiachi.Size = new System.Drawing.Size(45, 15);
             this.lbDiachi.TabIndex = 23;
             this.lbDiachi.Text = "Địa chỉ";
             // 
@@ -132,7 +132,7 @@
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.Location = new System.Drawing.Point(548, 227);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(212, 24);
+            this.tbEmail.Size = new System.Drawing.Size(212, 21);
             this.tbEmail.TabIndex = 17;
             // 
             // lbEmail
@@ -141,7 +141,7 @@
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.Location = new System.Drawing.Point(545, 194);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(45, 18);
+            this.lbEmail.Size = new System.Drawing.Size(39, 15);
             this.lbEmail.TabIndex = 16;
             this.lbEmail.Text = "Email";
             // 
@@ -150,7 +150,7 @@
             this.tbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSđt.Location = new System.Drawing.Point(548, 121);
             this.tbSđt.Name = "tbSđt";
-            this.tbSđt.Size = new System.Drawing.Size(212, 24);
+            this.tbSđt.Size = new System.Drawing.Size(212, 21);
             this.tbSđt.TabIndex = 14;
             // 
             // lbSđt
@@ -159,7 +159,7 @@
             this.lbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSđt.Location = new System.Drawing.Point(545, 85);
             this.lbSđt.Name = "lbSđt";
-            this.lbSđt.Size = new System.Drawing.Size(94, 18);
+            this.lbSđt.Size = new System.Drawing.Size(79, 15);
             this.lbSđt.TabIndex = 11;
             this.lbSđt.Text = "Số điện thoại";
             // 
@@ -168,7 +168,7 @@
             this.tbTenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenNCC.Location = new System.Drawing.Point(134, 227);
             this.tbTenNCC.Name = "tbTenNCC";
-            this.tbTenNCC.Size = new System.Drawing.Size(212, 24);
+            this.tbTenNCC.Size = new System.Drawing.Size(212, 21);
             this.tbTenNCC.TabIndex = 7;
             // 
             // tbMaNCC
@@ -176,7 +176,7 @@
             this.tbMaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaNCC.Location = new System.Drawing.Point(134, 121);
             this.tbMaNCC.Name = "tbMaNCC";
-            this.tbMaNCC.Size = new System.Drawing.Size(212, 24);
+            this.tbMaNCC.Size = new System.Drawing.Size(212, 21);
             this.tbMaNCC.TabIndex = 6;
             // 
             // lbTenNCC
@@ -185,7 +185,7 @@
             this.lbTenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenNCC.Location = new System.Drawing.Point(131, 194);
             this.lbTenNCC.Name = "lbTenNCC";
-            this.lbTenNCC.Size = new System.Drawing.Size(125, 18);
+            this.lbTenNCC.Size = new System.Drawing.Size(105, 15);
             this.lbTenNCC.TabIndex = 4;
             this.lbTenNCC.Text = "Tên nhà cung cấp";
             // 
@@ -195,7 +195,7 @@
             this.lbMaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaNCC.Location = new System.Drawing.Point(131, 85);
             this.lbMaNCC.Name = "lbMaNCC";
-            this.lbMaNCC.Size = new System.Drawing.Size(121, 18);
+            this.lbMaNCC.Size = new System.Drawing.Size(102, 15);
             this.lbMaNCC.TabIndex = 3;
             this.lbMaNCC.Text = "Mã nhà cung cấp";
             // 
@@ -210,6 +210,7 @@
             // 
             // dtaGVNCC
             // 
+            this.dtaGVNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtaGVNCC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtaGVNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtaGVNCC.Location = new System.Drawing.Point(5, 534);
@@ -254,7 +255,6 @@
             this.btnExport.Size = new System.Drawing.Size(75, 75);
             this.btnExport.TabIndex = 7;
             this.btnExport.UseVisualStyleBackColor = true;
-            //this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnDelete
             // 
@@ -266,6 +266,7 @@
             this.btnDelete.Size = new System.Drawing.Size(75, 75);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -277,6 +278,7 @@
             this.btnEdit.Size = new System.Drawing.Size(75, 75);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 

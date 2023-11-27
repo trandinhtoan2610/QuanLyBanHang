@@ -108,7 +108,7 @@ namespace DAL
 
         }
         //Xoá theo số điện thoại
-        public bool DeleteSP(int id)
+        public bool DeleteNV(int id)
         {
             conn.Open();
             try

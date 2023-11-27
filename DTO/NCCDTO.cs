@@ -8,13 +8,13 @@ namespace DTO
 {
     public class NCCDTO
     {
-        public int Id {  get; set; }
+        public int Id { get; set; }
         public string Tennhacungcap { get; set; }
         public string Sodienthoai { get; set; }
-        public string Diachi {  get; set; }
+        public string Diachi { get; set; }
         public string Email { get; set; }
 
-      
+
         public NCCDTO() { }
 
         public NCCDTO(int id, string tenNCC, string sodienthoai, string diachi, string email)
@@ -24,7 +24,7 @@ namespace DTO
             Sodienthoai = sodienthoai;
             Diachi = diachi;
             Email = email;
-         
+
         }
     }
 }

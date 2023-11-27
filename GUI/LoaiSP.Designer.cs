@@ -37,7 +37,7 @@
             this.tbMaLoaiSP = new System.Windows.Forms.TextBox();
             this.lbMaLoaiSP = new System.Windows.Forms.Label();
             this.lbDanhsach = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvlsp = new System.Windows.Forms.DataGridView();
             this.pnThemSuaXoa = new System.Windows.Forms.Panel();
             this.tbTimkiem = new System.Windows.Forms.TextBox();
             this.btnExport = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlsp)).BeginInit();
             this.pnThemSuaXoa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
             this.tbTenLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenLoaiSP.Location = new System.Drawing.Point(53, 210);
             this.tbTenLoaiSP.Name = "tbTenLoaiSP";
-            this.tbTenLoaiSP.Size = new System.Drawing.Size(212, 24);
+            this.tbTenLoaiSP.Size = new System.Drawing.Size(212, 21);
             this.tbTenLoaiSP.TabIndex = 10;
             // 
             // lbTenLoaiSP
@@ -96,7 +96,7 @@
             this.lbTenLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenLoaiSP.Location = new System.Drawing.Point(50, 172);
             this.lbTenLoaiSP.Name = "lbTenLoaiSP";
-            this.lbTenLoaiSP.Size = new System.Drawing.Size(129, 18);
+            this.lbTenLoaiSP.Size = new System.Drawing.Size(109, 15);
             this.lbTenLoaiSP.TabIndex = 8;
             this.lbTenLoaiSP.Text = "Tên loại sản phẩm";
             // 
@@ -105,7 +105,7 @@
             this.tbMaLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaLoaiSP.Location = new System.Drawing.Point(53, 111);
             this.tbMaLoaiSP.Name = "tbMaLoaiSP";
-            this.tbMaLoaiSP.Size = new System.Drawing.Size(212, 24);
+            this.tbMaLoaiSP.Size = new System.Drawing.Size(212, 21);
             this.tbMaLoaiSP.TabIndex = 9;
             // 
             // lbMaLoaiSP
@@ -114,7 +114,7 @@
             this.lbMaLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaLoaiSP.Location = new System.Drawing.Point(50, 74);
             this.lbMaLoaiSP.Name = "lbMaLoaiSP";
-            this.lbMaLoaiSP.Size = new System.Drawing.Size(125, 18);
+            this.lbMaLoaiSP.Size = new System.Drawing.Size(106, 15);
             this.lbMaLoaiSP.TabIndex = 8;
             this.lbMaLoaiSP.Text = "Mã loại sản phẩm";
             // 
@@ -127,15 +127,16 @@
             this.lbDanhsach.TabIndex = 29;
             this.lbDanhsach.Text = "Danh sách loại sản phẩm";
             // 
-            // dataGridView1
+            // dgvlsp
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(431, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1205, 269);
-            this.dataGridView1.TabIndex = 30;
+            this.dgvlsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvlsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlsp.Location = new System.Drawing.Point(431, 104);
+            this.dgvlsp.Name = "dgvlsp";
+            this.dgvlsp.RowHeadersWidth = 51;
+            this.dgvlsp.RowTemplate.Height = 24;
+            this.dgvlsp.Size = new System.Drawing.Size(1205, 269);
+            this.dgvlsp.TabIndex = 30;
             // 
             // pnThemSuaXoa
             // 
@@ -155,12 +156,11 @@
             this.tbTimkiem.BackColor = System.Drawing.Color.White;
             this.tbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTimkiem.HideSelection = false;
-            this.tbTimkiem.Location = new System.Drawing.Point(875, 35);
-            this.tbTimkiem.Multiline = true;
+            this.tbTimkiem.Location = new System.Drawing.Point(841, 41);
             this.tbTimkiem.Name = "tbTimkiem";
-            this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
+            this.tbTimkiem.Size = new System.Drawing.Size(452, 21);
             this.tbTimkiem.TabIndex = 8;
-            this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
+            this.tbTimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTimkiem_KeyDown);
             // 
             // btnExport
             // 
@@ -183,6 +183,7 @@
             this.btnDelete.Size = new System.Drawing.Size(75, 75);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -194,6 +195,7 @@
             this.btnEdit.Size = new System.Drawing.Size(75, 75);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -205,13 +207,14 @@
             this.btnAdd.Size = new System.Drawing.Size(75, 75);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // LoaiSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnThemSuaXoa);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvlsp);
             this.Controls.Add(this.lbDanhsach);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbQuanly);
@@ -219,7 +222,7 @@
             this.Size = new System.Drawing.Size(1639, 920);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlsp)).EndInit();
             this.pnThemSuaXoa.ResumeLayout(false);
             this.pnThemSuaXoa.PerformLayout();
             this.ResumeLayout(false);
@@ -236,7 +239,7 @@
         private System.Windows.Forms.Label lbTenLoaiSP;
         private System.Windows.Forms.TextBox tbTenLoaiSP;
         private System.Windows.Forms.Label lbDanhsach;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvlsp;
         private System.Windows.Forms.Panel pnThemSuaXoa;
         private System.Windows.Forms.TextBox tbTimkiem;
         private System.Windows.Forms.Button btnExport;

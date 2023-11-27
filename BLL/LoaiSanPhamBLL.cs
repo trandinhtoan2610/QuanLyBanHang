@@ -55,12 +55,17 @@ namespace BLL
 
 
 
-        public bool DeleteKH(string index)
+        public bool DeleteLSP(int id)
         {
-
-            return qllspDAL.DeleteLSP(index);
+            
+            return qllspDAL.DeleteLSP(id);
         }
 
-        
+        public List<LoaiSanPhamDTO> Search(string text)
+        {
+
+            return qllspDAL.Search(text);
+        }
+
     }
 }
