@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanHangDTO.cs" />
-    <Compile Include="LoaiSPDTO.cs" />
+    <Compile Include="LoaiSanPhamDTO.cs" />
     <Compile Include="NCCDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />
     <Compile Include="PhanQuyenDTO.cs" />
