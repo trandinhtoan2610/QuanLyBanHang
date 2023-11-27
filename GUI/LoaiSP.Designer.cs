@@ -37,7 +37,7 @@
             this.tbMaLoaiSP = new System.Windows.Forms.TextBox();
             this.lbMaLoaiSP = new System.Windows.Forms.Label();
             this.lbDanhsach = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtaGVLSP = new System.Windows.Forms.DataGridView();
             this.pnThemSuaXoa = new System.Windows.Forms.Panel();
             this.tbTimkiem = new System.Windows.Forms.TextBox();
             this.btnExport = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGVLSP)).BeginInit();
             this.pnThemSuaXoa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,15 +127,15 @@
             this.lbDanhsach.TabIndex = 29;
             this.lbDanhsach.Text = "Danh sách loại sản phẩm";
             // 
-            // dataGridView1
+            // dtaGVLSP
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(431, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1205, 269);
-            this.dataGridView1.TabIndex = 30;
+            this.dtaGVLSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtaGVLSP.Location = new System.Drawing.Point(431, 104);
+            this.dtaGVLSP.Name = "dtaGVLSP";
+            this.dtaGVLSP.RowHeadersWidth = 51;
+            this.dtaGVLSP.RowTemplate.Height = 24;
+            this.dtaGVLSP.Size = new System.Drawing.Size(1205, 269);
+            this.dtaGVLSP.TabIndex = 30;
             // 
             // pnThemSuaXoa
             // 
@@ -183,6 +183,7 @@
             this.btnDelete.Size = new System.Drawing.Size(75, 75);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -211,7 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnThemSuaXoa);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtaGVLSP);
             this.Controls.Add(this.lbDanhsach);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbQuanly);
@@ -219,7 +220,7 @@
             this.Size = new System.Drawing.Size(1639, 920);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGVLSP)).EndInit();
             this.pnThemSuaXoa.ResumeLayout(false);
             this.pnThemSuaXoa.PerformLayout();
             this.ResumeLayout(false);
@@ -236,7 +237,7 @@
         private System.Windows.Forms.Label lbTenLoaiSP;
         private System.Windows.Forms.TextBox tbTenLoaiSP;
         private System.Windows.Forms.Label lbDanhsach;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtaGVLSP;
         private System.Windows.Forms.Panel pnThemSuaXoa;
         private System.Windows.Forms.TextBox tbTimkiem;
         private System.Windows.Forms.Button btnExport;

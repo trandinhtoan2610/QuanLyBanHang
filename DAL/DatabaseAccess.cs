@@ -13,7 +13,7 @@ namespace DAL
         // Tạo kết nối cơ sở dữ liệu
         public static SqlConnection Connect()
         {
-            string Strconn = @"Data Source=Toàn;Initial Catalog=PhoneManage;Integrated Security=True";
+            string Strconn = @"Data Source=LAPTOP-IJDHL0GE;Initial Catalog=PhoneManage;Integrated Security=True";
             SqlConnection conn = new SqlConnection(Strconn);
             return conn;
         }
@@ -21,7 +21,7 @@ namespace DAL
 
     public class DatabaseAccess
     {
-        private string connectionSTR = @"Data Source=Toàn;Initial Catalog=PhoneManage;Integrated Security=True";
+        private string connectionSTR = @"Data Source=LAPTOP-IJDHL0GE;Initial Catalog=PhoneManage;Integrated Security=True";
         public DataTable ExecuteQuery(string query)
         {
             DataTable data = new DataTable();

@@ -57,10 +57,10 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cbTensanpham = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbSoluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbDongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbGiakhuyenmai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbThanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbThongtinKH.SuspendLayout();
             this.gbThongtinHD.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -145,10 +145,12 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(372, 106);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(271, 24);
             this.dateTimePicker1.TabIndex = 19;
+            this.dateTimePicker1.Value = new System.DateTime(2023, 11, 27, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -299,10 +301,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cbTensanpham,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
+            this.tbSoluong,
+            this.tbDongia,
+            this.tbGiakhuyenmai,
+            this.tbThanhtien});
             this.dataGridView1.Location = new System.Drawing.Point(28, 549);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -313,42 +315,34 @@
             // cbTensanpham
             // 
             this.cbTensanpham.HeaderText = "Tên sản phẩm";
-            this.cbTensanpham.Items.AddRange(new object[] {
-            "IPHONE 13",
-            "IPHONE 14",
-            "IPHONE 15",
-            "SAMSUNG",
-            "VIVO",
-            "XIAOMI",
-            "OPPO"});
             this.cbTensanpham.MaxDropDownItems = 15;
             this.cbTensanpham.MinimumWidth = 6;
             this.cbTensanpham.Name = "cbTensanpham";
             this.cbTensanpham.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column2
+            // tbSoluong
             // 
-            this.Column2.HeaderText = "Số lượng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
+            this.tbSoluong.HeaderText = "Số lượng";
+            this.tbSoluong.MinimumWidth = 6;
+            this.tbSoluong.Name = "tbSoluong";
             // 
-            // Column3
+            // tbDongia
             // 
-            this.Column3.HeaderText = "Đơn giá";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
+            this.tbDongia.HeaderText = "Đơn giá";
+            this.tbDongia.MinimumWidth = 6;
+            this.tbDongia.Name = "tbDongia";
             // 
-            // Column4
+            // tbGiakhuyenmai
             // 
-            this.Column4.HeaderText = "Giá khuyến mãi";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
+            this.tbGiakhuyenmai.HeaderText = "Giá khuyến mãi";
+            this.tbGiakhuyenmai.MinimumWidth = 6;
+            this.tbGiakhuyenmai.Name = "tbGiakhuyenmai";
             // 
-            // Column5
+            // tbThanhtien
             // 
-            this.Column5.HeaderText = "Thành tiền";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
+            this.tbThanhtien.HeaderText = "Thành tiền";
+            this.tbThanhtien.MinimumWidth = 6;
+            this.tbThanhtien.Name = "tbThanhtien";
             // 
             // Banhang
             // 
@@ -401,9 +395,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbTensanpham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tbSoluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tbDongia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tbGiakhuyenmai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tbThanhtien;
     }
 }

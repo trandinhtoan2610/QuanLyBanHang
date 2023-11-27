@@ -29,16 +29,16 @@ namespace BLL
             return qlspDAL.InsertSP(sanpham);
         }
 
-        public bool InsertSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh)
+        public bool InsertSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai)
         {
-            sp = new SanPhamDTO(id, tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh);
+            sp = new SanPhamDTO(id, tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh, khuyenmai);
             return InsertSP(sp);
         }
 
 
 
 
-        public bool UpdateSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh)
+        public bool UpdateSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai)
         {
             dssp = readDB();
 
@@ -53,9 +53,10 @@ namespace BLL
                     sp.Gia = gia;
                     sp.Soluong = soluong;
                     sp.Donvitinh = donvitinh;
+                    sp.Khuyenmai = khuyenmai;
                 }
             }
-            return qlspDAL.UpdateSP(id, tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh);
+            return qlspDAL.UpdateSP(id, tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh, khuyenmai);
         }
 
 

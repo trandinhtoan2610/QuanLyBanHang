@@ -21,7 +21,7 @@ namespace DAL
             try
             {
                 conn.Open();
-                String query = "Select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id";
+                String query = "Select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh,khuyenmai from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader read = cmd.ExecuteReader();
                 dssp = new List<SanPhamDTO>();
@@ -36,6 +36,7 @@ namespace DAL
                     sp.Gia = read.GetInt32(5);
                     sp.Soluong = read.GetInt32(6);
                     sp.Donvitinh = read.GetString(7);
+                    sp.Khuyenmai = read.GetInt32(8);
                     dssp.Add(sp);
                 }
                 conn.Close();
@@ -53,7 +54,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"Insert into SanPham (id,tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh) values ({sp.Id},'{sp.Tensanpham}', {sp.IdLoaiSanPham}, '{sp.Hangsanxuat}',{sp.Gia},{sp.Soluong},'{sp.Donvitinh}')";
+                string query = $"Insert into SanPham (id,tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh,khuyenmai) values ({sp.Id},'{sp.Tensanpham}', {sp.IdLoaiSanPham}, '{sp.Hangsanxuat}',{sp.Gia},{sp.Soluong},'{sp.Donvitinh}',{sp.Khuyenmai})";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -70,8 +71,7 @@ namespace DAL
         }
 
 
-
-        public bool UpdateSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, float gia, int soluong, string donvitinh)
+        public bool UpdateSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai)
         {
             conn.Open();
             try
@@ -83,6 +83,7 @@ namespace DAL
                     + "',gia = '" + gia
                     + "',soluong = '" + soluong
                     + "',donvitinh = '" + donvitinh
+                    + "',khuyenmai = '" + khuyenmai
                     + "' where id =" + id;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
@@ -100,6 +101,7 @@ namespace DAL
             }
 
         }
+
         //Xoá theo số điện thoại
         public bool DeleteSP(int id)
         {
@@ -135,7 +137,7 @@ namespace DAL
                 foreach (SanPhamDTO sp in dssp)
                 {
                     conn.Open();
-                    string query = "select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id where tensanpham like '%" + text + "%'";
+                    string query = "select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh,khuyenmai from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id where tensanpham like '%" + text + "%'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader read = cmd.ExecuteReader();
                     found = new List<SanPhamDTO>();
@@ -149,6 +151,7 @@ namespace DAL
                         sp.Gia = read.GetInt32(5);
                         sp.Soluong = read.GetInt32(6);
                         sp.Donvitinh = read.GetString(7);
+                        sp.Khuyenmai = read.GetInt32(8);
                         found.Add(sp);
                     }
                     conn.Close(); //Sau mỗi lần đọc lần đóng kết nối lại

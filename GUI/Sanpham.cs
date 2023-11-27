@@ -62,6 +62,7 @@ namespace GUI
             dataGridView1.Columns["soluong"].HeaderText = "số lượng";
             dataGridView1.Columns["gia"].HeaderText = "Giá";
             dataGridView1.Columns["donvitinh"].HeaderText = "Đơn vị tính";
+            dataGridView1.Columns["khuyenmai"].HeaderText = "Khuyến mãi";
         }
         public void addSanPhamBinding()
         {
@@ -72,11 +73,12 @@ namespace GUI
             tbGia.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Gia", true, DataSourceUpdateMode.Never));
             tbSoluong.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Soluong", true, DataSourceUpdateMode.Never));
             tbDonvitinh.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Donvitinh", true, DataSourceUpdateMode.Never));
+            tbKhuyenmai.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Khuyenmai", true, DataSourceUpdateMode.Never));
         }
 
         public void Clear()
         {
-            tbMaSP.Text = tbTenSP.Text = cbTenloaisanpham.Text = tbGia.Text = tbSoluong.Text = tbDonvitinh.Text = string.Empty;
+            tbMaSP.Text = tbTenSP.Text = cbTenloaisanpham.Text = tbGia.Text = tbSoluong.Text = tbDonvitinh.Text = tbKhuyenmai.Text = string.Empty;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -84,6 +86,7 @@ namespace GUI
             LoaiSanPhamBLL lspbll = new LoaiSanPhamBLL();
             List<LoaiSanPhamDTO> llsp;
             llsp = lspbll.readDB();
+            
             sp.Id = Convert.ToInt32(tbMaSP.Text);
             sp.Tensanpham = tbTenSP.Text;
             sp.IdLoaiSanPham = Convert.ToInt32(cbTenloaisanpham.SelectedValue);
@@ -91,7 +94,8 @@ namespace GUI
             sp.Gia = Convert.ToInt32(tbGia.Text);
             sp.Soluong = Convert.ToInt32(tbSoluong.Text);
             sp.Donvitinh = tbDonvitinh.Text;
-            if (qlspBLL.InsertSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh))
+            sp.Khuyenmai = Convert.ToInt32(tbKhuyenmai.Text);
+            if (qlspBLL.InsertSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh, sp.Khuyenmai))
             {
                 MessageBox.Show("thêm thành công!");
             }
@@ -109,8 +113,9 @@ namespace GUI
             sp.Gia = Convert.ToInt32(tbGia.Text);
             sp.Soluong = Convert.ToInt32(tbSoluong.Text);
             sp.Donvitinh = tbDonvitinh.Text;
+            sp.Khuyenmai = Convert.ToInt32(tbKhuyenmai.Text);
 
-            if (qlspBLL.UpdateSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh))
+            if (qlspBLL.UpdateSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh, sp.Khuyenmai))
             {
                 MessageBox.Show("Cập nhật thành công!");
             }

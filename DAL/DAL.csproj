@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHangDAL.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="LoaiSanPhamDAL.cs" />
+    <Compile Include="LoaiSPDAL.cs" />
     <Compile Include="NCCDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
