@@ -145,34 +145,5 @@ namespace DAL
             }
             return found;
         }
-
-        //Hiển thị + Reload dữ liệu vào DataGridView
-        public DataTable Display(List<LoaiSanPhamDTO> ds)
-        {
-            ds = readDB();
-            return Show(ds);
-        }
-
-        public DataTable Show(List<LoaiSanPhamDTO> ds)
-        {
-            DataTable dtb = new DataTable();    //Khởi tạo bảng, sau đó thêm các cột và gán kiểu dữ liệu
-            dtb.Columns.Add("ID", typeof(int));
-            dtb.Columns.Add("Tên sản phẩm", typeof(string));
-            
-
-            foreach (LoaiSanPhamDTO lsp in ds)
-            {
-                DataRow data = dtb.NewRow();
-                data["id"] = lsp.Id;
-                data["Tên loại sản phẩm"] = lsp.TenLoai;
-                dtb.Rows.Add(data); 
-                for (int i = 0; i < dtb.Rows.Count; i++)
-                {
-                    data["STT"] = i + 1;   
-                }
-
-            }
-            return dtb;
-        }
     }
 }
