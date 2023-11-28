@@ -84,7 +84,7 @@
             // 
             // tbTenLoaiSP
             // 
-            this.tbTenLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenLoaiSP.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbTenLoaiSP.Location = new System.Drawing.Point(53, 210);
             this.tbTenLoaiSP.Name = "tbTenLoaiSP";
             this.tbTenLoaiSP.Size = new System.Drawing.Size(212, 21);

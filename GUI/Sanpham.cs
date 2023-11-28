@@ -28,7 +28,7 @@ namespace GUI
             load();
         }
 
-        void load()
+        public void load()
         {
             dataGridView1.DataSource = splist;
             loadData();
@@ -43,7 +43,7 @@ namespace GUI
             spv = qlspBLL.readDB();
             splist.DataSource = spv;
         }
-        void loadcbb()
+        public void loadcbb()
         {
             LoaiSanPhamBLL lspbll = new LoaiSanPhamBLL();
             List<LoaiSanPhamDTO> llsp;

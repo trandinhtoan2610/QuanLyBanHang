@@ -18,7 +18,7 @@ namespace GUI
         LoaiSanPhamBLL lspBLL = new LoaiSanPhamBLL();
         LoaiSanPhamDTO lsp = new LoaiSanPhamDTO();
         List<LoaiSanPhamDTO> lspv, found;
-
+        
 
         public LoaiSP()
         {
@@ -71,6 +71,7 @@ namespace GUI
             }
             loadData();
             Clear();
+            
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -82,6 +83,7 @@ namespace GUI
             {
                 MessageBox.Show("Cập nhật thành công!");
             }
+            
             loadData();
 
         }

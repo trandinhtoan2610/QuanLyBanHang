@@ -45,9 +45,11 @@
             this.gbThongtinKH.Controls.Add(this.tbHoten);
             this.gbThongtinKH.Controls.Add(this.lbHoten);
             this.gbThongtinKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbThongtinKH.Location = new System.Drawing.Point(16, 89);
+            this.gbThongtinKH.Location = new System.Drawing.Point(353, 289);
+            this.gbThongtinKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbThongtinKH.Name = "gbThongtinKH";
-            this.gbThongtinKH.Size = new System.Drawing.Size(657, 172);
+            this.gbThongtinKH.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbThongtinKH.Size = new System.Drawing.Size(493, 140);
             this.gbThongtinKH.TabIndex = 1;
             this.gbThongtinKH.TabStop = false;
             this.gbThongtinKH.Text = "Thông tin khách hàng";
@@ -55,36 +57,40 @@
             // tbSđt
             // 
             this.tbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSđt.Location = new System.Drawing.Point(409, 86);
+            this.tbSđt.Location = new System.Drawing.Point(307, 70);
+            this.tbSđt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSđt.Name = "tbSđt";
-            this.tbSđt.Size = new System.Drawing.Size(212, 24);
+            this.tbSđt.Size = new System.Drawing.Size(160, 21);
             this.tbSđt.TabIndex = 16;
             // 
             // lbSđt
             // 
             this.lbSđt.AutoSize = true;
             this.lbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSđt.Location = new System.Drawing.Point(406, 46);
+            this.lbSđt.Location = new System.Drawing.Point(304, 37);
+            this.lbSđt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSđt.Name = "lbSđt";
-            this.lbSđt.Size = new System.Drawing.Size(94, 18);
+            this.lbSđt.Size = new System.Drawing.Size(79, 15);
             this.lbSđt.TabIndex = 13;
             this.lbSđt.Text = "Số điện thoại";
             // 
             // tbHoten
             // 
             this.tbHoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHoten.Location = new System.Drawing.Point(57, 86);
+            this.tbHoten.Location = new System.Drawing.Point(43, 70);
+            this.tbHoten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbHoten.Name = "tbHoten";
-            this.tbHoten.Size = new System.Drawing.Size(212, 24);
+            this.tbHoten.Size = new System.Drawing.Size(160, 21);
             this.tbHoten.TabIndex = 11;
             // 
             // lbHoten
             // 
             this.lbHoten.AutoSize = true;
             this.lbHoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoten.Location = new System.Drawing.Point(54, 46);
+            this.lbHoten.Location = new System.Drawing.Point(40, 37);
+            this.lbHoten.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHoten.Name = "lbHoten";
-            this.lbHoten.Size = new System.Drawing.Size(56, 18);
+            this.lbHoten.Size = new System.Drawing.Size(46, 15);
             this.lbHoten.TabIndex = 10;
             this.lbHoten.Text = "Họ tên ";
             // 
@@ -92,21 +98,23 @@
             // 
             this.lbTimkiem.BackColor = System.Drawing.Color.Cyan;
             this.lbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimkiem.Location = new System.Drawing.Point(0, 0);
+            this.lbTimkiem.Location = new System.Drawing.Point(341, 217);
+            this.lbTimkiem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTimkiem.Name = "lbTimkiem";
-            this.lbTimkiem.Size = new System.Drawing.Size(735, 40);
+            this.lbTimkiem.Size = new System.Drawing.Size(551, 32);
             this.lbTimkiem.TabIndex = 2;
             this.lbTimkiem.Text = "Tìm kiếm khách hàng";
             this.lbTimkiem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // fTimkiem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbTimkiem);
             this.Controls.Add(this.gbThongtinKH);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fTimkiem";
-            this.Size = new System.Drawing.Size(735, 312);
+            this.Size = new System.Drawing.Size(1233, 748);
             this.gbThongtinKH.ResumeLayout(false);
             this.gbThongtinKH.PerformLayout();
             this.ResumeLayout(false);

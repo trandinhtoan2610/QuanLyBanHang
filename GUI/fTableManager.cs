@@ -95,6 +95,7 @@ namespace GUI
         private void btnSp_Click(object sender, EventArgs e)
         {
             sanpham1.BringToFront();
+            sanpham1.loadcbb();
         }
 
         private void btnNhanvien_Click(object sender, EventArgs e)
