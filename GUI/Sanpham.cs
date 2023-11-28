@@ -34,6 +34,7 @@ namespace GUI
             loadData();
             loadcbb();
             addSanPhamBinding();
+
             dataGridView1.Columns["idLoaiSanPham"].Visible = false;
             loadHeaderText();
         }

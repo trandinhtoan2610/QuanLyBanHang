@@ -33,5 +33,33 @@ namespace BLL
             return InsertNV(nv);
         }
 
+        public bool UpdateNV(int id, string tennhanvien, string ngaysinh, int IdLoainhanvien, string sodienthoai, string cmnd, string email, string gioitinh, string diachi)
+        {
+            dsnv = readDB();
+
+            foreach (NhanVienDTO nv in dsnv)
+            {
+                if (nv.Id.Equals(id))
+                {
+                    nv.Id = id;
+                    nv.Tennhanvien = tennhanvien;
+                    nv.Ngaysinh = ngaysinh;
+                    nv.IdLoainhanvien = IdLoainhanvien;
+                    nv.Sodienthoai = sodienthoai;
+                    nv.Cmnd = cmnd;
+                    nv.Email = email;
+                    nv.Gioitinh = gioitinh;
+                    nv.Diachi = diachi;
+                }
+            }
+            return qlnvDAL.UpdateNV(id, tennhanvien, ngaysinh, IdLoainhanvien, sodienthoai, cmnd, email, gioitinh, diachi);
+        }
+
+        public bool DeleteNV(int id)
+        {
+
+            return qlnvDAL.DeleteNV(id);
+        }
+
     }
 }

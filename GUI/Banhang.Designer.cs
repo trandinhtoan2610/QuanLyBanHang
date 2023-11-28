@@ -38,7 +38,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lbQuanly = new System.Windows.Forms.Label();
             this.gbThongtinHD = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtNgaylap = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.tbMaHD = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -131,7 +131,7 @@
             // 
             // gbThongtinHD
             // 
-            this.gbThongtinHD.Controls.Add(this.dateTimePicker1);
+            this.gbThongtinHD.Controls.Add(this.dtNgaylap);
             this.gbThongtinHD.Controls.Add(this.label2);
             this.gbThongtinHD.Controls.Add(this.tbMaHD);
             this.gbThongtinHD.Controls.Add(this.label1);
@@ -143,14 +143,14 @@
             this.gbThongtinHD.TabStop = false;
             this.gbThongtinHD.Text = "Thông tin hóa đơn";
             // 
-            // dateTimePicker1
+            // dtNgaylap
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(372, 106);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(271, 24);
-            this.dateTimePicker1.TabIndex = 19;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 11, 27, 0, 0, 0, 0);
+            this.dtNgaylap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgaylap.Location = new System.Drawing.Point(372, 106);
+            this.dtNgaylap.Name = "dtNgaylap";
+            this.dtNgaylap.Size = new System.Drawing.Size(271, 24);
+            this.dtNgaylap.TabIndex = 19;
+            this.dtNgaylap.Value = new System.DateTime(2023, 11, 27, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -252,6 +252,7 @@
             this.btnAdd.Size = new System.Drawing.Size(75, 75);
             this.btnAdd.TabIndex = 20;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label5
             // 
@@ -378,7 +379,7 @@
         private System.Windows.Forms.GroupBox gbThongtinHD;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtNgaylap;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbMaHD;
         private System.Windows.Forms.Label label1;
