@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="HoaDonDAL.cs" />
+    <Compile Include="LoaiNhanVienDAL.cs" />
     <Compile Include="LoaiSanPhamDAL.cs" />
     <Compile Include="NCCDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />

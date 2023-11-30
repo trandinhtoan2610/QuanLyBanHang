@@ -1,7 +1,6 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,30 +9,25 @@ using System.Windows.Forms;
 
 namespace DAL
 {
-
-    public class NCCDAL
+    public class LoaiNhanVienDAL
     {
         SqlConnection conn = SqlConnectionData.Connect();
-        private List<NCCDTO> dsNCC, found;
-        public List<NCCDTO> readDB()
+        private List<LoaiNhanVienDTO> dslnv, found;
+        public List<LoaiNhanVienDTO> readDB()
         {
             try
             {
                 conn.Open();
-                String query = "Select * From NhaCungCap";
+                String query = "Select * from LoaiNhanVien";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader read = cmd.ExecuteReader();
-                dsNCC = new List<NCCDTO>();
+                dslnv = new List<LoaiNhanVienDTO>();
                 while (read.Read())
                 {
-                    NCCDTO ncc = new NCCDTO();
-                    ncc.Id = read.GetInt32(0);
-                    ncc.Tennhacungcap = read.GetString(1);
-                    ncc.Sodienthoai = read.GetString(2);
-                    ncc.Diachi = read.GetString(3);
-                    ncc.Email = read.GetString(4);
-
-                    dsNCC.Add(ncc);
+                    LoaiNhanVienDTO lnv = new LoaiNhanVienDTO();
+                    lnv.ID = read.GetInt32(0);
+                    lnv.Tenloai = read.GetString(1);
+                    dslnv.Add(lnv);
                 }
                 conn.Close();
             }
@@ -42,15 +36,15 @@ namespace DAL
                 MessageBox.Show("Error: " + ex);
             }
             finally { conn.Close(); }
-            return dsNCC;
+            return dslnv;
         }
 
-        public bool InsertNCC(NCCDTO ncc)
+        public bool InsertLNV(LoaiNhanVienDTO lnv)
         {
             conn.Open();
             try
             {
-                string query = $"Insert into NhaCungCap (tennhacungcap,sodienthoai,diachi,email) values ('{ncc.Tennhacungcap}', '{ncc.Sodienthoai}', '{ncc.Diachi}','{ncc.Email}')";
+                string query = $"Insert into LoaiNhanVien (id,tenloai) values ({lnv.ID},'{lnv.Tenloai}')";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -66,18 +60,16 @@ namespace DAL
             }
         }
 
-        public bool UpdateNCC(int id, string tenNCC, string sodienthoai, string diachi, string email)
+
+
+        public bool UpdateLNV(int id, string tenloai)
         {
             conn.Open();
             try
             {
-                string query = "UPDATE NhaCungCap SET "
-                    + "tennhacungcap = '" + tenNCC
-                    + "',sodienthoai = '" + sodienthoai
-                    + "',diachi = '" + diachi
-                    + "',email = '" + email
-
-                    + "' where id =" + id;
+                string query = "UPDATE LoaiNhanVien SET "
+                    + "tenloai = '" + tenloai
+                    + "' where id='" + id;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
                 cmd.ExecuteNonQuery();
@@ -95,17 +87,16 @@ namespace DAL
 
         }
 
-        //Xoá theo số điện thoại
-        public bool DeleteNCC(int id)
+        public bool DeleteLNV(string index)
         {
             conn.Open();
             try
             {
-                foreach (NCCDTO ncc in dsNCC)
+                foreach (LoaiNhanVienDTO lsp in dslnv)
                 {
-                    if (ncc.Id.Equals(id))
+                    if (lsp.Tenloai.Equals(index))
                     {
-                        string query = "Delete From NhaCungCap  WHERE id = " + id;
+                        string query = "Delete From LoaiNhanVien  WHERE tenloai = '" + index + "' or id = '" + index + "'";
                         SqlCommand cmd = new SqlCommand(query, conn);
                         cmd.ExecuteNonQuery();
                     }

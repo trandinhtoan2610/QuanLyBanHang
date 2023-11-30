@@ -137,7 +137,7 @@ namespace GUI
             this.lbMaLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaLoaiSP.Location = new System.Drawing.Point(559, 30);
             this.lbMaLoaiSP.Name = "lbMaLoaiSP";
-            this.lbMaLoaiSP.Size = new System.Drawing.Size(109, 15);
+            this.lbMaLoaiSP.Size = new System.Drawing.Size(129, 18);
             this.lbMaLoaiSP.TabIndex = 27;
             this.lbMaLoaiSP.Text = "Tên loại sản phẩm";
             // 
@@ -147,7 +147,9 @@ namespace GUI
             this.tbDonvitinh.Location = new System.Drawing.Point(261, 234);
             this.tbDonvitinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDonvitinh.Name = "tbDonvitinh";
-            this.tbDonvitinh.Size = new System.Drawing.Size(212, 21);
+
+            this.tbDonvitinh.Size = new System.Drawing.Size(212, 24);
+
             this.tbDonvitinh.TabIndex = 26;
             // 
             // btnChon
@@ -176,7 +178,7 @@ namespace GUI
             this.lbMota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMota.Location = new System.Drawing.Point(1228, 30);
             this.lbMota.Name = "lbMota";
-            this.lbMota.Size = new System.Drawing.Size(38, 15);
+            this.lbMota.Size = new System.Drawing.Size(46, 18);
             this.lbMota.TabIndex = 23;
             this.lbMota.Text = "Mô tả";
             // 
@@ -186,7 +188,9 @@ namespace GUI
             this.tbSoluong.Location = new System.Drawing.Point(875, 153);
             this.tbSoluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSoluong.Name = "tbSoluong";
+
             this.tbSoluong.Size = new System.Drawing.Size(212, 21);
+
             this.tbSoluong.TabIndex = 22;
             // 
             // lbSoluong
@@ -195,7 +199,7 @@ namespace GUI
             this.lbSoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSoluong.Location = new System.Drawing.Point(872, 121);
             this.lbSoluong.Name = "lbSoluong";
-            this.lbSoluong.Size = new System.Drawing.Size(56, 15);
+            this.lbSoluong.Size = new System.Drawing.Size(67, 18);
             this.lbSoluong.TabIndex = 21;
             this.lbSoluong.Text = "Số lượng";
             // 
@@ -205,7 +209,7 @@ namespace GUI
             this.lbHangSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHangSX.Location = new System.Drawing.Point(872, 30);
             this.lbHangSX.Name = "lbHangSX";
-            this.lbHangSX.Size = new System.Drawing.Size(86, 15);
+            this.lbHangSX.Size = new System.Drawing.Size(102, 18);
             this.lbHangSX.TabIndex = 16;
             this.lbHangSX.Text = "Hãng sản xuất";
             // 
@@ -215,7 +219,9 @@ namespace GUI
             this.tbKhuyenmai.Location = new System.Drawing.Point(563, 234);
             this.tbKhuyenmai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbKhuyenmai.Name = "tbKhuyenmai";
+
             this.tbKhuyenmai.Size = new System.Drawing.Size(212, 21);
+
             this.tbKhuyenmai.TabIndex = 15;
             // 
             // tbGia
@@ -224,7 +230,9 @@ namespace GUI
             this.tbGia.Location = new System.Drawing.Point(563, 153);
             this.tbGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbGia.Name = "tbGia";
+
             this.tbGia.Size = new System.Drawing.Size(212, 21);
+
             this.tbGia.TabIndex = 14;
             // 
             // lbKhuyenmai
@@ -233,7 +241,7 @@ namespace GUI
             this.lbKhuyenmai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbKhuyenmai.Location = new System.Drawing.Point(559, 206);
             this.lbKhuyenmai.Name = "lbKhuyenmai";
-            this.lbKhuyenmai.Size = new System.Drawing.Size(72, 15);
+            this.lbKhuyenmai.Size = new System.Drawing.Size(85, 18);
             this.lbKhuyenmai.TabIndex = 12;
             this.lbKhuyenmai.Text = "Khuyến mãi";
             // 
@@ -243,7 +251,7 @@ namespace GUI
             this.lbGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGia.Location = new System.Drawing.Point(559, 121);
             this.lbGia.Name = "lbGia";
-            this.lbGia.Size = new System.Drawing.Size(26, 15);
+            this.lbGia.Size = new System.Drawing.Size(31, 18);
             this.lbGia.TabIndex = 11;
             this.lbGia.Text = "Giá";
             // 
@@ -271,7 +279,7 @@ namespace GUI
             this.lbDonvitinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDonvitinh.Location = new System.Drawing.Point(259, 206);
             this.lbDonvitinh.Name = "lbDonvitinh";
-            this.lbDonvitinh.Size = new System.Drawing.Size(64, 15);
+            this.lbDonvitinh.Size = new System.Drawing.Size(77, 18);
             this.lbDonvitinh.TabIndex = 5;
             this.lbDonvitinh.Text = "Đơn vị tính";
             // 
@@ -281,7 +289,7 @@ namespace GUI
             this.lbTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenSP.Location = new System.Drawing.Point(259, 121);
             this.lbTenSP.Name = "lbTenSP";
-            this.lbTenSP.Size = new System.Drawing.Size(86, 15);
+            this.lbTenSP.Size = new System.Drawing.Size(102, 18);
             this.lbTenSP.TabIndex = 4;
             this.lbTenSP.Text = "Tên sản phẩm";
             // 
@@ -291,7 +299,7 @@ namespace GUI
             this.lbMaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaSP.Location = new System.Drawing.Point(259, 30);
             this.lbMaSP.Name = "lbMaSP";
-            this.lbMaSP.Size = new System.Drawing.Size(83, 15);
+            this.lbMaSP.Size = new System.Drawing.Size(98, 18);
             this.lbMaSP.TabIndex = 3;
             this.lbMaSP.Text = "Mã sản phẩm";
             // 
@@ -335,7 +343,9 @@ namespace GUI
             this.tbTimkiem.Location = new System.Drawing.Point(875, 34);
             this.tbTimkiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTimkiem.Name = "tbTimkiem";
+
             this.tbTimkiem.Size = new System.Drawing.Size(452, 21);
+
             this.tbTimkiem.TabIndex = 8;
             this.tbTimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTimkiem_KeyDown);
             // 

@@ -70,6 +70,12 @@
     <Compile Include="fTimkiem.Designer.cs">
       <DependentUpon>fTimkiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="GioHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GioHang.Designer.cs">
+      <DependentUpon>GioHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="HDban.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     <EmbeddedResource Include="fTimkiem.resx">
       <DependentUpon>fTimkiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GioHang.resx">
+      <DependentUpon>GioHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HDban.resx">
       <DependentUpon>HDban.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,16 +208,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{b6104678-de03-42b2-b339-f862691eec17}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{1830a6e4-8d75-476b-846e-8a4166781991}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="image\add-file__1_-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +241,16 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{b6104678-de03-42b2-b339-f862691eec17}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{1830a6e4-8d75-476b-846e-8a4166781991}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

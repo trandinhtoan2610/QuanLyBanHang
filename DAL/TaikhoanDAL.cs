@@ -10,33 +10,45 @@ namespace DAL
 {
     public class TaikhoanDAL
     {
-        public string CheckLogin(TaiKhoanDTO taikhoan)
+        public NhanVienDTO CheckLogin(string sodienthoai, string matkhau)
         {
-            string user = null;
+            
             SqlConnection conn = SqlConnectionData.Connect();
             conn.Open();
-            SqlCommand command = new SqlCommand("proc_login", conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@user", taikhoan.UserName);
-            command.Parameters.AddWithValue("@pass", taikhoan.Password);
-
-            command.Connection = conn;
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            string query = $"Select * from NhanVien where sodienthoai = '{sodienthoai}' and matkhau = '{matkhau}'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader read = cmd.ExecuteReader();
+           
+            if (read.HasRows)
             {
-                while (reader.Read())
+                while (read.Read())
                 {
-                    user = reader.GetString(0);
+                    NhanVienDTO user = new NhanVienDTO(
+                        read.GetInt32(0),
+                        read.GetString(1),
+                        read.GetString(2),
+                        read.GetInt32(3),
+                        read.GetString(4),
+                        read.GetString(5),
+                        read.GetString(6),
+                        read.GetString(7),
+                        read.GetString(8),
+                        read.GetString(9));
+                    
                     return user;
                 }
-                reader.Close();
+                read.Close();
                 conn.Close();
             }
-            else
-            {
-                return "Tài khoản mật khẩu không chính xác";
-            }
-            return user;
+            
+                return null ;
+
+        }
+       
+        public List<int> GetQuyen()
+        {
+            List<int> quyen = new List<int> ();
+            return quyen; 
         }
     }
 }

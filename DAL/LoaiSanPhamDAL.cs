@@ -68,9 +68,11 @@ namespace DAL
             conn.Open();
             try
             {
+
                 string query = "UPDATE LoaiSanPham SET "
                     + "tenloai = '" + tenloaisanpham
                     + "' where id = " + id ;
+
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
                 cmd.ExecuteNonQuery();
@@ -129,7 +131,7 @@ namespace DAL
                     while (read.Read())
                     {
                         lsp.Id = read.GetInt32(0);
-                        lsp.TenLoai = read.GetString(1);                 
+                        lsp.TenLoai = read.GetString(1);
                         found.Add(lsp);   //Thêm đối tượng vừa đọc vào List
                     }
                     conn.Close(); //Sau mỗi lần đọc lần đóng kết nối lại

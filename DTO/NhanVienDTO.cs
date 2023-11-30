@@ -19,19 +19,21 @@ namespace DTO
         public string Email { get; set; }
         public string Gioitinh { get; set; }
         public string Diachi { get; set; }
+
+        public string Matkhau { get; set; }
         public NhanVienDTO() { }
-        public NhanVienDTO(int id, string tennhanvien, string ngaysinh, int IdLoainhanvien, string sodienthoai, string cmnd, string email, string gioitinh, string diachi)
+        public NhanVienDTO(int id, string tennhanvien, string ngaysinh, int IdLoainhanvien, string sodienthoai, string cmnd, string email, string gioitinh, string diachi, string matkhau)
         {
-            this.Id = id;
-            this.Tennhanvien = tennhanvien;
-            this.Ngaysinh = ngaysinh;
+            Id = id;
+            Tennhanvien = tennhanvien;
+            Ngaysinh = ngaysinh;
             this.IdLoainhanvien = IdLoainhanvien;
-            this.Sodienthoai = sodienthoai;
-            this.Cmnd = cmnd;
-            this.Email = email;
-            this.Gioitinh = gioitinh;
-            this.Diachi = diachi;   
-            
+            Sodienthoai = sodienthoai;
+            Cmnd = cmnd;
+            Email = email;
+            Gioitinh = gioitinh;
+            Diachi = diachi;
+            Matkhau = matkhau;
         }
 
     }

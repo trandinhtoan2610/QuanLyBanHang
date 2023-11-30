@@ -37,7 +37,9 @@
             this.tbMaLoaiSP = new System.Windows.Forms.TextBox();
             this.lbMaLoaiSP = new System.Windows.Forms.Label();
             this.lbDanhsach = new System.Windows.Forms.Label();
+
             this.dgvlsp = new System.Windows.Forms.DataGridView();
+
             this.pnThemSuaXoa = new System.Windows.Forms.Panel();
             this.tbTimkiem = new System.Windows.Forms.TextBox();
             this.btnExport = new System.Windows.Forms.Button();
@@ -45,7 +47,9 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvlsp)).BeginInit();
+
             this.pnThemSuaXoa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +131,7 @@
             this.lbDanhsach.TabIndex = 29;
             this.lbDanhsach.Text = "Danh sách loại sản phẩm";
             // 
+
             // dgvlsp
             // 
             this.dgvlsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -137,6 +142,7 @@
             this.dgvlsp.RowTemplate.Height = 24;
             this.dgvlsp.Size = new System.Drawing.Size(1205, 269);
             this.dgvlsp.TabIndex = 30;
+
             // 
             // pnThemSuaXoa
             // 
@@ -214,7 +220,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnThemSuaXoa);
+
             this.Controls.Add(this.dgvlsp);
+
             this.Controls.Add(this.lbDanhsach);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbQuanly);
@@ -222,7 +230,9 @@
             this.Size = new System.Drawing.Size(1639, 920);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvlsp)).EndInit();
+
             this.pnThemSuaXoa.ResumeLayout(false);
             this.pnThemSuaXoa.PerformLayout();
             this.ResumeLayout(false);

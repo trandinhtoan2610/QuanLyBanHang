@@ -233,14 +233,10 @@ namespace GUI
             // 
             this.cbLoaiNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiNV.FormattingEnabled = true;
-            this.cbLoaiNV.Items.AddRange(new object[] {
-            "Quản lý",
-            "Nhân viên"});
             this.cbLoaiNV.Location = new System.Drawing.Point(649, 61);
             this.cbLoaiNV.Name = "cbLoaiNV";
             this.cbLoaiNV.Size = new System.Drawing.Size(212, 26);
             this.cbLoaiNV.TabIndex = 13;
-            this.cbLoaiNV.Text = "Quản lý";
             // 
             // lbCMND
             // 
@@ -282,9 +278,7 @@ namespace GUI
             this.dtNgaysinh.Name = "dtNgaysinh";
             this.dtNgaysinh.Size = new System.Drawing.Size(273, 24);
             this.dtNgaysinh.TabIndex = 9;
-
             this.dtNgaysinh.Value = new System.DateTime(2023, 11, 23, 0, 0, 0, 0);
-
             // 
             // tbTenNV
             // 
@@ -396,6 +390,7 @@ namespace GUI
             this.btnDelete.Size = new System.Drawing.Size(75, 75);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -407,6 +402,7 @@ namespace GUI
             this.btnEdit.Size = new System.Drawing.Size(75, 75);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -431,6 +427,7 @@ namespace GUI
             // 
             // dtaGVNV
             // 
+            this.dtaGVNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtaGVNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtaGVNV.Location = new System.Drawing.Point(0, 527);
             this.dtaGVNV.Name = "dtaGVNV";

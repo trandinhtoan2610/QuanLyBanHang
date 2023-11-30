@@ -10,20 +10,26 @@ namespace BLL
 {
     public class TaiKhoanBLL
     {
+        public static NhanVienDTO user = new NhanVienDTO();
         TaikhoanDAL tk = new TaikhoanDAL();
-        public string CheckLogin(TaiKhoanDTO taiKhoan)
+        public string CheckLogin(string sodienthoai, string matkhau)
         {
-            if(taiKhoan.UserName == "")
+            if(sodienthoai == "")
             {
                 return "requeid_taikhoan";
             }
 
-            if(taiKhoan.Password == "")
+            if(matkhau == "")
             {
                 return "requeid_matkhau";
             }
-            string info = tk.CheckLogin(taiKhoan);
-            return info;
+            NhanVienDTO info = tk.CheckLogin( sodienthoai, matkhau);
+            if (info != null)
+            {
+                user = info;
+                return "login success";
+            }
+            return "sai tai khoan mat khau";
         }
     }
 }

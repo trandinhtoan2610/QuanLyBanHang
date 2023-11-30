@@ -26,6 +26,7 @@ namespace GUI
             load();
             loadHeaderText();
 
+
         }
         public void load()
         {
@@ -34,12 +35,9 @@ namespace GUI
             listNCC = qlNCCBLL.readDB();
             ncclist.DataSource = listNCC;
             addNCCBinding();
+
         }
-        public void loadData()
-        {
-            listNCC = qlNCCBLL.readDB();
-            ncclist.DataSource = listNCC;
-        }
+        
 
         public void loadHeaderText()
         {
@@ -49,7 +47,16 @@ namespace GUI
             dtaGVNCC.Columns["diachi"].HeaderText = "Địa chỉ";
             dtaGVNCC.Columns["email"].HeaderText = "Email";
 
+
         }
+        public void loadData()
+        {
+            listNCC = qlNCCBLL.readDB();
+            ncclist.DataSource = listNCC;
+        }
+
+        
+
 
 
         public void addNCCBinding()
@@ -96,6 +103,7 @@ namespace GUI
             }
             loadData();
 
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -108,6 +116,7 @@ namespace GUI
             loadData();
         }
         
+
 
 
     }

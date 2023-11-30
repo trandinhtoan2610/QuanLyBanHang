@@ -37,6 +37,7 @@ namespace DAL
                     nv.Email = read.GetString(6);
                     nv.Gioitinh = read.GetString(7);
                     nv.Diachi = read.GetString(8);
+                    nv.Matkhau = read.GetString(9);
                     dsnv.Add(nv);
                 }
                 conn.Close();
@@ -58,7 +59,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"Insert into NhanVien (id,tennhanvien, ngaysinh, IdLoainhanvien, sodienthoai, cmnd, email, gioitinh, diachi) values ({nv.Id},'{nv.Tennhanvien}', '{nv.Ngaysinh}', {nv.IdLoainhanvien},'{nv.Sodienthoai}','{nv.Cmnd}','{nv.Email}','{nv.Gioitinh}','{nv.Diachi}')"; ;
+                string query = $"Insert into NhanVien (tennhanvien, ngaysinh, IdLoainhanvien, sodienthoai, cmnd, email, gioitinh, diachi, matkhau) values ('{nv.Tennhanvien}', '{nv.Ngaysinh}', {nv.IdLoainhanvien},'{nv.Sodienthoai}','{nv.Cmnd}','{nv.Email}','{nv.Gioitinh}','{nv.Diachi}', '{nv.Matkhau}')"; ;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -76,7 +77,7 @@ namespace DAL
 
 
 
-        public bool UpdateNV(int id, string tennhanvien, string ngaysinh, int IdLoainhanvien, string sodienthoai, string cmnd, string email, string gioitinh, string diachi)
+        public bool UpdateNV(int id, string tennhanvien, string ngaysinh, int IdLoainhanvien, string sodienthoai, string cmnd, string email, string gioitinh, string diachi, string matkhau)
         {
             conn.Open();
             try
@@ -90,6 +91,7 @@ namespace DAL
                     + "',email = '" + email
                     + "',gioitinh = '" + gioitinh
                     + "',diachi = '" + diachi
+                    + "',matkhau = '" + matkhau
                     + "' where id = " + id;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật nhân viên trong CSDL
@@ -113,15 +115,9 @@ namespace DAL
             conn.Open();
             try
             {
-                foreach (NhanVienDTO nv in dsnv)
-                {
-                    if (nv.Id.Equals(id)) //Nếu số điện thoại bằng giá trị ô được chọn của cột "Số điện thoại" thì mới cập nhật lại status
-                    {
-                        string query = "Delete From NhanVien  WHERE  id = " + id;
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
+                string query = "Delete From NhanVien  WHERE  id = " + id;
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
                 return true;
             }
             catch (SqlException ex)
@@ -134,5 +130,6 @@ namespace DAL
                 conn.Close();   //Đóng kết nối
             }
         }
+
     }
 }

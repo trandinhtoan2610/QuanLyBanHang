@@ -58,7 +58,5 @@ namespace BLL
             return qlNCCDAL.DeleteNCC(id);
         }
 
-
-
     }
 }

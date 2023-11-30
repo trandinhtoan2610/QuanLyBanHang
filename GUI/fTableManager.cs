@@ -12,13 +12,26 @@ namespace GUI
 {
     public partial class fTableManager : Form
     {
-
+        
         private bool isCollapsed = true;
         private bool isCollapsed2 = true ;
 
         public fTableManager()
         {
             InitializeComponent();
+            InitializeControls();
+        }
+
+        private void InitializeControls()
+        {
+            
+            banhang1.DiDenGioHang += TimKiemControl_TimKiemButtonClicked;
+        }
+
+        private void TimKiemControl_TimKiemButtonClicked(object sender, EventArgs e)
+        {
+            giohang.BringToFront();
+            
         }
 
         private void btnDanhmuc_Click(object sender, EventArgs e)
@@ -117,6 +130,7 @@ namespace GUI
         private void btnBanhang_Click(object sender, EventArgs e)
         {
             banhang1.BringToFront();
+
         }
 
         private void btnHoadonban_Click(object sender, EventArgs e)

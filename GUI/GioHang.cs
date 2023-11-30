@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fTimkiem : UserControl
+    public partial class GioHang : UserControl
     {
-        public event EventHandler TimKiemButtonClicked;
-        public fTimkiem()
+        public GioHang()
         {
             InitializeComponent();
-            
-        }
-
-        
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TimKiemButtonClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

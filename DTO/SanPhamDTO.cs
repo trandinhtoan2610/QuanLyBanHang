@@ -17,8 +17,9 @@ namespace DTO
         public int Gia { get; set; }
         public int Soluong { get; set; }
         public string Donvitinh { get; set; }
+        public int Khuyenmai { get; set; }
         public SanPhamDTO() { }
-        public SanPhamDTO(int id,string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh) 
+        public SanPhamDTO(int id,string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai) 
         {   
             Id = id;
             Tensanpham = tensanpham;
@@ -27,6 +28,7 @@ namespace DTO
             Gia = gia;
             Soluong = soluong;
             Donvitinh = donvitinh;
+            Khuyenmai = khuyenmai;
         }
         
     }

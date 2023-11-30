@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class DangNhap : Form
     {
-        TaiKhoanDTO taikhoandto = new TaiKhoanDTO();
+        
         TaiKhoanBLL taiKhoanbll = new TaiKhoanBLL();
         public DangNhap()
         {
@@ -23,10 +23,7 @@ namespace GUI
 
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
-            taikhoandto.UserName = tbtaikhoan.Text;
-            taikhoandto.Password = tbmatkhau.Text;
-
-            string getuser = taiKhoanbll.CheckLogin(taikhoandto);
+            string getuser = taiKhoanbll.CheckLogin(tbtaikhoan.Text, tbmatkhau.Text);
 
             switch (getuser)
             {
@@ -36,14 +33,17 @@ namespace GUI
                 case "requeid_matkhau":
                     MessageBox.Show("Không được để trống mật khẩu");
                     return;
-                case "Tài khoản mật khẩu không chính xác":
+                case "sai tai khoan mat khau":
                     MessageBox.Show("Tài khoản mật khẩu không chính xác");
                     return;
+                case "login success":
+                    fTableManager f = new fTableManager();
+                    this.Hide();
+                    f.ShowDialog();
+                    this.Show();
+                    return;
             }
-            fTableManager f = new fTableManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            
         }
     }
 }

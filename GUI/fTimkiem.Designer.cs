@@ -35,21 +35,23 @@
             this.lbHoten = new System.Windows.Forms.Label();
             this.lbTimkiem = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbThongtinKH.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbThongtinKH
             // 
+            this.gbThongtinKH.Controls.Add(this.button1);
             this.gbThongtinKH.Controls.Add(this.tbSđt);
             this.gbThongtinKH.Controls.Add(this.lbSđt);
             this.gbThongtinKH.Controls.Add(this.tbHoten);
             this.gbThongtinKH.Controls.Add(this.lbHoten);
             this.gbThongtinKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbThongtinKH.Location = new System.Drawing.Point(353, 289);
-            this.gbThongtinKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbThongtinKH.Location = new System.Drawing.Point(345, 289);
+            this.gbThongtinKH.Margin = new System.Windows.Forms.Padding(2);
             this.gbThongtinKH.Name = "gbThongtinKH";
-            this.gbThongtinKH.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gbThongtinKH.Size = new System.Drawing.Size(493, 140);
+            this.gbThongtinKH.Padding = new System.Windows.Forms.Padding(2);
+            this.gbThongtinKH.Size = new System.Drawing.Size(547, 193);
             this.gbThongtinKH.TabIndex = 1;
             this.gbThongtinKH.TabStop = false;
             this.gbThongtinKH.Text = "Thông tin khách hàng";
@@ -58,7 +60,7 @@
             // 
             this.tbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSđt.Location = new System.Drawing.Point(307, 70);
-            this.tbSđt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSđt.Margin = new System.Windows.Forms.Padding(2);
             this.tbSđt.Name = "tbSđt";
             this.tbSđt.Size = new System.Drawing.Size(160, 21);
             this.tbSđt.TabIndex = 16;
@@ -78,7 +80,7 @@
             // 
             this.tbHoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHoten.Location = new System.Drawing.Point(43, 70);
-            this.tbHoten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbHoten.Margin = new System.Windows.Forms.Padding(2);
             this.tbHoten.Name = "tbHoten";
             this.tbHoten.Size = new System.Drawing.Size(160, 21);
             this.tbHoten.TabIndex = 11;
@@ -106,13 +108,23 @@
             this.lbTimkiem.Text = "Tìm kiếm khách hàng";
             this.lbTimkiem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(205, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 32);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Tìm kiếm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // fTimkiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbTimkiem);
             this.Controls.Add(this.gbThongtinKH);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fTimkiem";
             this.Size = new System.Drawing.Size(1233, 748);
             this.gbThongtinKH.ResumeLayout(false);
@@ -130,5 +142,6 @@
         private System.Windows.Forms.Label lbHoten;
         private System.Windows.Forms.Label lbTimkiem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button1;
     }
 }

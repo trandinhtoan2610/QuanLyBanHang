@@ -20,7 +20,7 @@ namespace BLL
             return qllspDAL.readDB();
         }
 
-       
+
 
         public bool InsertSP(LoaiSanPhamDTO loaisanpham)
         {
@@ -47,7 +47,7 @@ namespace BLL
                 if (lsp.Id.Equals(id))
                 {
                     lsp.TenLoai = tenloai;
-                     
+
                 }
             }
             return qllspDAL.UpdateLSP(id, tenloai);
@@ -63,7 +63,6 @@ namespace BLL
 
         public List<LoaiSanPhamDTO> Search(string text)
         {
-
             return qllspDAL.Search(text);
         }
 
