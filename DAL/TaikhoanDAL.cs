@@ -15,7 +15,7 @@ namespace DAL
             
             SqlConnection conn = SqlConnectionData.Connect();
             conn.Open();
-            string query = $"Select * from NhanVien where sodienthoai = '{sodienthoai}' and matkhau = '{matkhau}'";
+            string query = $"Select * from NhanVien where sodienthoai = '{sodienthoai}' and maukhau = '{matkhau}'";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader read = cmd.ExecuteReader();
            

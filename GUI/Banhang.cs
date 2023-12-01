@@ -20,7 +20,7 @@ namespace GUI
         SanPhamBLL lspbll = new SanPhamBLL();
         List<SanPhamDTO> lsp = new List<SanPhamDTO>();
         int rowram = -1;
-        
+        public static List<SanPhamDTO> listCart = new List<SanPhamDTO>();
 
         
         public Banhang()
@@ -122,6 +122,8 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             DiDenGioHang?.Invoke(this, EventArgs.Empty);
+            GioHang.dataGridView2.DataSource = null;
+            GioHang.dataGridView2.DataSource = listCart;
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -241,7 +243,27 @@ namespace GUI
 
         private void btnadd_Click_1(object sender, EventArgs e)
         {
-
+            //click thêm vào giỏ hàng
+            SanPhamDTO spDTO = new SanPhamDTO();
+            spDTO.Id = Convert.ToInt32(tbId.Text);
+            spDTO.Tensanpham= tbtensanpham.Text;
+            spDTO.Donvitinh= tbdonvitinh.Text;
+            spDTO.Gia = Convert.ToInt32(tbgia.Text);
+            spDTO.Soluong = Convert.ToInt32(tbsoluong.Text);
+            spDTO.Hangsanxuat= tbhangsanxuat.Text;
+            spDTO.Khuyenmai = Convert.ToInt32(tbkhuyenmai.Text);
+            spDTO.IdLoaiSanPham = Convert.ToInt32(tbidloaisanpham.Text);
+            spDTO.Tenloai = tbtenloai.Text;
+            listCart.Add(spDTO);
+            tbId.Text = "";
+            tbtensanpham.Text = "";
+            tbdonvitinh.Text = "";
+            tbgia.Text = "";
+            tbsoluong.Text = "";
+            tbhangsanxuat.Text = "";
+            tbkhuyenmai.Text = "";
+            tbidloaisanpham.Text = "";
+            tbtenloai.Text = "";
         }
 
         private void lbQuanly_Click(object sender, EventArgs e)
