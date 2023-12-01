@@ -76,6 +76,12 @@
     <Compile Include="GioHang.Designer.cs">
       <DependentUpon>GioHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GioHangNhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GioHangNhapHang.Designer.cs">
+      <DependentUpon>GioHangNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="HDban.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GioHang.resx">
       <DependentUpon>GioHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GioHangNhapHang.resx">
+      <DependentUpon>GioHangNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HDban.resx">
       <DependentUpon>HDban.cs</DependentUpon>

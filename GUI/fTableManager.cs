@@ -24,8 +24,13 @@ namespace GUI
 
         private void InitializeControls()
         {
-            
+            nhaphang1.DiDenGioHangNhaphang += Nhaphang1_DiDenGioHangNhaphang;
             banhang1.DiDenGioHang += TimKiemControl_TimKiemButtonClicked;
+        }
+
+        private void Nhaphang1_DiDenGioHangNhaphang(object sender, EventArgs e)
+        {
+            giohangnhaphang.BringToFront();
         }
 
         private void TimKiemControl_TimKiemButtonClicked(object sender, EventArgs e)
@@ -125,12 +130,12 @@ namespace GUI
         private void btnNhaphang_Click(object sender, EventArgs e)
         {
             nhaphang1.BringToFront();
+            nhaphang1.loadData();
         }
 
         private void btnBanhang_Click(object sender, EventArgs e)
         {
             banhang1.BringToFront();
-
         }
 
         private void btnHoadonban_Click(object sender, EventArgs e)
