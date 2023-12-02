@@ -141,6 +141,11 @@ namespace GUI
             splist.DataSource = found;
         }
 
+        private void cbHangSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void tbTimkiem_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

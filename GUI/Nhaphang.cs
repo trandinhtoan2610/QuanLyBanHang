@@ -11,25 +11,27 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
     public partial class Nhaphang : UserControl
     {
-        BindingSource bds = new BindingSource();
         public static List<SanPhamDTO> listCart= new List<SanPhamDTO>();
         NhapHangBLL nhBLL= new NhapHangBLL();
         public static List<SanPhamDTO> listProduct = new List<SanPhamDTO>();
         public event EventHandler DiDenGioHangNhaphang;
+        public static int nhaCungCapId = 0;
         public Nhaphang()
         {
             InitializeComponent();
-            listProduct = nhBLL.getAllProduct();
-            loadData();
+            cbb_nhacungcap.DisplayMember = "tennhacungcap";
+            cbb_nhacungcap.ValueMember = "Id";
+            cbb_nhacungcap.DataSource = nhBLL.getAllNhaCungCap();
         }
         public void loadData()
         {
-            dgv_nhaphang.DataSource = bds;
+            dgv_nhaphang.DataSource = null;
             dgv_nhaphang.DataSource = listProduct;
         }
 
@@ -39,8 +41,16 @@ namespace GUI
             {
                 if (tbId.Text.Trim().Length == 0)
                 {
-                    DialogResult result = MessageBox.Show("Vui lòng chọn sản phẩm để thêm!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng chọn sản phẩm để thêm!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
+                }
+                foreach (var item in listCart)
+                {
+                    if (item.Hangsanxuat != nhaCungCapId.ToString())
+                    {
+                        MessageBox.Show("Xóa hết sản phẩm trong giỏ để mua sản phẩm của nhà cung cấp khác!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                 }
                 //click thêm vào giỏ hàng
                 SanPhamDTO spDTO = new SanPhamDTO();
@@ -90,7 +100,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sai định dạng số lượng!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sai định dạng số lượng!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -114,7 +124,7 @@ namespace GUI
                 DataGridViewRow row = dgv_nhaphang.Rows[e.RowIndex];
                 if (row.Cells[5].Value.ToString() == "0")
                 {
-                    DialogResult result = MessageBox.Show("Sản phẩm đã hết!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sản phẩm đã hết!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 // Sử dụng row để truy cập các giá trị của hàng theo nhu cầu của bạn
@@ -130,6 +140,24 @@ namespace GUI
                 tbdonvitinh.Text = row.Cells[7].Value.ToString();
                 tbkhuyenmai.Text = row.Cells[8].Value.ToString();
             }
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb_nhacungcap.SelectedItem != null)
+            {
+                var firstValue = ((dynamic)cbb_nhacungcap.SelectedItem).Id;
+                // Sử dụng giá trị đầu tiên
+                nhaCungCapId = (int)firstValue;
+                listProduct.Clear();
+                listProduct = nhBLL.getAllProduct(nhaCungCapId);
+            }
+            loadData();
         }
     }
 }

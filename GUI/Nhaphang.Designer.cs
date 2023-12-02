@@ -51,6 +51,10 @@
             this.tbId = new System.Windows.Forms.TextBox();
             this.dgv_nhaphang = new System.Windows.Forms.DataGridView();
             this.lbQuanly = new System.Windows.Forms.Label();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.lbl_search = new System.Windows.Forms.Label();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.cbb_nhacungcap = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhaphang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -272,12 +276,51 @@
             this.lbQuanly.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
             this.lbQuanly.Size = new System.Drawing.Size(1644, 47);
             this.lbQuanly.TabIndex = 29;
-            this.lbQuanly.Text = "Quản lý bán hàng";
+            this.lbQuanly.Text = "Nhập hàng";
+            // 
+            // txt_search
+            // 
+            this.txt_search.Location = new System.Drawing.Point(121, 69);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(173, 22);
+            this.txt_search.TabIndex = 51;
+            // 
+            // lbl_search
+            // 
+            this.lbl_search.AutoSize = true;
+            this.lbl_search.Location = new System.Drawing.Point(53, 72);
+            this.lbl_search.Name = "lbl_search";
+            this.lbl_search.Size = new System.Drawing.Size(62, 16);
+            this.lbl_search.TabIndex = 52;
+            this.lbl_search.Text = "Tìm kiếm";
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(300, 69);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(75, 23);
+            this.btn_search.TabIndex = 53;
+            this.btn_search.Text = "Tìm kiếm";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // cbb_nhacungcap
+            // 
+            this.cbb_nhacungcap.FormattingEnabled = true;
+            this.cbb_nhacungcap.Location = new System.Drawing.Point(420, 69);
+            this.cbb_nhacungcap.Name = "cbb_nhacungcap";
+            this.cbb_nhacungcap.Size = new System.Drawing.Size(121, 24);
+            this.cbb_nhacungcap.TabIndex = 54;
+            this.cbb_nhacungcap.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Nhaphang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbb_nhacungcap);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.lbl_search);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnadd);
             this.Controls.Add(this.label9);
@@ -332,5 +375,9 @@
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label lbQuanly;
         public System.Windows.Forms.DataGridView dgv_nhaphang;
+        private System.Windows.Forms.TextBox txt_search;
+        private System.Windows.Forms.Label lbl_search;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.ComboBox cbb_nhacungcap;
     }
 }

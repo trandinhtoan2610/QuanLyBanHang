@@ -14,7 +14,6 @@ namespace GUI
 {
     public partial class DangNhap : Form
     {
-        
         TaiKhoanBLL taiKhoanbll = new TaiKhoanBLL();
         public DangNhap()
         {

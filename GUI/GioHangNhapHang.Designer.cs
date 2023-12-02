@@ -48,13 +48,13 @@
             this.tbgia = new System.Windows.Forms.TextBox();
             this.tbtenloai = new System.Windows.Forms.TextBox();
             this.tbId = new System.Windows.Forms.TextBox();
-            this.dgv_giohang_nhaphang = new System.Windows.Forms.DataGridView();
+            dgv_giohang_nhaphang = new System.Windows.Forms.DataGridView();
             this.lbQuanly = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_giohang_nhaphang)).BeginInit();
+            label11 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(dgv_giohang_nhaphang)).BeginInit();
             this.SuspendLayout();
             // 
             // btnadd
@@ -242,17 +242,17 @@
             // 
             // dgv_giohang_nhaphang
             // 
-            this.dgv_giohang_nhaphang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_giohang_nhaphang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_giohang_nhaphang.Location = new System.Drawing.Point(28, 549);
-            this.dgv_giohang_nhaphang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgv_giohang_nhaphang.Name = "dgv_giohang_nhaphang";
-            this.dgv_giohang_nhaphang.ReadOnly = true;
-            this.dgv_giohang_nhaphang.RowHeadersWidth = 51;
-            this.dgv_giohang_nhaphang.RowTemplate.Height = 24;
-            this.dgv_giohang_nhaphang.Size = new System.Drawing.Size(1436, 368);
-            this.dgv_giohang_nhaphang.TabIndex = 51;
-            this.dgv_giohang_nhaphang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            dgv_giohang_nhaphang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_giohang_nhaphang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_giohang_nhaphang.Location = new System.Drawing.Point(28, 549);
+            dgv_giohang_nhaphang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            dgv_giohang_nhaphang.Name = "dgv_giohang_nhaphang";
+            dgv_giohang_nhaphang.ReadOnly = true;
+            dgv_giohang_nhaphang.RowHeadersWidth = 51;
+            dgv_giohang_nhaphang.RowTemplate.Height = 24;
+            dgv_giohang_nhaphang.Size = new System.Drawing.Size(1436, 368);
+            dgv_giohang_nhaphang.TabIndex = 51;
+            dgv_giohang_nhaphang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // lbQuanly
             // 
@@ -297,18 +297,18 @@
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(216, 431);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(22, 16);
-            this.label11.TabIndex = 74;
-            this.label11.Text = "0đ";
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(216, 431);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(22, 16);
+            label11.TabIndex = 74;
+            label11.Text = "0đ";
             // 
             // GioHangNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label11);
+            this.Controls.Add(label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -331,11 +331,11 @@
             this.Controls.Add(this.tbgia);
             this.Controls.Add(this.tbtenloai);
             this.Controls.Add(this.tbId);
-            this.Controls.Add(this.dgv_giohang_nhaphang);
+            this.Controls.Add(dgv_giohang_nhaphang);
             this.Controls.Add(this.lbQuanly);
             this.Name = "GioHangNhapHang";
             this.Size = new System.Drawing.Size(1644, 921);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_giohang_nhaphang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dgv_giohang_nhaphang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,7 +366,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.Label label11;
-        public System.Windows.Forms.DataGridView dgv_giohang_nhaphang;
+        public static System.Windows.Forms.Label label11;
+        public static System.Windows.Forms.DataGridView dgv_giohang_nhaphang;
     }
 }

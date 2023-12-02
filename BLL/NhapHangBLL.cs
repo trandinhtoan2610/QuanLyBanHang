@@ -11,13 +11,17 @@ namespace BLL
     public class NhapHangBLL
     {
         NhapHangDAL nhDAL= new NhapHangDAL();
-        public List<SanPhamDTO> getAllProduct()
+        public List<SanPhamDTO> getAllProduct(int nhaCungCapId)
         {
-            return nhDAL.getAllProduct();
+            return nhDAL.getAllProduct(nhaCungCapId);
         }
-        public Boolean InsertSP(List<SanPhamDTO> listsp)
+        public List<NCCDTO> getAllNhaCungCap()
         {
-            Boolean result= nhDAL.InsertSP(listsp);           
+            return nhDAL.getAllNhaCungCap();
+        }
+        public Boolean InsertSP(List<SanPhamDTO> listsp, NhanVienDTO nv, int nhaCungCapId)
+        {
+            Boolean result= nhDAL.InsertSP(listsp, nv, nhaCungCapId);           
             return result;
         }
     }

@@ -26,7 +26,7 @@ namespace GUI
             {
                 if (tbId.Text.Trim().Length == 0)
                 {
-                    DialogResult result = MessageBox.Show("Vui lòng chọn sản phẩm!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("Vui lòng chọn sản phẩm!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 //click thêm thay đổi số lượng giỏ hàng
@@ -81,7 +81,7 @@ namespace GUI
                 tbtenloai.Text = "";
             }
             catch (Exception ex) {
-                MessageBox.Show("Sai định dạng số lượng!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sai định dạng số lượng!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -111,7 +111,7 @@ namespace GUI
             {
                 if (tbId.Text.Trim().Length == 0)
                 {
-                    DialogResult result = MessageBox.Show("Vui lòng chọn sản phẩm!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng chọn sản phẩm!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 //click thêm thay đổi số lượng giỏ hàng
@@ -166,17 +166,20 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sai định dạng số lượng!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sai định dạng số lượng!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Boolean result= nhBLL.InsertSP(Nhaphang.listCart);
+            NhanVienDTO nv = TaiKhoanBLL.user;
+            Boolean result= nhBLL.InsertSP(Nhaphang.listCart, nv, Nhaphang.nhaCungCapId);
             if (result)
             {
-                MessageBox.Show("Thêm thành công!!!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Nhập hàng thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            MessageBox.Show("Lỗi!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
