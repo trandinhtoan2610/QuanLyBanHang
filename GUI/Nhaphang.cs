@@ -144,7 +144,15 @@ namespace GUI
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-
+            if (cbb_nhacungcap.SelectedItem != null)
+            {
+                var firstValue = ((dynamic)cbb_nhacungcap.SelectedItem).Id;
+                // Sử dụng giá trị đầu tiên
+                nhaCungCapId = (int)firstValue;
+                listProduct.Clear();
+                listProduct = nhBLL.getAllProduct(nhaCungCapId, txt_search.Text);
+            }
+            loadData();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,7 +163,7 @@ namespace GUI
                 // Sử dụng giá trị đầu tiên
                 nhaCungCapId = (int)firstValue;
                 listProduct.Clear();
-                listProduct = nhBLL.getAllProduct(nhaCungCapId);
+                listProduct = nhBLL.getAllProduct(nhaCungCapId, txt_search.Text);
             }
             loadData();
         }

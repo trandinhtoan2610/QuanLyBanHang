@@ -43,12 +43,12 @@ namespace DAL
             finally { conn.Close(); }
             return listNCC;
         }
-        public List<SanPhamDTO> getAllProduct(int nhaCungCapId)
+        public List<SanPhamDTO> getAllProduct(int nhaCungCapId, string txt_search)
         {
             try
             {
                 conn.Open();
-                String query = $"Select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh,khuyenmai from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id where SanPham.hangsanxuat = {nhaCungCapId}";
+                String query = $"Select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh,khuyenmai from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id where SanPham.hangsanxuat = {nhaCungCapId} and SanPham.tensanpham LIKE '%{txt_search}%'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader read = cmd.ExecuteReader();
                 while (read.Read())

@@ -11,9 +11,9 @@ namespace BLL
     public class NhapHangBLL
     {
         NhapHangDAL nhDAL= new NhapHangDAL();
-        public List<SanPhamDTO> getAllProduct(int nhaCungCapId)
+        public List<SanPhamDTO> getAllProduct(int nhaCungCapId, string txt_search)
         {
-            return nhDAL.getAllProduct(nhaCungCapId);
+            return nhDAL.getAllProduct(nhaCungCapId, txt_search);
         }
         public List<NCCDTO> getAllNhaCungCap()
         {
