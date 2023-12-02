@@ -130,6 +130,7 @@ namespace GUI
             this.cbHangSX.Name = "cbHangSX";
             this.cbHangSX.Size = new System.Drawing.Size(212, 24);
             this.cbHangSX.TabIndex = 29;
+            this.cbHangSX.SelectedIndexChanged += new System.EventHandler(this.cbHangSX_SelectedIndexChanged);
             // 
             // lbMaLoaiSP
             // 

@@ -46,6 +46,17 @@ namespace GUI
 
         public void addSanPhamBinding()
         {
+            // Xóa các binding hiện tại
+            tbId.DataBindings.Clear();
+            tbtensanpham.DataBindings.Clear();
+            tbidloaisanpham.DataBindings.Clear();
+            tbtenloai.DataBindings.Clear();
+            tbhangsanxuat.DataBindings.Clear();
+            tbsoluong.DataBindings.Clear();
+            tbgia.DataBindings.Clear();
+            tbdonvitinh.DataBindings.Clear();
+            tbkhuyenmai.DataBindings.Clear();
+
             tbId.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "id", true, DataSourceUpdateMode.Never));
             tbtensanpham.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "tensanpham", true, DataSourceUpdateMode.Never));
             tbidloaisanpham.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "idloaisanpham", true, DataSourceUpdateMode.Never));

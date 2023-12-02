@@ -25,11 +25,13 @@ namespace GUI
 
         private void InitializeControls()
         {
+
             fTimkiem1.DiDenBanhang += sukiennuttimkiem;
             banhang1.DiDenGioHang += sukiennutgiohang;
         }
 
         private void sukiennutgiohang(object sender, EventArgs e)
+
         {
             giohang.BringToFront();
             giohang.dataGridView2.DataSource = null;
@@ -133,12 +135,12 @@ namespace GUI
         private void btnNhaphang_Click(object sender, EventArgs e)
         {
             nhaphang1.BringToFront();
+            nhaphang1.loadData();
         }
 
         private void btnBanhang_Click(object sender, EventArgs e)
         {
             fTimkiem1.BringToFront();
-
         }
 
         private void btnHoadonban_Click(object sender, EventArgs e)
@@ -149,6 +151,7 @@ namespace GUI
         private void btnHoadonnhap_Click(object sender, EventArgs e)
         {
             hDnhap1.BringToFront();
+            hDnhap1.loadData();
         }
 
         private void btnThongke_Click(object sender, EventArgs e)

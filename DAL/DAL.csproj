@@ -45,11 +45,16 @@
     <Compile Include="ChiTietHoaDonBanDAL.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="HoaDonDAL.cs" />
+
     <Compile Include="KhachHangDAL.cs" />
+
+    <Compile Include="HoaDonNhapDAL.cs" />
+
     <Compile Include="LoaiNhanVienDAL.cs" />
     <Compile Include="LoaiSanPhamDAL.cs" />
     <Compile Include="NCCDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
+    <Compile Include="NhapHangDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamDAL.cs" />
     <Compile Include="TaikhoanDAL.cs" />

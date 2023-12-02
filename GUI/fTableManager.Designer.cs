@@ -62,6 +62,7 @@
             this.hDban1 = new GUI.HDban();
             this.banhang1 = new GUI.Banhang();
             this.fTimkiem1 = new GUI.fTimkiem();
+            this.giohangnhaphang = new GUI.GioHangNhapHang();
             this.timerDropDown = new System.Windows.Forms.Timer(this.components);
             this.timerDropDown2 = new System.Windows.Forms.Timer(this.components);
             this.lbQLCH = new System.Windows.Forms.Label();
@@ -390,6 +391,7 @@
             this.pnUserControl.Controls.Add(this.hDban1);
             this.pnUserControl.Controls.Add(this.banhang1);
             this.pnUserControl.Controls.Add(this.fTimkiem1);
+            this.pnUserControl.Controls.Add(this.giohangnhaphang);
             this.pnUserControl.Location = new System.Drawing.Point(280, 65);
             this.pnUserControl.Margin = new System.Windows.Forms.Padding(0);
             this.pnUserControl.Name = "pnUserControl";
@@ -500,6 +502,14 @@
             this.fTimkiem1.Size = new System.Drawing.Size(1229, 748);
             this.fTimkiem1.TabIndex = 11;
             // 
+            // giohangnhaphang
+            // 
+            this.giohangnhaphang.Location = new System.Drawing.Point(0, 0);
+            this.giohangnhaphang.Margin = new System.Windows.Forms.Padding(2);
+            this.giohangnhaphang.Name = "giohangnhaphang";
+            this.giohangnhaphang.Size = new System.Drawing.Size(1233, 748);
+            this.giohangnhaphang.TabIndex = 14;
+            // 
             // timerDropDown
             // 
             this.timerDropDown.Interval = 1;
@@ -605,5 +615,6 @@
         public Banhang banhang1;
         private fTimkiem fTimkiem1;
         public GioHang giohang;
+        public GioHangNhapHang giohangnhaphang;
     }
 }
