@@ -14,7 +14,6 @@ namespace BLL
         private NhanVienDTO nv;
         private List<NhanVienDTO> dsnv;
         NhanVienDAL qlnvDAL = new NhanVienDAL();
-
         public List<NhanVienDTO> readDB()
         {
             return qlnvDAL.readDB();
@@ -55,7 +54,6 @@ namespace BLL
             }
             return qlnvDAL.UpdateNV(id, tennhanvien, ngaysinh, IdLoainhanvien, sodienthoai, cmnd, email, gioitinh, diachi,matkhau);
         }
-
         public bool DeleteNV(int id)
         {
             dsnv = readDB();

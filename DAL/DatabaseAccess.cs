@@ -13,7 +13,7 @@ namespace DAL
         // Tạo kết nối cơ sở dữ liệu
         public static SqlConnection Connect()
         {
-            string Strconn = @"Data Source=MSI\HAIDUONG;Initial Catalog=PhoneManage;Integrated Security=True";
+            string Strconn = @"Data Source=DESKTOP-FB40R12;Initial Catalog=PhoneManage;Integrated Security=True";
             SqlConnection conn = new SqlConnection(Strconn);
             return conn;
         }
@@ -21,7 +21,7 @@ namespace DAL
 
     public class DatabaseAccess
     {
-        private string connectionSTR = @"Data Source=MSI\HAIDUONG;Initial Catalog=PhoneManage;Integrated Security=True";
+        private string connectionSTR = @"Data Source=DESKTOP-FB40R12;Initial Catalog=PhoneManage;Integrated Security=True";
         public DataTable ExecuteQuery(string query)
         {
             DataTable data = new DataTable();
@@ -31,6 +31,7 @@ namespace DAL
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
+                
                 adapter.Fill(data);
                 connection.Close();
             }

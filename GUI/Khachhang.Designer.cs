@@ -61,20 +61,18 @@
             this.lbQuanly.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.lbQuanly.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQuanly.Location = new System.Drawing.Point(0, 0);
-            this.lbQuanly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbQuanly.Name = "lbQuanly";
-            this.lbQuanly.Padding = new System.Windows.Forms.Padding(4, 8, 0, 0);
-            this.lbQuanly.Size = new System.Drawing.Size(1233, 38);
+            this.lbQuanly.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.lbQuanly.Size = new System.Drawing.Size(1644, 47);
             this.lbQuanly.TabIndex = 5;
             this.lbQuanly.Text = "Quản lý khách hàng";
             // 
             // lbThongtin
             // 
             this.lbThongtin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThongtin.Location = new System.Drawing.Point(14, 48);
-            this.lbThongtin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbThongtin.Location = new System.Drawing.Point(19, 59);
             this.lbThongtin.Name = "lbThongtin";
-            this.lbThongtin.Size = new System.Drawing.Size(167, 20);
+            this.lbThongtin.Size = new System.Drawing.Size(223, 25);
             this.lbThongtin.TabIndex = 6;
             this.lbThongtin.Text = "Thông tin khách hàng";
             // 
@@ -82,60 +80,57 @@
             // 
             this.lbHoten.AutoSize = true;
             this.lbHoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoten.Location = new System.Drawing.Point(37, 123);
-            this.lbHoten.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbHoten.Location = new System.Drawing.Point(49, 151);
             this.lbHoten.Name = "lbHoten";
-            this.lbHoten.Size = new System.Drawing.Size(46, 15);
+            this.lbHoten.Size = new System.Drawing.Size(56, 18);
             this.lbHoten.TabIndex = 9;
             this.lbHoten.Text = "Họ tên ";
             // 
             // tbHoten
             // 
             this.tbHoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHoten.Location = new System.Drawing.Point(39, 155);
-            this.tbHoten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbHoten.Location = new System.Drawing.Point(52, 191);
+            this.tbHoten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbHoten.Name = "tbHoten";
-            this.tbHoten.Size = new System.Drawing.Size(160, 21);
+            this.tbHoten.Size = new System.Drawing.Size(212, 24);
             this.tbHoten.TabIndex = 10;
             // 
             // lbSđt
             // 
             this.lbSđt.AutoSize = true;
             this.lbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSđt.Location = new System.Drawing.Point(37, 222);
-            this.lbSđt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbSđt.Location = new System.Drawing.Point(49, 273);
             this.lbSđt.Name = "lbSđt";
-            this.lbSđt.Size = new System.Drawing.Size(79, 15);
+            this.lbSđt.Size = new System.Drawing.Size(94, 18);
             this.lbSđt.TabIndex = 12;
             this.lbSđt.Text = "Số điện thoại";
             // 
             // tbSđt
             // 
             this.tbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSđt.Location = new System.Drawing.Point(39, 252);
-            this.tbSđt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSđt.Location = new System.Drawing.Point(52, 310);
+            this.tbSđt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSđt.Name = "tbSđt";
-            this.tbSđt.Size = new System.Drawing.Size(160, 21);
+            this.tbSđt.Size = new System.Drawing.Size(212, 24);
             this.tbSđt.TabIndex = 15;
             // 
             // lbGioitinh
             // 
             this.lbGioitinh.AutoSize = true;
             this.lbGioitinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGioitinh.Location = new System.Drawing.Point(37, 318);
-            this.lbGioitinh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbGioitinh.Location = new System.Drawing.Point(49, 391);
             this.lbGioitinh.Name = "lbGioitinh";
-            this.lbGioitinh.Size = new System.Drawing.Size(52, 15);
+            this.lbGioitinh.Size = new System.Drawing.Size(62, 18);
             this.lbGioitinh.TabIndex = 19;
             this.lbGioitinh.Text = "Giới tính";
             // 
             // rb1
             // 
             this.rb1.AutoSize = true;
-            this.rb1.Location = new System.Drawing.Point(39, 350);
-            this.rb1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb1.Location = new System.Drawing.Point(52, 431);
+            this.rb1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb1.Name = "rb1";
-            this.rb1.Size = new System.Drawing.Size(47, 17);
+            this.rb1.Size = new System.Drawing.Size(57, 20);
             this.rb1.TabIndex = 20;
             this.rb1.TabStop = true;
             this.rb1.Text = "Nam";
@@ -144,10 +139,10 @@
             // rb2
             // 
             this.rb2.AutoSize = true;
-            this.rb2.Location = new System.Drawing.Point(103, 350);
-            this.rb2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb2.Location = new System.Drawing.Point(137, 431);
+            this.rb2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb2.Name = "rb2";
-            this.rb2.Size = new System.Drawing.Size(39, 17);
+            this.rb2.Size = new System.Drawing.Size(45, 20);
             this.rb2.TabIndex = 21;
             this.rb2.TabStop = true;
             this.rb2.Text = "Nữ";
@@ -157,21 +152,20 @@
             // 
             this.lbGhichu.AutoSize = true;
             this.lbGhichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGhichu.Location = new System.Drawing.Point(37, 410);
-            this.lbGhichu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbGhichu.Location = new System.Drawing.Point(49, 505);
             this.lbGhichu.Name = "lbGhichu";
-            this.lbGhichu.Size = new System.Drawing.Size(49, 15);
+            this.lbGhichu.Size = new System.Drawing.Size(59, 18);
             this.lbGhichu.TabIndex = 24;
             this.lbGhichu.Text = "Ghi chú";
             // 
             // tbGhichu
             // 
             this.tbGhichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGhichu.Location = new System.Drawing.Point(39, 448);
-            this.tbGhichu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGhichu.Location = new System.Drawing.Point(52, 551);
+            this.tbGhichu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbGhichu.Multiline = true;
             this.tbGhichu.Name = "tbGhichu";
-            this.tbGhichu.Size = new System.Drawing.Size(160, 92);
+            this.tbGhichu.Size = new System.Drawing.Size(212, 112);
             this.tbGhichu.TabIndex = 25;
             // 
             // panel1
@@ -188,53 +182,53 @@
             this.panel1.Controls.Add(this.lbSđt);
             this.panel1.Controls.Add(this.lbGioitinh);
             this.panel1.Controls.Add(this.tbSđt);
-            this.panel1.Location = new System.Drawing.Point(16, 71);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(21, 87);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 571);
+            this.panel1.Size = new System.Drawing.Size(344, 702);
             this.panel1.TabIndex = 26;
             // 
             // tbMaKH
             // 
             this.tbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaKH.Location = new System.Drawing.Point(39, 57);
-            this.tbMaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbMaKH.Location = new System.Drawing.Point(52, 70);
+            this.tbMaKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMaKH.Name = "tbMaKH";
-            this.tbMaKH.Size = new System.Drawing.Size(160, 21);
+            this.tbMaKH.Size = new System.Drawing.Size(212, 24);
             this.tbMaKH.TabIndex = 27;
             // 
             // lbMaKH
             // 
             this.lbMaKH.AutoSize = true;
             this.lbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaKH.Location = new System.Drawing.Point(37, 22);
-            this.lbMaKH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMaKH.Location = new System.Drawing.Point(49, 27);
             this.lbMaKH.Name = "lbMaKH";
-            this.lbMaKH.Size = new System.Drawing.Size(92, 15);
+            this.lbMaKH.Size = new System.Drawing.Size(109, 18);
             this.lbMaKH.TabIndex = 8;
             this.lbMaKH.Text = "Mã khách hàng";
             // 
             // lbDanhsach
             // 
             this.lbDanhsach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDanhsach.Location = new System.Drawing.Point(326, 48);
-            this.lbDanhsach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDanhsach.Location = new System.Drawing.Point(435, 59);
             this.lbDanhsach.Name = "lbDanhsach";
-            this.lbDanhsach.Size = new System.Drawing.Size(167, 20);
+            this.lbDanhsach.Size = new System.Drawing.Size(223, 25);
             this.lbDanhsach.TabIndex = 28;
             this.lbDanhsach.Text = "Danh sách khách hàng";
             // 
             // dtaGVKhachang
             // 
+            this.dtaGVKhachang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtaGVKhachang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtaGVKhachang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtaGVKhachang.Location = new System.Drawing.Point(300, 71);
-            this.dtaGVKhachang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtaGVKhachang.Location = new System.Drawing.Point(400, 86);
+            this.dtaGVKhachang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtaGVKhachang.Name = "dtaGVKhachang";
             this.dtaGVKhachang.RowHeadersWidth = 51;
             this.dtaGVKhachang.RowTemplate.Height = 24;
-            this.dtaGVKhachang.Size = new System.Drawing.Size(933, 570);
+            this.dtaGVKhachang.Size = new System.Drawing.Size(1244, 702);
             this.dtaGVKhachang.TabIndex = 29;
+            this.dtaGVKhachang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtaGVKhachang_CellClick);
             // 
             // pnThemSuaXoa
             // 
@@ -244,10 +238,10 @@
             this.pnThemSuaXoa.Controls.Add(this.btnDelete);
             this.pnThemSuaXoa.Controls.Add(this.btnEdit);
             this.pnThemSuaXoa.Controls.Add(this.btnAdd);
-            this.pnThemSuaXoa.Location = new System.Drawing.Point(2, 656);
-            this.pnThemSuaXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnThemSuaXoa.Location = new System.Drawing.Point(3, 807);
+            this.pnThemSuaXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnThemSuaXoa.Name = "pnThemSuaXoa";
-            this.pnThemSuaXoa.Size = new System.Drawing.Size(1231, 89);
+            this.pnThemSuaXoa.Size = new System.Drawing.Size(1641, 110);
             this.pnThemSuaXoa.TabIndex = 30;
             // 
             // tbTimkiem
@@ -255,14 +249,15 @@
             this.tbTimkiem.BackColor = System.Drawing.Color.White;
             this.tbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTimkiem.HideSelection = false;
-            this.tbTimkiem.Location = new System.Drawing.Point(656, 28);
-            this.tbTimkiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTimkiem.Location = new System.Drawing.Point(875, 34);
+            this.tbTimkiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTimkiem.Multiline = true;
             this.tbTimkiem.Name = "tbTimkiem";
-            this.tbTimkiem.Size = new System.Drawing.Size(340, 39);
+            this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
             this.tbTimkiem.TabIndex = 8;
             this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
             this.tbTimkiem.Enter += new System.EventHandler(this.tbTimkiem_Enter);
+            this.tbTimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTimkiem_KeyDown);
             this.tbTimkiem.Leave += new System.EventHandler(this.tbTimkiem_Leave);
             // 
             // btnExport
@@ -270,52 +265,56 @@
             this.btnExport.FlatAppearance.BorderSize = 0;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.Location = new System.Drawing.Point(472, 12);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExport.Location = new System.Drawing.Point(629, 15);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(56, 61);
+            this.btnExport.Size = new System.Drawing.Size(75, 75);
             this.btnExport.TabIndex = 7;
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(337, 12);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Location = new System.Drawing.Point(449, 15);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(56, 61);
+            this.btnDelete.Size = new System.Drawing.Size(75, 75);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(196, 12);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Location = new System.Drawing.Point(261, 15);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(56, 61);
+            this.btnEdit.Size = new System.Drawing.Size(75, 75);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(62, 12);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(83, 15);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(56, 61);
+            this.btnAdd.Size = new System.Drawing.Size(75, 75);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Khachhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnThemSuaXoa);
             this.Controls.Add(this.dtaGVKhachang);
@@ -323,9 +322,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbThongtin);
             this.Controls.Add(this.lbQuanly);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Khachhang";
-            this.Size = new System.Drawing.Size(1233, 748);
+            this.Size = new System.Drawing.Size(1644, 921);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGVKhachang)).EndInit();

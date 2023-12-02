@@ -141,6 +141,8 @@ namespace GUI
             splist.DataSource = found;
         }
 
+        
+
         private void tbTimkiem_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

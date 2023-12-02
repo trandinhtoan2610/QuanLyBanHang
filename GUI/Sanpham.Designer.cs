@@ -113,7 +113,7 @@ namespace GUI
             this.cbTenloaisanpham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTenloaisanpham.FormattingEnabled = true;
             this.cbTenloaisanpham.Location = new System.Drawing.Point(563, 60);
-            this.cbTenloaisanpham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTenloaisanpham.Margin = new System.Windows.Forms.Padding(4);
             this.cbTenloaisanpham.Name = "cbTenloaisanpham";
             this.cbTenloaisanpham.Size = new System.Drawing.Size(212, 24);
             this.cbTenloaisanpham.TabIndex = 30;
@@ -147,9 +147,7 @@ namespace GUI
             this.tbDonvitinh.Location = new System.Drawing.Point(261, 234);
             this.tbDonvitinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDonvitinh.Name = "tbDonvitinh";
-
             this.tbDonvitinh.Size = new System.Drawing.Size(212, 24);
-
             this.tbDonvitinh.TabIndex = 26;
             // 
             // btnChon
@@ -188,9 +186,7 @@ namespace GUI
             this.tbSoluong.Location = new System.Drawing.Point(875, 153);
             this.tbSoluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSoluong.Name = "tbSoluong";
-
-            this.tbSoluong.Size = new System.Drawing.Size(212, 21);
-
+            this.tbSoluong.Size = new System.Drawing.Size(212, 24);
             this.tbSoluong.TabIndex = 22;
             // 
             // lbSoluong
@@ -219,9 +215,7 @@ namespace GUI
             this.tbKhuyenmai.Location = new System.Drawing.Point(563, 234);
             this.tbKhuyenmai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbKhuyenmai.Name = "tbKhuyenmai";
-
-            this.tbKhuyenmai.Size = new System.Drawing.Size(212, 21);
-
+            this.tbKhuyenmai.Size = new System.Drawing.Size(212, 24);
             this.tbKhuyenmai.TabIndex = 15;
             // 
             // tbGia
@@ -230,9 +224,7 @@ namespace GUI
             this.tbGia.Location = new System.Drawing.Point(563, 153);
             this.tbGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbGia.Name = "tbGia";
-
-            this.tbGia.Size = new System.Drawing.Size(212, 21);
-
+            this.tbGia.Size = new System.Drawing.Size(212, 24);
             this.tbGia.TabIndex = 14;
             // 
             // lbKhuyenmai
@@ -261,7 +253,7 @@ namespace GUI
             this.tbTenSP.Location = new System.Drawing.Point(261, 153);
             this.tbTenSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTenSP.Name = "tbTenSP";
-            this.tbTenSP.Size = new System.Drawing.Size(212, 21);
+            this.tbTenSP.Size = new System.Drawing.Size(212, 24);
             this.tbTenSP.TabIndex = 7;
             // 
             // tbMaSP
@@ -270,7 +262,7 @@ namespace GUI
             this.tbMaSP.Location = new System.Drawing.Point(261, 62);
             this.tbMaSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMaSP.Name = "tbMaSP";
-            this.tbMaSP.Size = new System.Drawing.Size(212, 21);
+            this.tbMaSP.Size = new System.Drawing.Size(212, 24);
             this.tbMaSP.TabIndex = 6;
             // 
             // lbDonvitinh
@@ -343,9 +335,7 @@ namespace GUI
             this.tbTimkiem.Location = new System.Drawing.Point(875, 34);
             this.tbTimkiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTimkiem.Name = "tbTimkiem";
-
-            this.tbTimkiem.Size = new System.Drawing.Size(452, 21);
-
+            this.tbTimkiem.Size = new System.Drawing.Size(452, 24);
             this.tbTimkiem.TabIndex = 8;
             this.tbTimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTimkiem_KeyDown);
             // 
@@ -413,7 +403,7 @@ namespace GUI
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 508);
+            this.dataGridView1.Location = new System.Drawing.Point(-39, 507);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;

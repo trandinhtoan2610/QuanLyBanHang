@@ -172,6 +172,7 @@ namespace DAL
                     found = new List<SanPhamDTO>();
                     while (read.Read())
                     {
+                        
                         sp.Id = read.GetInt32(0);
                         sp.Tensanpham = read.GetString(1);
                         sp.IdLoaiSanPham = read.GetInt32(2);
