@@ -18,7 +18,6 @@ namespace GUI
     {
         BindingSource splist = new BindingSource();
         SanPhamBLL qlspBLL = new SanPhamBLL();
-        SanPhamDTO sp = new SanPhamDTO();
         List<SanPhamDTO> spv, found;
 
 
@@ -84,11 +83,8 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //LoaiSanPhamBLL lspbll = new LoaiSanPhamBLL();
-            //List<LoaiSanPhamDTO> llsp;
-            //llsp = lspbll.readDB();
             
-            sp.Id = Convert.ToInt32(tbMaSP.Text);
+            SanPhamDTO sp = new SanPhamDTO();
             sp.Tensanpham = tbTenSP.Text;
             sp.IdLoaiSanPham = Convert.ToInt32(cbTenloaisanpham.SelectedValue);
             sp.Hangsanxuat = cbHangSX.Text;
@@ -96,7 +92,7 @@ namespace GUI
             sp.Soluong = Convert.ToInt32(tbSoluong.Text);
             sp.Donvitinh = tbDonvitinh.Text;
             sp.Khuyenmai = Convert.ToInt32(tbKhuyenmai.Text);
-            if (qlspBLL.InsertSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh, sp.Khuyenmai))
+            if (qlspBLL.InsertSP(sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh, sp.Khuyenmai))
             {
                 MessageBox.Show("thêm thành công!");
             }
@@ -107,6 +103,7 @@ namespace GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            SanPhamDTO sp = new SanPhamDTO();
             sp.Id = Convert.ToInt32(tbMaSP.Text);
             sp.Tensanpham = tbTenSP.Text;
             sp.IdLoaiSanPham = Convert.ToInt32(cbTenloaisanpham.SelectedValue);
@@ -116,7 +113,7 @@ namespace GUI
             sp.Donvitinh = tbDonvitinh.Text;
             sp.Khuyenmai = Convert.ToInt32(tbKhuyenmai.Text);
 
-            if (qlspBLL.UpdateSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh, sp.Khuyenmai))
+            if (qlspBLL.UpdateSP(sp))
             {
                 MessageBox.Show("Cập nhật thành công!");
             }
@@ -126,6 +123,7 @@ namespace GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            SanPhamDTO sp = new SanPhamDTO();
             sp.Id = Convert.ToInt32(tbMaSP.Text);
             if (qlspBLL.DeleteSP(sp.Id))
             {

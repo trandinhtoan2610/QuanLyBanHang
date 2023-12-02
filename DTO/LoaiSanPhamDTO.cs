@@ -16,5 +16,9 @@ namespace DTO
             Id = id;
             TenLoai = tenloai;
         }
+        public LoaiSanPhamDTO(string tenloai)
+        {  
+            TenLoai = tenloai;
+        }
     }
 }

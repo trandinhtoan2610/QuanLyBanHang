@@ -29,9 +29,9 @@ namespace BLL
             return qllspDAL.InsertLSP(loaisanpham);
         }
 
-        public bool InsertLSP(int id, string tenloai)
+        public bool InsertLSP(string tenloai)
         {
-            lsp = new LoaiSanPhamDTO(id, tenloai);
+            lsp = new LoaiSanPhamDTO(tenloai);
             return InsertSP(lsp);
         }
 
@@ -57,7 +57,6 @@ namespace BLL
 
         public bool DeleteLSP(int id)
         {
-            
             return qllspDAL.DeleteLSP(id);
         }
 

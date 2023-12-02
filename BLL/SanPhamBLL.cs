@@ -33,50 +33,25 @@ namespace BLL
             return qlspDAL.InsertSP(sanpham);
         }
 
-        public bool InsertSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai)
+        public bool InsertSP( string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai)
         {
-            sp = new SanPhamDTO(id, tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh, khuyenmai);
+            sp = new SanPhamDTO(tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh, khuyenmai);
             return InsertSP(sp);
         }
 
 
 
 
-        public bool UpdateSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai)
+        public bool UpdateSP(SanPhamDTO sp)
         {
-            dssp = readDB();
-
-            foreach (SanPhamDTO sp in dssp)
-            {
-                if (sp.Id.Equals(id))
-                {
-                    sp.Id = id;
-                    sp.Tensanpham = tensanpham;
-                    sp.IdLoaiSanPham = idLoaiSanPham;
-                    sp.Hangsanxuat = hangsanxuat;
-                    sp.Gia = gia;
-                    sp.Soluong = soluong;
-                    sp.Donvitinh = donvitinh;
-                    sp.Khuyenmai = khuyenmai;
-                }
-            }
-            return qlspDAL.UpdateSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh, sp.Khuyenmai);
+            return qlspDAL.UpdateSP(sp);
         }
 
 
 
         public bool DeleteSP(int id)
         {
-            dssp = readDB();
-            foreach (SanPhamDTO sp in dssp)
-            {
-                if (sp.Id.Equals(id))
-                {
-                    sp.Id = id;
-                    
-                }
-            }
-            return qlspDAL.DeleteSP(sp.Id);
+            return qlspDAL.DeleteSP(id);
         }
 
         public List<SanPhamDTO> Search(string text)

@@ -30,6 +30,15 @@ namespace DTO
             Donvitinh = donvitinh;
             Khuyenmai = khuyenmai;
         }
-        
+        public SanPhamDTO(string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai)
+        {
+            Tensanpham = tensanpham;
+            IdLoaiSanPham = idLoaiSanPham;
+            Hangsanxuat = hangsanxuat;
+            Gia = gia;
+            Soluong = soluong;
+            Donvitinh = donvitinh;
+            Khuyenmai = khuyenmai;
+        }
     }
 }

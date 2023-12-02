@@ -87,7 +87,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"Insert into SanPham (id,tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh,khuyenmai) values ({sp.Id},'{sp.Tensanpham}', {sp.IdLoaiSanPham}, '{sp.Hangsanxuat}',{sp.Gia},{sp.Soluong},'{sp.Donvitinh}',{sp.Khuyenmai})";
+                string query = $"Insert into SanPham (tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh,khuyenmai) values ('{sp.Tensanpham}', {sp.IdLoaiSanPham}, '{sp.Hangsanxuat}',{sp.Gia},{sp.Soluong},'{sp.Donvitinh}',{sp.Khuyenmai})";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -105,21 +105,22 @@ namespace DAL
 
 
 
-        public bool UpdateSP(int id, string tensanpham, int idLoaiSanPham, string hangsanxuat, int gia, int soluong, string donvitinh, int khuyenmai)
+        public bool UpdateSP(SanPhamDTO sp)
 
         {
             conn.Open();
             try
             {
+                
                 string query = "UPDATE SanPham SET "
-                    + "tensanpham = '" + tensanpham
-                    + "',idLoaiSanPham = '" + idLoaiSanPham
-                    + "',hangsanxuat = '" + hangsanxuat
-                    + "',gia = '" + gia
-                    + "',soluong = '" + soluong
-                    + "',donvitinh = '" + donvitinh
-                    + "',khuyenmai = '" + khuyenmai
-                    + "' where id =" + id;
+                    + "tensanpham = '" + sp.Tensanpham
+                    + "',idLoaiSanPham = " + sp.IdLoaiSanPham
+                    + ",hangsanxuat = '" + sp.Hangsanxuat
+                    + "',gia = " + sp.Gia
+                    + ",soluong = " + sp.Soluong
+                    + ",donvitinh = '" + sp.Donvitinh
+                    + "',khuyenmai = " + sp.Khuyenmai
+                    + " where id =" + sp.Id;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
                 cmd.ExecuteNonQuery();
@@ -163,8 +164,7 @@ namespace DAL
         {
             try
             {
-                foreach (SanPhamDTO sp in dssp)
-                {
+               
                     conn.Open();
                     string query = "select SanPham.id,tensanpham,idLoaiSanPham,tenloai,hangsanxuat,gia,soluong,donvitinh,khuyenmai from SanPham Join LoaiSanPham on SanPham.idLoaiSanPham = LoaiSanPham.id where tensanpham like '%" + text + "%'";
                     SqlCommand cmd = new SqlCommand(query, conn);
@@ -172,7 +172,7 @@ namespace DAL
                     found = new List<SanPhamDTO>();
                     while (read.Read())
                     {
-                        
+                    SanPhamDTO sp = new SanPhamDTO();
                         sp.Id = read.GetInt32(0);
                         sp.Tensanpham = read.GetString(1);
                         sp.IdLoaiSanPham = read.GetInt32(2);
@@ -185,7 +185,7 @@ namespace DAL
                         found.Add(sp);
                     }
                     conn.Close(); //Sau mỗi lần đọc lần đóng kết nối lại
-                }
+                
             }
             catch (SqlException ex)
             {

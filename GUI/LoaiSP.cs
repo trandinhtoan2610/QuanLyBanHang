@@ -62,10 +62,10 @@ namespace GUI
             LoaiSanPhamBLL lspbll = new LoaiSanPhamBLL();
             List<LoaiSanPhamDTO> llsp;
             llsp = lspbll.readDB();
-            lsp.Id = Convert.ToInt32(tbMaLoaiSP.Text);
+            
             lsp.TenLoai = tbTenLoaiSP.Text;
             
-            if (lspBLL.InsertLSP(lsp.Id, lsp.TenLoai))
+            if (lspBLL.InsertLSP(lsp.TenLoai))
             {
                 MessageBox.Show("thêm thành công!");
             }
