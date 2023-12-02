@@ -26,7 +26,7 @@ namespace GUI
             {
                 if (tbId.Text.Trim().Length == 0)
                 {
-                    DialogResult result = MessageBox.Show("Vui lòng chọn sản phẩm!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng chọn sản phẩm!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 //click thêm thay đổi số lượng giỏ hàng
@@ -177,6 +177,8 @@ namespace GUI
             if (result)
             {
                 MessageBox.Show("Nhập hàng thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Banhang.listCart.Clear();
+                dgv_giohang_nhaphang.DataSource = Banhang.listCart;
                 return;
             }
             MessageBox.Show("Lỗi!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

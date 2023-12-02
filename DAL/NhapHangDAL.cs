@@ -120,7 +120,7 @@ namespace DAL
                 int soluongSP = -1;
                 foreach (var sp in listsp)
                 {
-                    int moneySum = sp.Soluong * sp.Gia + ((sp.Gia * 10) / 100);
+                    Double moneySum = Convert.ToDouble((sp.Soluong * sp.Gia) + Convert.ToDouble((sp.Gia * 10) / 100));
                     string queryCTHDNhap = $"INSERT INTO ct_hoadonnhaphang (idHoadonnhaphang , idSanpham, count , thanhtien ) VALUES ({insertedId},{sp.Id} ,{sp.Soluong},{moneySum});";
                     SqlCommand cmdCTHDNhap = new SqlCommand(queryCTHDNhap, conn);
                     cmdCTHDNhap.ExecuteNonQuery();

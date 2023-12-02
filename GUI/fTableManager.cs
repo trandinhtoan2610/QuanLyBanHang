@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -146,6 +147,7 @@ namespace GUI
         private void btnHoadonnhap_Click(object sender, EventArgs e)
         {
             hDnhap1.BringToFront();
+            hDnhap1.loadData();
         }
 
         private void btnThongke_Click(object sender, EventArgs e)
