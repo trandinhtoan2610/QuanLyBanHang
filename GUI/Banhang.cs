@@ -9,18 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
     public partial class Banhang : UserControl
     {
         public event EventHandler DiDenGioHang;
-
         BindingSource splist = new BindingSource();
         SanPhamBLL lspbll = new SanPhamBLL();
         List<SanPhamDTO> lsp = new List<SanPhamDTO>();
         int rowram = -1;
-        public static List<SanPhamDTO> listCart = new List<SanPhamDTO>();
+        public  List<SanPhamDTO> listCart = new List<SanPhamDTO>();
 
         
         public Banhang()
@@ -121,9 +121,9 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
             DiDenGioHang?.Invoke(this, EventArgs.Empty);
-            GioHang.dataGridView2.DataSource = null;
-            GioHang.dataGridView2.DataSource = listCart;
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

@@ -33,10 +33,10 @@ namespace GUI
             dataGridView1.DataSource = splist;
             loadData();
             loadcbb();
+             
             addSanPhamBinding();
-
-            dataGridView1.Columns["idLoaiSanPham"].Visible = false;
             loadHeaderText();
+            dataGridView1.Columns["idLoaiSanPham"].Visible = false;
         }
 
         public void loadData()
@@ -84,9 +84,9 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            LoaiSanPhamBLL lspbll = new LoaiSanPhamBLL();
-            List<LoaiSanPhamDTO> llsp;
-            llsp = lspbll.readDB();
+            //LoaiSanPhamBLL lspbll = new LoaiSanPhamBLL();
+            //List<LoaiSanPhamDTO> llsp;
+            //llsp = lspbll.readDB();
             
             sp.Id = Convert.ToInt32(tbMaSP.Text);
             sp.Tensanpham = tbTenSP.Text;

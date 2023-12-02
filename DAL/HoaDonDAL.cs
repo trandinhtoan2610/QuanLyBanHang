@@ -50,12 +50,34 @@ namespace DAL
             return dshd;
         }
 
+        public bool CheckoutBill (int id)
+        {
+            conn.Open ();
+            try
+            {
+                string query = "Update hoadonban set status = 1 where id = " + id;
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
         public bool InsertHDB(HoaDonDTO hd)
         {
             conn.Open();
             try
             {
-                string query = $"Insert into hoadonban (ngaylap, idKhachhang, idNhanvien, status) values ({hd.Ngaylap} , {hd.IdKhachhang}, {hd.IdNhanvien}, {hd.Status})";
+                string query = $"Insert into hoadonbanhang ( idKhachang, idNhanvien, status) values ( {hd.IdKhachhang}, {hd.IdNhanvien}, {hd.Status})";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -69,6 +91,26 @@ namespace DAL
             {
                 conn.Close();
             }
+        }
+
+        public int GetIdHDB(int idKhachHang)
+        {
+            int id;
+            conn.Open();
+            string query = $"select id from hoadonbanhang where status = 0 and idKhachang = " + idKhachHang;
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader read = cmd.ExecuteReader();
+            if (read.HasRows)
+                {
+                while (read.Read())
+                {
+                    id = read.GetInt32(0);
+                    return id;
+                }
+                 read.Close();
+                 conn.Close();
+             }
+             return -1;
         }
     }
 }

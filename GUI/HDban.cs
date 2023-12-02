@@ -17,6 +17,9 @@ namespace GUI
         HoaDonBLL qlhdBLL = new HoaDonBLL();
         HoaDonDTO hd = new HoaDonDTO();
         List<HoaDonDTO> dshd, found;
+
+        ChiTietHoaDonBanBLL qlcthdBLL = new ChiTietHoaDonBanBLL();
+        List<ChiTietHoaDonBanDTO> dscthd;
         public HDban()
         {
             InitializeComponent();
@@ -25,14 +28,36 @@ namespace GUI
 
         void load()
         {
-            loadData();
+            loadDataHoaDon();
             dtaGVdanhsachHD.Columns["IdKhachhang"].Visible = false;
             dtaGVdanhsachHD.Columns["IdNhanvien"].Visible = false;
+           
+            addHoaDon();
         }
-        public void loadData()
+        public void loadDataHoaDon()
         {
             dshd = qlhdBLL.readDB();
             dtaGVdanhsachHD.DataSource = dshd;
+        }
+
+
+
+         
+
+        private void dtaGVdanhsachchitiet_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dscthd = qlcthdBLL.ShowBill(Convert.ToInt32(tbMaHD.Text));
+            dtaGVdanhsachchitiet.DataSource = dscthd;
+        }
+
+        public void addHoaDon()
+        {
+            tbMaHD.DataBindings.Add(new Binding("Text", dtaGVdanhsachHD.DataSource, "id", true, DataSourceUpdateMode.Never));
         }
     }
 }

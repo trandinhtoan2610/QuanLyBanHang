@@ -12,7 +12,7 @@ namespace GUI
 {
     public partial class fTimkiem : UserControl
     {
-        public event EventHandler TimKiemButtonClicked;
+        public event EventHandler DiDenBanhang;
         public fTimkiem()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TimKiemButtonClicked?.Invoke(this, EventArgs.Empty);
+            DiDenBanhang?.Invoke(this, EventArgs.Empty);
         }
     }
 }

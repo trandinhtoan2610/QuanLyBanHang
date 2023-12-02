@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDonBanDAL.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="LoaiNhanVienDAL.cs" />

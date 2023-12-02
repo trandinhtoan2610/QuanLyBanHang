@@ -24,14 +24,21 @@ namespace GUI
 
         private void InitializeControls()
         {
-            
-            banhang1.DiDenGioHang += TimKiemControl_TimKiemButtonClicked;
+            fTimkiem1.DiDenBanhang += sukiennuttimkiem;
+            banhang1.DiDenGioHang += sukiennutgiohang;
         }
 
-        private void TimKiemControl_TimKiemButtonClicked(object sender, EventArgs e)
+        private void sukiennutgiohang(object sender, EventArgs e)
         {
             giohang.BringToFront();
-            
+            giohang.dataGridView2.DataSource = null;
+            giohang.dataGridView2.DataSource = banhang1.listCart;
+                
+        }
+
+        private void sukiennuttimkiem(object sender, EventArgs e)
+        {
+            banhang1.BringToFront();
         }
 
         private void btnDanhmuc_Click(object sender, EventArgs e)
@@ -129,7 +136,7 @@ namespace GUI
 
         private void btnBanhang_Click(object sender, EventArgs e)
         {
-            banhang1.BringToFront();
+            fTimkiem1.BringToFront();
 
         }
 

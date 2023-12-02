@@ -60,7 +60,7 @@ namespace BLL
                     sp.Khuyenmai = khuyenmai;
                 }
             }
-            return qlspDAL.UpdateSP(id, tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh, khuyenmai);
+            return qlspDAL.UpdateSP(sp.Id, sp.Tensanpham, sp.IdLoaiSanPham, sp.Hangsanxuat, sp.Gia, sp.Soluong, sp.Donvitinh, sp.Khuyenmai);
         }
 
 
@@ -76,7 +76,7 @@ namespace BLL
                     
                 }
             }
-            return qlspDAL.DeleteSP(id);
+            return qlspDAL.DeleteSP(sp.Id);
         }
 
         public List<SanPhamDTO> Search(string text)
