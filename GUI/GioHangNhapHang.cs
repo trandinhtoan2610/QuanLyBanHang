@@ -177,8 +177,9 @@ namespace GUI
             if (result)
             {
                 MessageBox.Show("Nhập hàng thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Banhang.listCart.Clear();
-                dgv_giohang_nhaphang.DataSource = Banhang.listCart;
+                Nhaphang.listCart.Clear();
+                dgv_giohang_nhaphang.DataSource = null;
+                dgv_giohang_nhaphang.DataSource = Nhaphang.listCart;
                 return;
             }
             MessageBox.Show("Lỗi!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

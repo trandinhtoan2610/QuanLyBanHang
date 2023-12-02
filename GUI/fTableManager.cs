@@ -25,9 +25,16 @@ namespace GUI
 
         private void InitializeControls()
         {
-
+            nhaphang1.DiDenGioHangNhaphang += Nhaphang1_DiDenGioHangNhaphang;
             fTimkiem1.DiDenBanhang += sukiennuttimkiem;
             banhang1.DiDenGioHang += sukiennutgiohang;
+        }
+
+        private void Nhaphang1_DiDenGioHangNhaphang(object sender, EventArgs e)
+        {
+            giohangnhaphang.BringToFront();
+            GioHangNhapHang.dgv_giohang_nhaphang.DataSource = null;
+            GioHangNhapHang.dgv_giohang_nhaphang.DataSource = Nhaphang.listCart;
         }
 
         private void sukiennutgiohang(object sender, EventArgs e)

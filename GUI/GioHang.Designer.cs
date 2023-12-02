@@ -51,6 +51,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.lbQuanly = new System.Windows.Forms.Label();
             this.btnthanhtoan = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,12 +61,13 @@
             this.btnadd.FlatAppearance.BorderSize = 0;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Image = ((System.Drawing.Image)(resources.GetObject("btnadd.Image")));
-            this.btnadd.Location = new System.Drawing.Point(232, 350);
+            this.btnadd.Location = new System.Drawing.Point(240, 350);
             this.btnadd.Margin = new System.Windows.Forms.Padding(2);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(56, 61);
             this.btnadd.TabIndex = 48;
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click_1);
             // 
             // label9
             // 
@@ -252,10 +255,29 @@
             this.btnthanhtoan.UseVisualStyleBackColor = true;
             this.btnthanhtoan.Click += new System.EventHandler(this.btnthanhtoan_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(81, 374);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "Tổng tiền";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(140, 374);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.TabIndex = 51;
+            // 
             // GioHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnthanhtoan);
             this.Controls.Add(this.btnadd);
             this.Controls.Add(this.label9);
@@ -311,5 +333,7 @@
         private System.Windows.Forms.Label lbQuanly;
         private System.Windows.Forms.Button btnthanhtoan;
         public System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

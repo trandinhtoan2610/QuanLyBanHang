@@ -29,12 +29,10 @@ namespace GUI
             cbb_nhacungcap.DisplayMember = "tennhacungcap";
             cbb_nhacungcap.ValueMember = "Id";
             cbb_nhacungcap.DataSource = nhBLL.getAllNhaCungCap();
-            loadData();
         }
         public void loadData()
         {
             dgv_nhaphang.DataSource = null;
-            listProduct = sp.readDB();
             dgv_nhaphang.DataSource = listProduct;
         }
 
