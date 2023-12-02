@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,11 +20,24 @@ namespace GUI
             
         }
 
-        
 
+        KhachHangBLL khachhangbll = new KhachHangBLL();
         private void button1_Click(object sender, EventArgs e)
         {
-            DiDenBanhang?.Invoke(this, EventArgs.Empty);
+            string getkhachhang = khachhangbll.CheckTimKiemKH(tbSđt.Text);
+            switch (getkhachhang)
+            {
+                case "requeid_sodienthoai":
+                    MessageBox.Show("Không được để trống số điện thoại");
+                    return;
+                case "sai so dien thoai":
+                    MessageBox.Show("Không tìm thấy khách hàng");
+                    return;
+                case "timthaykhachhang":
+                    DiDenBanhang?.Invoke(this, EventArgs.Empty);
+                    return;
+            }
+            
         }
     }
 }

@@ -68,8 +68,10 @@ namespace GUI
         private void btnthanhtoan_Click(object sender, EventArgs e)
         {
             DateTime ngayHomNay = DateTime.Now;
-            qlhdbll.InsertHDB(1, ngayHomNay, 1, TaiKhoanBLL.user.Id, 0);
-            qlcthdb.InsertCTHDB(1, qlhdbll.GetIdHDB(1), 1, 10000, 1);
+            qlhdbll.InsertHDB(1, ngayHomNay, KhachHangBLL.khachdto.Id , TaiKhoanBLL.user.Id, 0);
+            
+            
+            qlcthdb.InsertCTHDB(1, qlhdbll.GetIdHDB(KhachHangBLL.khachdto.Id), 1, 10000, 1);
         }
 
 

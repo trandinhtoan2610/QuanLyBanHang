@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,7 +36,7 @@ namespace GUI
             giohang.dataGridView2.DataSource = banhang1.listCart;
                 
         }
-
+        
         private void sukiennuttimkiem(object sender, EventArgs e)
         {
             banhang1.BringToFront();

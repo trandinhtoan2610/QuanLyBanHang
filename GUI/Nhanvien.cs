@@ -78,7 +78,7 @@ namespace GUI
 
         public void addNhanVienBinding()
         {
-         
+
             tbMaNV.DataBindings.Add(new Binding("Text", dtaGVNV.DataSource, "id", true, DataSourceUpdateMode.Never));
             tbTenNV.DataBindings.Add(new Binding("Text", dtaGVNV.DataSource, "tennhanvien", true, DataSourceUpdateMode.Never));
             dtNgaysinh.DataBindings.Add(new Binding("Text", dtaGVNV.DataSource, "ngaysinh", true, DataSourceUpdateMode.Never));
@@ -139,6 +139,8 @@ namespace GUI
             }
             loadData();
         }
+
+       
 
         private void btnEdit_Click(object sender, EventArgs e)
         {

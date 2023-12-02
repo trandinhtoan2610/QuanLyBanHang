@@ -379,6 +379,7 @@ namespace GUI
             this.btnExport.Size = new System.Drawing.Size(75, 75);
             this.btnExport.TabIndex = 7;
             this.btnExport.UseVisualStyleBackColor = true;
+            
             // 
             // btnDelete
             // 

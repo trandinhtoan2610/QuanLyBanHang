@@ -13,7 +13,9 @@ namespace DAL
         // Tạo kết nối cơ sở dữ liệu
         public static SqlConnection Connect()
         {
+
             string Strconn = @"Data Source=TOÀN;Initial Catalog=PhoneManage;Integrated Security=True";
+
             SqlConnection conn = new SqlConnection(Strconn);
             return conn;
         }
@@ -21,7 +23,9 @@ namespace DAL
 
     public class DatabaseAccess
     {
+
         private string connectionSTR = @"Data Source=TOÀN;Initial Catalog=PhoneManage;Integrated Security=True";
+
         public DataTable ExecuteQuery(string query)
         {
             DataTable data = new DataTable();
@@ -31,6 +35,7 @@ namespace DAL
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
+                
                 adapter.Fill(data);
                 connection.Close();
             }
