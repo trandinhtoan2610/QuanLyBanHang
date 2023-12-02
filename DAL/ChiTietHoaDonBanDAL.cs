@@ -49,7 +49,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"insert into ct_hoadonbanhang (idHoadonbanhang,idSanpham,thanhtien,count) values ({ctsp.Id},{ctsp.IdHoadonban},{ctsp.IdSanpham},{ctsp.Thanhtien},{ctsp.Count})";
+                string query = $"insert into ct_hoadonbanhang (idHoadonbanhang,idSanpham,thanhtien,count) values ({ctsp.IdHoadonban},{ctsp.IdSanpham},{ctsp.Thanhtien},{ctsp.Count})";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -82,11 +82,10 @@ namespace DAL
                 Convert.ToInt32(read.GetDouble(3)),
                 read.GetInt32(4));
                 show.Add(cthd);    
-                return show;
                 }
             read.Close();
             conn.Close(); 
-            return null;
+            return show;
         }
     }
 }

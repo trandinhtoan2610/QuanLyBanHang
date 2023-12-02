@@ -20,7 +20,7 @@ namespace GUI
         SanPhamBLL lspbll = new SanPhamBLL();
         List<SanPhamDTO> lsp = new List<SanPhamDTO>();
         int rowram = -1;
-        public  List<SanPhamDTO> listCart = new List<SanPhamDTO>();
+        public static List<SanPhamDTO> listCart = new List<SanPhamDTO>();
 
         
         public Banhang()

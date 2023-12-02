@@ -68,10 +68,18 @@ namespace GUI
         private void btnthanhtoan_Click(object sender, EventArgs e)
         {
             DateTime ngayHomNay = DateTime.Now;
-            qlhdbll.InsertHDB(1, ngayHomNay, KhachHangBLL.khachdto.Id , TaiKhoanBLL.user.Id, 0);
+            int idhoadon = qlhdbll.InsertHDB(1, ngayHomNay, KhachHangBLL.khachdto.Id , TaiKhoanBLL.user.Id, 0);
+            if(idhoadon == -1 ) 
+            {
+                MessageBox.Show("Lỗi");
+                return;
+            }
+            foreach (var item in Banhang.listCart)
+            {
+                qlcthdb.InsertCTHDB(1, idhoadon, item.Id, item.Gia, item.Soluong);
+                MessageBox.Show(item.Id + " ");
+            }
             
-            
-            qlcthdb.InsertCTHDB(1, qlhdbll.GetIdHDB(KhachHangBLL.khachdto.Id), 1, 10000, 1);
         }
 
 

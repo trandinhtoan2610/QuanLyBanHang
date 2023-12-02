@@ -33,7 +33,7 @@ namespace GUI
         {
             giohang.BringToFront();
             giohang.dataGridView2.DataSource = null;
-            giohang.dataGridView2.DataSource = banhang1.listCart;
+            giohang.dataGridView2.DataSource = Banhang.listCart;
                 
         }
         

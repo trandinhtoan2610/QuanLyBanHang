@@ -20,14 +20,14 @@ namespace BLL
             return qlhdDAL.readDB();
         }
 
-        public bool InsertHDB(HoaDonDTO hoadon)
+        public int InsertHDB(HoaDonDTO hoadon)
         {
             dshd = readDB();
             dshd.Add(hoadon);
             return qlhdDAL.InsertHDB(hoadon);
         }
         
-        public bool InsertHDB(int id,DateTime ngaylap, int idkhachhang, int idnhanvien, int status)
+        public int InsertHDB(int id,DateTime ngaylap, int idkhachhang, int idnhanvien, int status)
         {
             hd = new HoaDonDTO(id,ngaylap, idkhachhang, idnhanvien, status);
             return InsertHDB(hd);

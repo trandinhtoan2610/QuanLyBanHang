@@ -72,20 +72,23 @@ namespace DAL
 
         }
 
-        public bool InsertHDB(HoaDonDTO hd)
+        public int InsertHDB(HoaDonDTO hd)
         {
             conn.Open();
             try
             {
-                string query = $"Insert into hoadonbanhang ( idKhachang, idNhanvien, status) values ( {hd.IdKhachhang}, {hd.IdNhanvien}, {hd.Status})";
+                string query = $"Insert into hoadonbanhang ( idKhachang, idNhanvien) values ({hd.IdKhachhang}, {hd.IdNhanvien})";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
-                return true;
+                string queryGetInsertedId = "SELECT SCOPE_IDENTITY()";
+                SqlCommand cmdGetInsertedId = new SqlCommand(queryGetInsertedId, conn);
+                int insertedId = Convert.ToInt32(cmdGetInsertedId.ExecuteScalar());
+                return insertedId;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Error: " + ex);
-                return false;
+                return -1;
             }
             finally
             {
@@ -101,16 +104,16 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader read = cmd.ExecuteReader();
             if (read.HasRows)
-                {
+            {
                 while (read.Read())
                 {
                     id = read.GetInt32(0);
                     return id;
-                }
-                 read.Close();
-                 conn.Close();
+                } 
              }
-             return -1;
+            read.Close();
+            conn.Close();
+            return -1;
         }
     }
 }
