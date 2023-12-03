@@ -401,7 +401,7 @@
             // sanpham1
             // 
             this.sanpham1.Location = new System.Drawing.Point(0, 4);
-            this.sanpham1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sanpham1.Margin = new System.Windows.Forms.Padding(2);
             this.sanpham1.Name = "sanpham1";
             this.sanpham1.Size = new System.Drawing.Size(1229, 748);
             this.sanpham1.TabIndex = 10;
@@ -417,7 +417,7 @@
             // thongke1
             // 
             this.thongke1.Location = new System.Drawing.Point(0, 0);
-            this.thongke1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.thongke1.Margin = new System.Windows.Forms.Padding(2);
             this.thongke1.Name = "thongke1";
             this.thongke1.Size = new System.Drawing.Size(1233, 748);
             this.thongke1.TabIndex = 9;
@@ -433,7 +433,7 @@
             // nhaphang1
             // 
             this.nhaphang1.Location = new System.Drawing.Point(0, 0);
-            this.nhaphang1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nhaphang1.Margin = new System.Windows.Forms.Padding(2);
             this.nhaphang1.Name = "nhaphang1";
             this.nhaphang1.Size = new System.Drawing.Size(1233, 748);
             this.nhaphang1.TabIndex = 7;
@@ -449,7 +449,7 @@
             // ncc1
             // 
             this.ncc1.Location = new System.Drawing.Point(0, 0);
-            this.ncc1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ncc1.Margin = new System.Windows.Forms.Padding(2);
             this.ncc1.Name = "ncc1";
             this.ncc1.Size = new System.Drawing.Size(1233, 748);
             this.ncc1.TabIndex = 5;
@@ -457,7 +457,7 @@
             // loaiSP1
             // 
             this.loaiSP1.Location = new System.Drawing.Point(0, 0);
-            this.loaiSP1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loaiSP1.Margin = new System.Windows.Forms.Padding(2);
             this.loaiSP1.Name = "loaiSP1";
             this.loaiSP1.Size = new System.Drawing.Size(1229, 748);
             this.loaiSP1.TabIndex = 4;
@@ -465,7 +465,7 @@
             // khachhang1
             // 
             this.khachhang1.Location = new System.Drawing.Point(0, 0);
-            this.khachhang1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.khachhang1.Margin = new System.Windows.Forms.Padding(2);
             this.khachhang1.Name = "khachhang1";
             this.khachhang1.Size = new System.Drawing.Size(1229, 748);
             this.khachhang1.TabIndex = 3;
@@ -473,7 +473,7 @@
             // hDnhap1
             // 
             this.hDnhap1.Location = new System.Drawing.Point(0, 0);
-            this.hDnhap1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hDnhap1.Margin = new System.Windows.Forms.Padding(2);
             this.hDnhap1.Name = "hDnhap1";
             this.hDnhap1.Size = new System.Drawing.Size(1233, 748);
             this.hDnhap1.TabIndex = 2;
@@ -481,7 +481,7 @@
             // hDban1
             // 
             this.hDban1.Location = new System.Drawing.Point(0, 0);
-            this.hDban1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hDban1.Margin = new System.Windows.Forms.Padding(2);
             this.hDban1.Name = "hDban1";
             this.hDban1.Size = new System.Drawing.Size(1233, 748);
             this.hDban1.TabIndex = 1;
@@ -505,7 +505,7 @@
             // giohangnhaphang
             // 
             this.giohangnhaphang.Location = new System.Drawing.Point(0, 0);
-            this.giohangnhaphang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.giohangnhaphang.Margin = new System.Windows.Forms.Padding(2);
             this.giohangnhaphang.Name = "giohangnhaphang";
             this.giohangnhaphang.Size = new System.Drawing.Size(1233, 748);
             this.giohangnhaphang.TabIndex = 14;

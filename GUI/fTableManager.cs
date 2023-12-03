@@ -153,6 +153,7 @@ namespace GUI
         private void btnHoadonban_Click(object sender, EventArgs e)
         {
             hDban1.BringToFront();
+            hDban1.loadDataHoaDon();
         }
 
         private void btnHoadonnhap_Click(object sender, EventArgs e)
