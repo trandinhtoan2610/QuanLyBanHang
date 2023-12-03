@@ -1,17 +1,17 @@
 ﻿using BLL;
 using DTO;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using OfficeOpenXml;
+using System.IO;
+using System.Data;
+using System.Data.SqlClient;
+using DevExpress.XtraCharts.Native;
+using System.Text;
+using Microsoft.Office.Interop.Excel;
+    
 
 namespace GUI
 {
@@ -39,7 +39,6 @@ namespace GUI
             addNCCBinding();
 
         }
-        
 
         public void loadHeaderText()
         {
@@ -49,17 +48,12 @@ namespace GUI
             dtaGVNCC.Columns["diachi"].HeaderText = "Địa chỉ";
             dtaGVNCC.Columns["email"].HeaderText = "Email";
 
-
         }
         public void loadData()
         {
             listNCC = qlNCCBLL.readDB();
             ncclist.DataSource = listNCC;
         }
-
-        
-
-
 
         public void addNCCBinding()
         {
@@ -118,9 +112,57 @@ namespace GUI
             loadData();
         }
 
-        private void btnImport_Click(object sender, EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e)
         {
-           
+            StringBuilder sb = new StringBuilder();
+
+            // Lấy tiêu đề của các cột và gán chúng vào chuỗi
+            for (int i = 0; i < dtaGVNCC.Columns.Count; i++)
+            {
+                sb.Append(dtaGVNCC.Columns[i].HeaderText);
+                sb.Append("\t"); // Sử dụng tab để phân tách giữa các cột
+            }
+            sb.AppendLine(); // Xuống dòng sau khi ghi tiêu đề
+
+            // Lấy dữ liệu từ các hàng và cột và ghi vào chuỗi
+            for (int i = 0; i < dtaGVNCC.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtaGVNCC.Columns.Count; j++)
+                {
+                    sb.Append(dtaGVNCC.Rows[i].Cells[j].Value);
+                    sb.Append("\t"); // Sử dụng tab để phân tách giữa các cột
+                }
+                sb.AppendLine(); // Xuống dòng sau khi ghi mỗi hàng
+            }
+
+            // Sao chép chuỗi dữ liệu vào Clipboard
+            Clipboard.SetText(sb.ToString());
+
+            // Khởi tạo ứng dụng Excel
+            Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            xlapp.Visible = true;
+
+            // Tạo một Workbook mới
+            Microsoft.Office.Interop.Excel.Workbook xlWbook = xlapp.Workbooks.Add(System.Reflection.Missing.Value);
+            Microsoft.Office.Interop.Excel.Worksheet xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWbook.Worksheets[1];
+
+            // Dán dữ liệu từ clipboard vào Excel
+            Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
+            xlr.Select();
+            xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+            // Lấy tiêu đề của các cột và gán chúng vào Excel
+            for (int i = 1; i <= dtaGVNCC.Columns.Count; i++)
+            {
+                xlsheet.Cells[1, i] = dtaGVNCC.Columns[i - 1].HeaderText;
+            }
+
+            // Thiết lập lại vùng lựa chọn đầu tiên để hiển thị trọn vẹn bảng Excel
+            xlsheet.Range[xlsheet.Cells[1, 1], xlsheet.Cells[dtaGVNCC.Rows.Count + 1, dtaGVNCC.Columns.Count]].AutoFormat(Microsoft.Office.Interop.Excel.XlRangeAutoFormat.xlRangeAutoFormatClassic2);
+
+            // Xóa dữ liệu trong Clipboard để tránh rò rỉ bộ nhớ
+            Clipboard.Clear();
         }
     }
+
 }

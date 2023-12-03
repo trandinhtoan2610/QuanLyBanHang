@@ -60,12 +60,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(692, 454);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(625, 431);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(85, 85);
             this.button1.TabIndex = 50;
-            this.button1.Text = "Giỏ hàng";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -74,10 +76,10 @@
             this.btnadd.FlatAppearance.BorderSize = 0;
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Image = ((System.Drawing.Image)(resources.GetObject("btnadd.Image")));
-            this.btnadd.Location = new System.Drawing.Point(309, 431);
+            this.btnadd.Location = new System.Drawing.Point(295, 431);
             this.btnadd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(75, 75);
+            this.btnadd.Size = new System.Drawing.Size(85, 85);
             this.btnadd.TabIndex = 49;
             this.btnadd.UseVisualStyleBackColor = true;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
@@ -280,36 +282,40 @@
             // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(121, 69);
+            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(958, 457);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(173, 22);
+            this.txt_search.Size = new System.Drawing.Size(180, 24);
             this.txt_search.TabIndex = 51;
             // 
             // lbl_search
             // 
             this.lbl_search.AutoSize = true;
-            this.lbl_search.Location = new System.Drawing.Point(53, 72);
+            this.lbl_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_search.Location = new System.Drawing.Point(849, 471);
             this.lbl_search.Name = "lbl_search";
-            this.lbl_search.Size = new System.Drawing.Size(62, 16);
+            this.lbl_search.Size = new System.Drawing.Size(101, 26);
             this.lbl_search.TabIndex = 52;
             this.lbl_search.Text = "Tìm kiếm";
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(300, 69);
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
+            this.btn_search.Location = new System.Drawing.Point(1156, 446);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(75, 23);
+            this.btn_search.Size = new System.Drawing.Size(70, 70);
             this.btn_search.TabIndex = 53;
-            this.btn_search.Text = "Tìm kiếm";
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // cbb_nhacungcap
             // 
             this.cbb_nhacungcap.FormattingEnabled = true;
-            this.cbb_nhacungcap.Location = new System.Drawing.Point(420, 69);
+            this.cbb_nhacungcap.Location = new System.Drawing.Point(958, 482);
             this.cbb_nhacungcap.Name = "cbb_nhacungcap";
-            this.cbb_nhacungcap.Size = new System.Drawing.Size(121, 24);
+            this.cbb_nhacungcap.Size = new System.Drawing.Size(180, 24);
             this.cbb_nhacungcap.TabIndex = 54;
             this.cbb_nhacungcap.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 

@@ -44,8 +44,6 @@
             this.pnThemSuaXoa = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnInHD = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.lbThanhtien = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.gbThongtinSP = new System.Windows.Forms.GroupBox();
@@ -203,8 +201,6 @@
             this.pnThemSuaXoa.BackColor = System.Drawing.Color.White;
             this.pnThemSuaXoa.Controls.Add(this.button1);
             this.pnThemSuaXoa.Controls.Add(this.btnInHD);
-            this.pnThemSuaXoa.Controls.Add(this.btnDelete);
-            this.pnThemSuaXoa.Controls.Add(this.btnAdd);
             this.pnThemSuaXoa.Location = new System.Drawing.Point(0, 529);
             this.pnThemSuaXoa.Margin = new System.Windows.Forms.Padding(0);
             this.pnThemSuaXoa.Name = "pnThemSuaXoa";
@@ -213,12 +209,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(995, 49);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(527, 16);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 75);
             this.button1.TabIndex = 27;
-            this.button1.Text = "Xem";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -233,30 +231,6 @@
             this.btnInHD.Size = new System.Drawing.Size(75, 75);
             this.btnInHD.TabIndex = 26;
             this.btnInHD.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(449, 15);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 75);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(83, 15);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 75);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // lbThanhtien
             // 
@@ -458,8 +432,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel pnThemSuaXoa;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnInHD;
         private System.Windows.Forms.Label lbThanhtien;
         private System.Windows.Forms.TextBox textBox2;

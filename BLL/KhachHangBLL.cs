@@ -51,15 +51,16 @@ namespace BLL
         }
 
         public static KhachHangDTO khachdto = new KhachHangDTO();
-        KhachHangDAL khachdal = new KhachHangDAL();
+        
         public string CheckTimKiemKH(string sodienthoai)
         {
+            KhachHangDAL khachdal = new KhachHangDAL();
             if (sodienthoai == "")
             {
                 return "requeid_sodienthoai";
             }
             KhachHangDTO info = khachdal.TimKiemKH(sodienthoai);
-            if (khachdto != null)
+            if (info != null)
             {
                 khachdto = info;
                 return "timthaykhachhang";

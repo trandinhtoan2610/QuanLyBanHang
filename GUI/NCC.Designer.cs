@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NCC));
             this.lbQuanly = new System.Windows.Forms.Label();
             this.pnThongtin = new System.Windows.Forms.Panel();
-            this.tbGhichu = new System.Windows.Forms.TextBox();
-            this.lbGhichu = new System.Windows.Forms.Label();
             this.tbDiachi = new System.Windows.Forms.TextBox();
             this.lbDiachi = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
@@ -52,7 +50,6 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbDanhsach = new System.Windows.Forms.Label();
-            this.btnImport = new System.Windows.Forms.Button();
             this.pnThongtin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGVNCC)).BeginInit();
             this.pnThemSuaXoa.SuspendLayout();
@@ -72,8 +69,6 @@
             // pnThongtin
             // 
             this.pnThongtin.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.pnThongtin.Controls.Add(this.tbGhichu);
-            this.pnThongtin.Controls.Add(this.lbGhichu);
             this.pnThongtin.Controls.Add(this.tbDiachi);
             this.pnThongtin.Controls.Add(this.lbDiachi);
             this.pnThongtin.Controls.Add(this.tbEmail);
@@ -89,25 +84,6 @@
             this.pnThongtin.Name = "pnThongtin";
             this.pnThongtin.Size = new System.Drawing.Size(1644, 302);
             this.pnThongtin.TabIndex = 18;
-            // 
-            // tbGhichu
-            // 
-            this.tbGhichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGhichu.Location = new System.Drawing.Point(1212, 121);
-            this.tbGhichu.Multiline = true;
-            this.tbGhichu.Name = "tbGhichu";
-            this.tbGhichu.Size = new System.Drawing.Size(212, 112);
-            this.tbGhichu.TabIndex = 26;
-            // 
-            // lbGhichu
-            // 
-            this.lbGhichu.AutoSize = true;
-            this.lbGhichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGhichu.Location = new System.Drawing.Point(1209, 85);
-            this.lbGhichu.Name = "lbGhichu";
-            this.lbGhichu.Size = new System.Drawing.Size(59, 18);
-            this.lbGhichu.TabIndex = 25;
-            this.lbGhichu.Text = "Ghi chú";
             // 
             // tbDiachi
             // 
@@ -224,7 +200,6 @@
             // pnThemSuaXoa
             // 
             this.pnThemSuaXoa.BackColor = System.Drawing.Color.White;
-            this.pnThemSuaXoa.Controls.Add(this.btnImport);
             this.pnThemSuaXoa.Controls.Add(this.tbTimkiem);
             this.pnThemSuaXoa.Controls.Add(this.btnExport);
             this.pnThemSuaXoa.Controls.Add(this.btnDelete);
@@ -240,10 +215,10 @@
             this.tbTimkiem.BackColor = System.Drawing.Color.White;
             this.tbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTimkiem.HideSelection = false;
-            this.tbTimkiem.Location = new System.Drawing.Point(875, 35);
+            this.tbTimkiem.Location = new System.Drawing.Point(780, 35);
             this.tbTimkiem.Multiline = true;
             this.tbTimkiem.Name = "tbTimkiem";
-            this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
+            this.tbTimkiem.Size = new System.Drawing.Size(332, 39);
             this.tbTimkiem.TabIndex = 8;
             // 
             // btnExport
@@ -256,6 +231,7 @@
             this.btnExport.Size = new System.Drawing.Size(75, 75);
             this.btnExport.TabIndex = 7;
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnDelete
             // 
@@ -302,16 +278,6 @@
             this.lbDanhsach.TabIndex = 29;
             this.lbDanhsach.Text = "Danh sách nhà cung cấp";
             // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(748, 29);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(82, 47);
-            this.btnImport.TabIndex = 9;
-            this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
             // NCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,8 +313,6 @@
         private System.Windows.Forms.Label lbTenNCC;
         private System.Windows.Forms.Label lbMaNCC;
         private System.Windows.Forms.Label lbThongtin;
-        private System.Windows.Forms.Label lbGhichu;
-        private System.Windows.Forms.TextBox tbGhichu;
         private System.Windows.Forms.DataGridView dtaGVNCC;
         private System.Windows.Forms.Panel pnThemSuaXoa;
         private System.Windows.Forms.TextBox tbTimkiem;
@@ -357,6 +321,5 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lbDanhsach;
-        private System.Windows.Forms.Button btnImport;
     }
 }

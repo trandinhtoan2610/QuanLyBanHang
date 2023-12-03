@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HDnhap));
             this.lbQuanly = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv_hoadon = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_cthd = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hoadon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cthd)).BeginInit();
             this.SuspendLayout();
@@ -93,16 +94,6 @@
             this.dgv_cthd.Size = new System.Drawing.Size(1128, 274);
             this.dgv_cthd.TabIndex = 44;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1046, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 40);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Export Excel";
-            this.button1.UseVisualStyleBackColor = true;
-            
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(55, 101);
@@ -119,6 +110,18 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(268, 22);
             this.dateTimePicker2.TabIndex = 47;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1108, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 75);
+            this.button1.TabIndex = 45;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // HDnhap
             // 
@@ -146,8 +149,8 @@
         public System.Windows.Forms.DataGridView dgv_hoadon;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.DataGridView dgv_cthd;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button button1;
     }
 }

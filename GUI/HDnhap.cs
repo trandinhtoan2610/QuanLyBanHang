@@ -50,7 +50,9 @@ namespace GUI
             loadData();
         }
 
-        /*private void button1_Click(object sender, EventArgs e)
+       
+
+        private void button1_Click(object sender, EventArgs e)
         {
             dgv_hoadon.SelectAll();
             DataObject copydata = dgv_hoadon.GetClipboardContent();
@@ -66,6 +68,6 @@ namespace GUI
             Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
             xlr.Select();
             xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-        }*/
+        }
     }
 }
