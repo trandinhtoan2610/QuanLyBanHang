@@ -11,9 +11,10 @@ namespace DTO
         public int Id { get; set; }
         public int IdHoadonban { get; set; }
         public int IdSanpham {  get; set; }
+        public string Tensanpham { get; set; }
         public int Thanhtien { get; set; }
         public int Count { get; set; }
-
+        
         public ChiTietHoaDonBanDTO() { }
 
         public ChiTietHoaDonBanDTO(int id , int idhoadonban, int idsanpham, int thanhtien, int count)
@@ -23,6 +24,13 @@ namespace DTO
             IdSanpham = idsanpham;
             Count = count;
             Thanhtien = thanhtien;
+        }
+
+        public ChiTietHoaDonBanDTO(string tensanpham, int thanhtien, int count)
+        {
+            Tensanpham = tensanpham;
+            Thanhtien = thanhtien;
+            Count = count;
         }
     }
 }

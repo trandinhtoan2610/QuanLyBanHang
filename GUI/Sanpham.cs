@@ -51,6 +51,12 @@ namespace GUI
             cbTenloaisanpham.DisplayMember = "TenLoai";
             cbTenloaisanpham.ValueMember = "Id";
             cbTenloaisanpham.DataSource = llsp;
+
+            NCCBLL nccbll = new NCCBLL();
+            List<NCCDTO> lncc = nccbll.readDB();
+            cbHangSX.DataSource = lncc;
+            cbHangSX.DisplayMember = "tennhacungcap";
+            cbHangSX.ValueMember= "Id";
         }
 
         public void loadHeaderText()
@@ -87,7 +93,7 @@ namespace GUI
             SanPhamDTO sp = new SanPhamDTO();
             sp.Tensanpham = tbTenSP.Text;
             sp.IdLoaiSanPham = Convert.ToInt32(cbTenloaisanpham.SelectedValue);
-            sp.Hangsanxuat = cbHangSX.Text;
+            sp.Hangsanxuat = cbHangSX.SelectedValue.ToString();
             sp.Gia = Convert.ToInt32(tbGia.Text);
             sp.Soluong = Convert.ToInt32(tbSoluong.Text);
             sp.Donvitinh = tbDonvitinh.Text;

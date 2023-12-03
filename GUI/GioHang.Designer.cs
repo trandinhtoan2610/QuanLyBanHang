@@ -52,7 +52,8 @@
             this.lbQuanly = new System.Windows.Forms.Label();
             this.btnthanhtoan = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             this.btnadd.Size = new System.Drawing.Size(56, 61);
             this.btnadd.TabIndex = 48;
             this.btnadd.UseVisualStyleBackColor = true;
-            this.btnadd.Click += new System.EventHandler(this.btnadd_Click_1);
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // label9
             // 
@@ -232,6 +233,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(1077, 299);
             this.dataGridView2.TabIndex = 29;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // lbQuanly
             // 
@@ -264,19 +266,31 @@
             this.label10.TabIndex = 50;
             this.label10.Text = "Tổng tiền";
             // 
-            // label11
+            // button1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(140, 374);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 13);
-            this.label11.TabIndex = 51;
+            this.button1.Location = new System.Drawing.Point(386, 380);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 19);
+            this.button1.TabIndex = 72;
+            this.button1.Text = "Xóa";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label12
+            // 
+            label12.Location = new System.Drawing.Point(140, 373);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(20, 13);
+            label12.TabIndex = 73;
+            label12.Text = "0đ";
             // 
             // GioHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label11);
+            this.Controls.Add(label12);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnthanhtoan);
             this.Controls.Add(this.btnadd);
@@ -334,6 +348,7 @@
         private System.Windows.Forms.Button btnthanhtoan;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button1;
+        public static System.Windows.Forms.Label label12;
     }
 }

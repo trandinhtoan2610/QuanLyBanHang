@@ -41,18 +41,21 @@ namespace GUI
         }
 
 
-
-         
-
-        private void dtaGVdanhsachchitiet_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             dscthd = qlcthdBLL.ShowBill(Convert.ToInt32(tbMaHD.Text));
             dtaGVdanhsachchitiet.DataSource = dscthd;
+            loadHeaderText();
+            dtaGVdanhsachchitiet.Columns["id"].Visible = false;
+            dtaGVdanhsachchitiet.Columns["idhoadonban"].Visible = false;
+            dtaGVdanhsachchitiet.Columns["idsanpham"].Visible = false;
+        }
+
+        public void loadHeaderText()
+        {
+            dtaGVdanhsachchitiet.Columns["tensanpham"].HeaderText = "Tên sản phẩm";
+            dtaGVdanhsachchitiet.Columns["thanhtien"].HeaderText = "Thành tiền";
+            dtaGVdanhsachchitiet.Columns["count"].HeaderText = "số lượng";
         }
 
         public void addHoaDon()

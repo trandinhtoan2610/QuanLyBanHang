@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,13 +18,14 @@ namespace GUI
     public partial class Banhang : UserControl
     {
         public event EventHandler DiDenGioHang;
-        BindingSource splist = new BindingSource();
+        
         SanPhamBLL lspbll = new SanPhamBLL();
         List<SanPhamDTO> lsp = new List<SanPhamDTO>();
         int rowram = -1;
         public static List<SanPhamDTO> listCart = new List<SanPhamDTO>();
+        public static List<SanPhamDTO> listProduct = new List<SanPhamDTO>();
 
-        
+
         public Banhang()
         {
             InitializeComponent();
@@ -31,79 +34,18 @@ namespace GUI
 
         void load()
         {
-
-            dataGridView1.DataSource = splist;
-            loadData();
-            addSanPhamBinding();
+            loadData(); 
         }
 
         void loadData()
         {
-            lsp = lspbll.GetSanphamkho();
-            dataGridView1.DataSource = lsp;
+            listProduct = lspbll.GetSanphamkho();
+            dataGridView1.DataSource = listProduct;
         }
        
 
-        public void addSanPhamBinding()
-        {
-            // Xóa các binding hiện tại
-            tbId.DataBindings.Clear();
-            tbtensanpham.DataBindings.Clear();
-            tbidloaisanpham.DataBindings.Clear();
-            tbtenloai.DataBindings.Clear();
-            tbhangsanxuat.DataBindings.Clear();
-            tbsoluong.DataBindings.Clear();
-            tbgia.DataBindings.Clear();
-            tbdonvitinh.DataBindings.Clear();
-            tbkhuyenmai.DataBindings.Clear();
-
-            tbId.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "id", true, DataSourceUpdateMode.Never));
-            tbtensanpham.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "tensanpham", true, DataSourceUpdateMode.Never));
-            tbidloaisanpham.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "idloaisanpham", true, DataSourceUpdateMode.Never));
-            tbtenloai.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Tenloai", true, DataSourceUpdateMode.Never));
-            tbhangsanxuat.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "hangsanxuat", true, DataSourceUpdateMode.Never));
-            tbsoluong.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Soluong", true, DataSourceUpdateMode.Never));
-            tbgia.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "gia", true, DataSourceUpdateMode.Never));
-            tbdonvitinh.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "donvitinh", true, DataSourceUpdateMode.Never));
-            tbkhuyenmai.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "Khuyenmai", true, DataSourceUpdateMode.Never));
-        }
-        private void dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            // Kiểm tra xem sự kiện xảy ra trong cột ComboBox
-            if (e.ColumnIndex == dataGridView1.Columns["cbTensanpham"].Index)
-            {
-                DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)dataGridView1.Rows[e.RowIndex].Cells["cbTensanpham"];
-                string id = comboBoxCell.Value.ToString();
-                foreach (SanPhamDTO sp in lsp)
-                {
-                    if (sp.Id.ToString() == id)
-                    {
-                        dataGridView1.Rows[e.RowIndex].Cells[2].Value = sp.Gia;
-                        dataGridView1.Rows[e.RowIndex].Cells[3].Value = sp.Khuyenmai;
-                    }
-                }  
-            }
-            if(e.ColumnIndex == dataGridView1.Columns["tbSoluong"].Index)
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
-                    DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells["tbSoluong"];
-                    string soluong = cell.Value.ToString();
-                    string gia  = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() ;
-                    string khuyenmai = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString() ;
-                    dataGridView1.Rows[e.RowIndex].Cells[1].Value = soluong;
-                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = (Convert.ToDouble(soluong) * Convert.ToDouble(gia)) - ((Convert.ToDouble(soluong) * Convert.ToDouble(gia))* (Convert.ToDouble(khuyenmai)/100));
-                }
-            }
-
-            //List<SanPhamDTO> list = new List<SanPhamDTO>();
-            //SanPhamDTO spDTO = new SanPhamDTO();
-            rowram = SelectRowInDataGridView(dataGridView1, e.RowIndex);
-
-            
-
-        }
+        
+       
 
         private int SelectRowInDataGridView(DataGridView dataGridView, int rowIndex)
         {
@@ -120,21 +62,17 @@ namespace GUI
             return -1;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (rowram != -1)
-            {
-                dataGridView1.Rows.RemoveAt(rowram);
-                
-            }
-           
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-
             DiDenGioHang?.Invoke(this, EventArgs.Empty);
+            int sumMoney = 0;
+            foreach (var item in listCart)
+            {
+                sumMoney += item.Gia * item.Soluong;
+            }
+            GioHang.label12.Text = sumMoney + "đ";
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -159,7 +97,27 @@ namespace GUI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Kiểm tra chỉ mục ô có hợp lệ
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                if (row.Cells[5].Value.ToString() == "0")
+                {
+                    MessageBox.Show("Sản phẩm đã hết!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                // Sử dụng row để truy cập các giá trị của hàng theo nhu cầu của bạn
+                // Ví dụ: string cellValue = row.Cells["TênCột"].Value.ToString();
 
+                tbId.Text = row.Cells[0].Value.ToString();
+                tbtensanpham.Text = row.Cells[1].Value.ToString();
+                tbidloaisanpham.Text = row.Cells[2].Value.ToString();
+                tbtenloai.Text = row.Cells[3].Value.ToString();
+                tbhangsanxuat.Text = row.Cells[4].Value.ToString();
+                tbgia.Text = row.Cells[5].Value.ToString();
+                tbsoluong.Text = "1";
+                tbdonvitinh.Text = row.Cells[7].Value.ToString();
+                tbkhuyenmai.Text = row.Cells[8].Value.ToString();
+            }
         }
 
         private void tbId_TextChanged(object sender, EventArgs e)
@@ -254,6 +212,12 @@ namespace GUI
 
         private void btnadd_Click_1(object sender, EventArgs e)
         {
+            if (tbId.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm để thêm!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            
             //click thêm vào giỏ hàng
             SanPhamDTO spDTO = new SanPhamDTO();
             spDTO.Id = Convert.ToInt32(tbId.Text);
@@ -265,7 +229,31 @@ namespace GUI
             spDTO.Khuyenmai = Convert.ToInt32(tbkhuyenmai.Text);
             spDTO.IdLoaiSanPham = Convert.ToInt32(tbidloaisanpham.Text);
             spDTO.Tenloai = tbtenloai.Text;
-            listCart.Add(spDTO);
+            bool isExist = false;
+            foreach (var item in listCart)
+             {
+                    if (item.Id == spDTO.Id)
+                    {
+                        isExist = true;
+                        item.Soluong = item.Soluong + spDTO.Soluong;
+                        break;
+                    }
+             }
+             if (!isExist)
+             {
+                 listCart.Add(spDTO);
+             }
+
+                foreach (var item in listProduct)
+                {
+                if (item.Id == spDTO.Id)
+                  {
+                    item.Soluong = item.Soluong - spDTO.Soluong;
+                    break;
+                }
+             }
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listProduct;
             tbId.Text = "";
             tbtensanpham.Text = "";
             tbdonvitinh.Text = "";

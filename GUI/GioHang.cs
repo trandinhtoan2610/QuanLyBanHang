@@ -25,44 +25,6 @@ namespace GUI
         public GioHang()
         {
             InitializeComponent();
-            load();
-        }
-
-        public void GetDuLieu()
-        {
-            
-        }
-
-        void load()
-        {
-            
-        }
-
-
-
-        public  void  dataGridView2_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridView2.SelectedRows.Count > 0)
-            {
-                // Lấy dòng được chọn
-                DataGridViewRow selectedRow = dataGridView2.SelectedRows[0];
-
-                // Lấy giá trị từ các cột mong muốn và hiển thị lên các TextBox tương ứng
-                tbId.Text = selectedRow.Cells["id"].Value.ToString();
-                tbtensanpham.Text = selectedRow.Cells["tensanpham"].Value.ToString();
-                tbidloaisanpham.Text = selectedRow.Cells["idloaisanpham"].Value.ToString();
-                tbtenloai.Text = selectedRow.Cells["Tenloai"].Value.ToString();
-                tbhangsanxuat.Text = selectedRow.Cells["hangsanxuat"].Value.ToString();
-                tbsoluong.Text = selectedRow.Cells["Soluong"].Value.ToString();
-                tbgia.Text = selectedRow.Cells["gia"].Value.ToString();
-                tbdonvitinh.Text = selectedRow.Cells["donvitinh"].Value.ToString();
-                tbkhuyenmai.Text = selectedRow.Cells["Khuyenmai"].Value.ToString();
-
-            }
-        }
-
-        private void btnadd_Click(object sender, EventArgs e)
-        {
             
         }
 
@@ -81,9 +43,13 @@ namespace GUI
                 MessageBox.Show(item.Id + " ");
             }
             Banhang.listCart.Clear();
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = Banhang.listCart;
         }
 
-        private void btnadd_Click_1(object sender, EventArgs e)
+        
+
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -111,21 +77,20 @@ namespace GUI
                     if (item.Id == spDTO.Id)
                     {
                         int quantityOld = item.Soluong;
-                        //ví dụ ban đầu có sl=5 chỉnh lại sl=3 -> quantityCart= 5-3= 2 ngược lại quantityCart= 3-5= -2
-                        quantityCart = quantityOld - quantityNew;
-                        item.Soluong = quantityNew;
+                        quantityCart = quantityOld;
                         break;
                     }
                 }
+                Banhang.listCart.RemoveAll(item => item.Id == spDTO.Id);
                 dataGridView2.DataSource = null;
-                dataGridView2.DataSource = Banhang.listCart;
+                dataGridView2.DataSource = Nhaphang.listCart;
                 int sumMoney = 0;
                 foreach (var item in Banhang.listCart)
                 {
                     sumMoney += item.Gia * item.Soluong;
                 }
-                label11.Text = sumMoney + "đ";
-                foreach (var item in Banhang.listCart)
+                label12.Text = sumMoney + "đ";
+                foreach (var item in Banhang.listProduct)
                 {
                     if (item.Id == spDTO.Id)
                     {
@@ -149,11 +114,30 @@ namespace GUI
             }
         }
 
-
-
-        /*public ChiTietHoaDonBanDTO GetData()
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //return 
-        }*/
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Kiểm tra chỉ mục ô có hợp lệ
+            {
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+                // Sử dụng row để truy cập các giá trị của hàng theo nhu cầu của bạn
+                // Ví dụ: string cellValue = row.Cells["TênCột"].Value.ToString();
+
+                tbId.Text = row.Cells[0].Value.ToString();
+                tbtensanpham.Text = row.Cells[1].Value.ToString();
+                tbidloaisanpham.Text = row.Cells[2].Value.ToString();
+                tbtenloai.Text = row.Cells[3].Value.ToString();
+                tbhangsanxuat.Text = row.Cells[4].Value.ToString();
+                tbgia.Text = row.Cells[5].Value.ToString();
+                tbsoluong.Text = row.Cells[6].Value.ToString();
+                tbdonvitinh.Text = row.Cells[7].Value.ToString();
+                tbkhuyenmai.Text = row.Cells[8].Value.ToString();
+
+            }
+        }
+
+        private void btnadd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

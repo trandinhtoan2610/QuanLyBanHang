@@ -64,7 +64,7 @@ namespace GUI
                 spDTO.Khuyenmai = Convert.ToInt32(tbkhuyenmai.Text);
                 spDTO.IdLoaiSanPham = Convert.ToInt32(tbidloaisanpham.Text);
                 spDTO.Tenloai = tbtenloai.Text;
-                Boolean isExist = false;
+                bool isExist = false;
                 foreach (var item in listCart)
                 {
                     if (item.Id == spDTO.Id)

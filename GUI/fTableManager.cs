@@ -43,7 +43,7 @@ namespace GUI
             giohang.BringToFront();
             giohang.dataGridView2.DataSource = null;
             giohang.dataGridView2.DataSource = Banhang.listCart;
-                
+            
         }
         
         private void sukiennuttimkiem(object sender, EventArgs e)
