@@ -65,6 +65,7 @@ namespace GUI
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbDanhsach = new System.Windows.Forms.Label();
             this.dtaGVNV = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnThongtin.SuspendLayout();
             this.pnThemSuaXoa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGVNV)).BeginInit();
@@ -346,6 +347,7 @@ namespace GUI
             // pnThemSuaXoa
             // 
             this.pnThemSuaXoa.BackColor = System.Drawing.Color.White;
+            this.pnThemSuaXoa.Controls.Add(this.button1);
             this.pnThemSuaXoa.Controls.Add(this.tbTimkiem);
             this.pnThemSuaXoa.Controls.Add(this.btnExport);
             this.pnThemSuaXoa.Controls.Add(this.btnDelete);
@@ -362,12 +364,11 @@ namespace GUI
             this.tbTimkiem.BackColor = System.Drawing.Color.White;
             this.tbTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTimkiem.HideSelection = false;
-            this.tbTimkiem.Location = new System.Drawing.Point(875, 35);
+            this.tbTimkiem.Location = new System.Drawing.Point(986, 39);
             this.tbTimkiem.Multiline = true;
             this.tbTimkiem.Name = "tbTimkiem";
             this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
             this.tbTimkiem.TabIndex = 8;
-            this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
             // 
             // btnExport
             // 
@@ -379,7 +380,6 @@ namespace GUI
             this.btnExport.Size = new System.Drawing.Size(75, 75);
             this.btnExport.TabIndex = 7;
             this.btnExport.UseVisualStyleBackColor = true;
-            
             // 
             // btnDelete
             // 
@@ -436,6 +436,16 @@ namespace GUI
             this.dtaGVNV.RowTemplate.Height = 24;
             this.dtaGVNV.Size = new System.Drawing.Size(1647, 390);
             this.dtaGVNV.TabIndex = 17;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(822, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 75);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Nhanvien
             // 
@@ -494,6 +504,7 @@ namespace GUI
         private DataGridView dtaGVNV;
         private RadioButton rb2;
         private RadioButton rb1;
+        private Button button1;
     }
     
 }

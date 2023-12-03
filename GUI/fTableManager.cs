@@ -28,8 +28,15 @@ namespace GUI
             nhaphang1.DiDenGioHangNhaphang += Nhaphang1_DiDenGioHangNhaphang;
             fTimkiem1.DiDenBanhang += sukiennuttimkiem;
             banhang1.DiDenGioHang += sukiennutgiohang;
+            nhanvien1.Didenfinhoadon += sukiennutin;
         }
-
+        private void sukiennutin(object sender, EventArgs e)
+        {
+            fInNhanVien fIn = new fInNhanVien();
+            this.Hide();
+            fIn.ShowDialog();
+            this.Show();
+        }
         private void Nhaphang1_DiDenGioHangNhaphang(object sender, EventArgs e)
         {
             giohangnhaphang.BringToFront();

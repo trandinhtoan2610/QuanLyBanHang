@@ -14,7 +14,7 @@ namespace DAL
         public static SqlConnection Connect()
         {
 
-            string Strconn = @"Data Source=TOÀN;Initial Catalog=PhoneManage;Integrated Security=True";
+            string Strconn = @"Data Source=LAPTOP-IJDHL0GE\SQLEXPRESS;Initial Catalog=PhoneManage;Integrated Security=True";
 
             SqlConnection conn = new SqlConnection(Strconn);
             return conn;
@@ -24,7 +24,7 @@ namespace DAL
     public class DatabaseAccess
     {
 
-        private string connectionSTR = @"Data Source=TOÀN;Initial Catalog=PhoneManage;Integrated Security=True";
+        private string connectionSTR = @"Data Source=LAPTOP-IJDHL0GE\SQLEXPRESS;Initial Catalog=PhoneManage;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query)
         {
