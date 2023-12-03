@@ -59,7 +59,7 @@ namespace BLL
                 return "requeid_sodienthoai";
             }
             KhachHangDTO info = khachdal.TimKiemKH(sodienthoai);
-            if (khachdto != null)
+            if (info != null)
             {
                 khachdto = info;
                 return "timthaykhachhang";
