@@ -14,7 +14,25 @@ namespace DAL
         SqlConnection conn = SqlConnectionData.Connect();
         private List<HoaDonDTO> dshd, found;
         
-
+        public bool deleteHoaDon(int khachhangID)
+        {
+            try
+            {
+                conn.Open();
+                string sql = "DELETE FROM hoadonbanhang WHERE idKhachhang = " + khachhangID;
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                if(cmd.ExecuteNonQuery() >0)
+                {
+                    conn.Close();
+                    return true;
+                }
+                
+            }catch(SqlException ex)
+            {
+                MessageBox.Show("Error :" + ex);
+            }finally { conn.Close(); }
+            return false;
+        }
         public List<HoaDonDTO> readDB()
         {
             
@@ -108,6 +126,7 @@ namespace DAL
                 while (read.Read())
                 {
                     id = read.GetInt32(0);
+                    conn.Close();
                     return id;
                 } 
              }

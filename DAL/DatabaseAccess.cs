@@ -14,7 +14,7 @@ namespace DAL
         public static SqlConnection Connect()
         {
 
-            string Strconn = @"Data Source=TOÀN;Initial Catalog=PhoneManage;Integrated Security=True";
+            string Strconn = @"Data Source=DESKTOP-FB40R12;Initial Catalog=PhoneManage;Integrated Security=True;";
 
             SqlConnection conn = new SqlConnection(Strconn);
             return conn;

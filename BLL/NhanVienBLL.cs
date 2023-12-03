@@ -19,7 +19,10 @@ namespace BLL
             return qlnvDAL.readDB();
         }
 
- 
+        public NhanVienDTO findbyPhone(string phone)
+        {
+            return qlnvDAL.findbyPhone(phone);
+        }
         public bool InsertNV(NhanVienDTO nhanvien)
         {
             dsnv = readDB();

@@ -14,7 +14,27 @@ namespace DAL
         SqlConnection conn = SqlConnectionData.Connect();
         private List<ChiTietHoaDonBanDTO> dsctsp, found;
 
+        public bool deletectHoaDon(int hoaDonID)
+        {
+            try
+            {
+                conn.Open();
+                string sql = "DELETE FROM ct_hoadonbanhang WHERE idHoadonbanhang = " + hoaDonID;
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    conn.Close();
+                    return true;
+                }
 
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error :" + ex);
+            }
+            finally { conn.Close(); }
+            return false;
+        }
         public List<ChiTietHoaDonBanDTO> readDB()
         {
                 try

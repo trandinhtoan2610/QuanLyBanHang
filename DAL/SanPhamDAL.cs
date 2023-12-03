@@ -87,8 +87,10 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"Insert into SanPham (tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh,khuyenmai) values ('{sp.Tensanpham}', {sp.IdLoaiSanPham}, '{sp.Hangsanxuat}',{sp.Gia},{sp.Soluong},'{sp.Donvitinh}',{sp.Khuyenmai})";
+                string query = $"Insert into SanPham (tensanpham, idLoaiSanPham, hangsanxuat, gia, soluong, donvitinh,khuyenmai) values (@TenSanPham, {sp.IdLoaiSanPham}, '{sp.Hangsanxuat}',{sp.Gia},{sp.Soluong},@DonViTinh,{sp.Khuyenmai})";
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@TenSanPham", sp.Tensanpham);
+                cmd.Parameters.AddWithValue("@DonViTinh", sp.Donvitinh);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -113,16 +115,18 @@ namespace DAL
             {
                 
                 string query = "UPDATE SanPham SET "
-                    + "tensanpham = '" + sp.Tensanpham
+                    + "tensanpham = @TenSanPham "
                     + "',idLoaiSanPham = " + sp.IdLoaiSanPham
                     + ",hangsanxuat = '" + sp.Hangsanxuat
                     + "',gia = " + sp.Gia
                     + ",soluong = " + sp.Soluong
-                    + ",donvitinh = '" + sp.Donvitinh
-                    + "',khuyenmai = " + sp.Khuyenmai
+                    + ",donvitinh = @DonViTinh"
+                    + ",khuyenmai = " + sp.Khuyenmai
                     + " where id =" + sp.Id;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật khách hàng trong CSDL
+                cmd.Parameters.AddWithValue("@TenSanPham", sp.Tensanpham);
+                cmd.Parameters.AddWithValue("@DonViTinh", sp.Donvitinh);
                 cmd.ExecuteNonQuery();
                 return true;
             }

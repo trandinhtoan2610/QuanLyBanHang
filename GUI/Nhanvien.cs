@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
@@ -36,7 +37,6 @@ namespace GUI
         {
 
             dtaGVNV.DataSource = nvlist;
-            
             loadData();
             loadcbb();
             loadHeaderText();
@@ -93,7 +93,16 @@ namespace GUI
         {
             tbMaNV.Text = tbTenNV.Text = cbLoaiNV.Text = tbSđt.Text = tbCMND.Text = tbEmail.Text = tbDiachi.Text = tbMatkhau.Text = string.Empty;
         }
+        static bool IsPhoneNumber(string input)
+        {
 
+            return Regex.IsMatch(input, @"^0\d+$");
+        }
+        static bool IsCMNDNumber(string input)
+        {
+            // Kiểm tra chuỗi có chứa chỉ số và không chứa chữ cái
+            return Regex.IsMatch(input, @"^\d+$");
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -107,7 +116,7 @@ namespace GUI
             nv.Tennhanvien = tbTenNV.Text;
             nv.Ngaysinh = selectedDateTime.ToString("yyyy-MM-dd");
             nv.IdLoainhanvien = Convert.ToInt32(cbLoaiNV.SelectedValue);
-            nv.Sodienthoai = tbSđt.Text;
+            nv.Sodienthoai = tbSđt.Text.Replace(" ", ""); ;
             nv.Cmnd = tbCMND.Text;
             nv.Email = tbEmail.Text;
             
@@ -122,12 +131,71 @@ namespace GUI
 
             nv.Diachi = tbDiachi.Text;
             nv.Matkhau = tbMatkhau.Text;
-            if (qlnvBLL.InsertNV(nv.Id, nv.Tennhanvien, nv.Ngaysinh, nv.IdLoainhanvien, nv.Sodienthoai, nv.Cmnd, nv.Email, nv.Gioitinh, nv.Diachi, nv.Matkhau))
+            /*if (qlnvBLL.InsertNV(nv.Id, nv.Tennhanvien, nv.Ngaysinh, nv.IdLoainhanvien, nv.Sodienthoai, nv.Cmnd, nv.Email, nv.Gioitinh, nv.Diachi, nv.Matkhau))
             {
                 MessageBox.Show("thêm thành công");
             }
             loadData();
-            Clear();
+            Clear();*/
+            if (nv.Tennhanvien != "")
+            {
+                if (nv.Sodienthoai != "")
+                {
+                    if (nv.Sodienthoai.Length == 10 && IsPhoneNumber(nv.Sodienthoai))
+                    {
+                        if (qlnvBLL.findbyPhone(nv.Sodienthoai).Sodienthoai == null)
+                        {
+                            if(nv.Cmnd != "" && IsCMNDNumber(nv.Cmnd))
+                            {
+                                if (nv.Matkhau != "")
+                                {
+                                    if(nv.Ngaysinh != "")
+                                    {
+                                        if (qlnvBLL.InsertNV(nv))
+                                        {
+                                            MessageBox.Show("thêm thành công!");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("thêm thất bại!");
+                                        }
+                                        loadData();
+                                        Clear();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Ngày sinh không được để trống!");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Mật khẩu không được để trống!");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Chứng minh nhân dân không được bỏ trống và được nhập bằng ký tự số!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Số điện thoại đã tồn tại!");
+                        }                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số điện thoại được bắt đầu bằng số 0 và phải có 10 ký tự số!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại không được để trống !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập tên khách hàng!");
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -139,28 +207,92 @@ namespace GUI
             }
             loadData();
         }
-
-       
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            LoaiNhanVienBLL lnvbll = new LoaiNhanVienBLL();
+            List<LoaiNhanVienDTO> llnv;
+            llnv = lnvbll.readDB();
             DateTime selectedDateTime = dtNgaysinh.Value;
 
             nv.Id = Convert.ToInt32(tbMaNV.Text);
             nv.Tennhanvien = tbTenNV.Text;
             nv.Ngaysinh = selectedDateTime.ToString("yyyy-MM-dd");
             nv.IdLoainhanvien = Convert.ToInt32(cbLoaiNV.SelectedValue);
-            nv.Sodienthoai = tbSđt.Text;
+            nv.Sodienthoai = tbSđt.Text.Replace(" ", ""); ;
             nv.Cmnd = tbCMND.Text;
             nv.Email = tbEmail.Text;
-            //nv.Gioitinh = 
+
+            if (rb1.Checked)
+            {
+                nv.Gioitinh = rb1.Text;
+            }
+            else
+            {
+                nv.Gioitinh = rb2.Text;
+            }
+
             nv.Diachi = tbDiachi.Text;
             nv.Matkhau = tbMatkhau.Text;
-            if (qlnvBLL.UpdateNV(nv.Id, nv.Tennhanvien, nv.Ngaysinh, nv.IdLoainhanvien, nv.Sodienthoai, nv.Cmnd, nv.Email,nv.Gioitinh, nv.Diachi, nv.Matkhau))
+            if (nv.Tennhanvien != "")
             {
-                MessageBox.Show("Cập nhật thành công!");
+                if (nv.Sodienthoai != "")
+                {
+                    if (nv.Sodienthoai.Length == 10 && IsPhoneNumber(nv.Sodienthoai))
+                    {
+                        if (qlnvBLL.findbyPhone(nv.Sodienthoai).Sodienthoai == null)
+                        {
+                            if (nv.Cmnd != "" && IsCMNDNumber(nv.Cmnd))
+                            {
+                                if (nv.Matkhau != "")
+                                {
+                                    if (nv.Ngaysinh != "")
+                                    {
+                                        if (qlnvBLL.UpdateNV(nv.Id, nv.Tennhanvien, nv.Ngaysinh, nv.IdLoainhanvien, nv.Sodienthoai, nv.Cmnd, nv.Email, nv.Gioitinh, nv.Diachi, nv.Matkhau))
+                                        {
+                                            MessageBox.Show("Cập nhât thành công!");
+                                            loadData();
+                                            Clear();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Cập nhật thất bại!");
+                                        }
+                                        
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Ngày sinh không được để trống!");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Mật khẩu không được để trống!");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Chứng minh nhân dân không được bỏ trống và được nhập bằng ký tự số!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Số điện thoại đã tồn tại!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số điện thoại được bắt đầu bằng số 0 và phải có 10 ký tự số!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại không được để trống !");
+                }
             }
-            loadData();
+            else
+            {
+                MessageBox.Show("Vui lòng nhập tên khách hàng!");
+            }
         }
     }
 }

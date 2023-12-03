@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.Office.Interop.Excel;
+using System.Text.RegularExpressions;
 
 namespace GUI
 {
@@ -19,12 +21,13 @@ namespace GUI
     {
         BindingSource khlist = new BindingSource();
         KhachHangBLL qlkhBLL = new KhachHangBLL();
+        HoaDonBLL qlhd = new HoaDonBLL();
+        ChiTietHoaDonBanBLL qlcthdb= new ChiTietHoaDonBanBLL();
         KhachHangDTO kh = new KhachHangDTO();
         List<KhachHangDTO> listKhachHang, found;
         public Khachhang()
         {
             InitializeComponent();
-            
             load();
             Clear();
         }
@@ -32,7 +35,6 @@ namespace GUI
         {
             dtaGVKhachang.DataSource = khlist;
             loadData();
-            /*addNhanVienBinding();*/
             Clear();
         }
 
@@ -75,18 +77,21 @@ namespace GUI
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int id = 0;
-             id = int.Parse(tbMaKH.Text);
-            if(id > 0)
+            if (tbMaKH.Text != "")
             {
-                if (qlkhBLL.DeleteKH(id))
+                id = int.Parse(tbMaKH.Text);
+                if (id > 0)
                 {
-                    MessageBox.Show("Xóa thành công!");
-                    loadData();
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại!");
+                    if ( qlkhBLL.DeleteKH(id))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        loadData();
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!");
+                    }
                 }
             }
             else
@@ -96,33 +101,7 @@ namespace GUI
         }
 
         
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            KhachHangDTO k = new KhachHangDTO();
-            k.Id = int.Parse(tbMaKH.Text);
-            k.TenKhachHang = tbMaKH.Text;
-            k.SoDienThoai = tbSđt.Text;
-            if (rb1.Checked)
-            {
-                k.GioiTinh = "Nam";
-            }
-            else
-            {
-                k.GioiTinh = "Nu";
-            }
-            k.Ghichu = tbGhichu.Text;
-            if (qlkhBLL.UpdateKH(k))
-            {
-                MessageBox.Show("update thành công!");
-            }
-            else
-            {
-                MessageBox.Show("update thất bại!");
-            }
-            
-            loadData();
-            Clear();
-        }
+        
         public void search()
         {
            string text = tbTimkiem.Text;
@@ -149,7 +128,32 @@ namespace GUI
             }
         }
 
-        /*private void btnExport_Click(object sender, EventArgs e)
+       
+
+        private void dtaGVKhachang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int test = int.Parse(dtaGVKhachang[0, dtaGVKhachang.CurrentRow.Index].Value.ToString());
+            if (dtaGVKhachang.RowCount > 0 && test >0)
+            {
+                tbMaKH.Text = dtaGVKhachang[0 , dtaGVKhachang.CurrentRow.Index].Value.ToString();
+               tbHoten.Text = dtaGVKhachang[1, dtaGVKhachang.CurrentRow.Index].Value.ToString();
+                tbSđt.Text = dtaGVKhachang[2, dtaGVKhachang.CurrentRow.Index].Value.ToString();
+                
+                string gioitinh = tbGhichu.Text = dtaGVKhachang[3, dtaGVKhachang.CurrentRow.Index].Value.ToString();
+                if(gioitinh == "Nam")
+                {
+                    rb1.Checked = true;
+                }
+                else
+                {
+                    rb2.Checked = true;
+                }
+                tbGhichu.Text = dtaGVKhachang[4, dtaGVKhachang.CurrentRow.Index].Value.ToString();
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
         {
 
             StringBuilder sb = new StringBuilder();
@@ -201,54 +205,119 @@ namespace GUI
             // Xóa dữ liệu trong Clipboard để tránh rò rỉ bộ nhớ
             Clipboard.Clear();
 
-        }*/
 
-        private void dtaGVKhachang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            int test = int.Parse(dtaGVKhachang[0, dtaGVKhachang.CurrentRow.Index].Value.ToString());
-            if (dtaGVKhachang.RowCount > 0 && test >0)
-            {
-                tbMaKH.Text = dtaGVKhachang[0 , dtaGVKhachang.CurrentRow.Index].Value.ToString();
-               tbHoten.Text = dtaGVKhachang[1, dtaGVKhachang.CurrentRow.Index].Value.ToString();
-                tbSđt.Text = dtaGVKhachang[2, dtaGVKhachang.CurrentRow.Index].Value.ToString();
-                
-                string gioitinh = tbGhichu.Text = dtaGVKhachang[3, dtaGVKhachang.CurrentRow.Index].Value.ToString();
-                if(gioitinh == "Nam")
-                {
-                    rb1.Checked = true;
-                }
-                else
-                {
-                    rb2.Checked = true;
-                }
-                tbGhichu.Text = dtaGVKhachang[4, dtaGVKhachang.CurrentRow.Index].Value.ToString();
-            }
         }
-
+        static bool IsPhoneNumber(string input)
+        {
+            
+            return Regex.IsMatch(input, @"^0\d+$");
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            KhachHangDTO kh = new KhachHangDTO();
             kh.TenKhachHang = tbHoten.Text;
-            kh.SoDienThoai = tbSđt.Text;
-            if(rb1.Checked)
+            kh.SoDienThoai = tbSđt.Text.Replace(" ", "");
+
+            if (rb1.Checked)
             {
                 kh.GioiTinh = "Nam";
             }
-            else 
+            else
             {
                 kh.GioiTinh = "Nữ";
             }
             kh.Ghichu = tbGhichu.Text;
-            if (qlkhBLL.InsertKH(kh))
+            if (kh.TenKhachHang != "")
             {
-                MessageBox.Show("thêm thành công!");
+                if (kh.SoDienThoai != ""  )
+                {
+                    if (kh.SoDienThoai.Length == 10 && IsPhoneNumber(kh.SoDienThoai)) {
+                        if (qlkhBLL.finbyphone(kh.SoDienThoai).SoDienThoai != null)
+                        {
+                            MessageBox.Show("Số điện thoại đã tồn tại");
+                        }
+                        else
+                        {
+                            if (qlkhBLL.InsertKH(kh))
+                            {
+                                MessageBox.Show("thêm thành công!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("thêm thất bại!");
+                            }
+                            loadData();
+                            Clear();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số điện thoại được bắt đầu bằng số 0 và phải có 10 ký tự số!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại không được để trống !");
+                }
             }
             else
             {
-                MessageBox.Show("thêm thất bại!");
+                MessageBox.Show("Vui lòng nhập tên khách hàng!");
             }
-            loadData();
-            Clear();
+        }
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            KhachHangDTO k = new KhachHangDTO();
+            k.Id = int.Parse(tbMaKH.Text);
+            k.TenKhachHang = tbHoten.Text;
+            k.SoDienThoai = tbSđt.Text.Replace(" ", "");
+            if (rb1.Checked)
+            {
+                k.GioiTinh = "Nam";
+            }
+            else
+            {
+                k.GioiTinh = "Nữ";
+            }
+            k.Ghichu = tbGhichu.Text;
+            if (k.TenKhachHang != "")
+            {
+                if (k.SoDienThoai != "")
+                {
+                    if (k.SoDienThoai.Length == 10 && IsPhoneNumber(k.SoDienThoai))
+                    {
+                        if (qlkhBLL.finbyphone(kh.SoDienThoai).SoDienThoai != null)
+                        {
+                            MessageBox.Show("Số điện thoại đã tồn tại");
+                        }
+                        else
+                        {
+                            if (qlkhBLL.UpdateKH(k))
+                            {
+                                MessageBox.Show("update thành công!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("update thất bại!");
+                            }
+                            loadData();
+                            Clear();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số điện thoại được bắt đầu bằng số 0 và phải có 10 ký tự số!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại không được để trống !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập tên khách hàng!");
+            }
 
         }
     }

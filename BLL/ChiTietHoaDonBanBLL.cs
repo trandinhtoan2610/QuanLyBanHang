@@ -37,5 +37,9 @@ namespace BLL
             cthddto = new ChiTietHoaDonBanDTO(id, idhoadon, idsanpham, thanhtien, count);
             return InsertCTHDB(cthddto);
         }
+        public bool deletect_HoaDon(int hoaDonID)
+        {
+            return qlcthd.deletectHoaDon(hoaDonID);
+        }
     }
 }

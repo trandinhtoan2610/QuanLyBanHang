@@ -30,6 +30,7 @@
         {
             this.lbQuanly = new System.Windows.Forms.Label();
             this.pnThongke = new System.Windows.Forms.Panel();
+            this.btnXem = new System.Windows.Forms.Button();
             this.cbbNam = new System.Windows.Forms.ComboBox();
             this.cbbThang = new System.Windows.Forms.ComboBox();
             this.rdbt6 = new System.Windows.Forms.RadioButton();
@@ -38,8 +39,8 @@
             this.rdbt3 = new System.Windows.Forms.RadioButton();
             this.rdbt2 = new System.Windows.Forms.RadioButton();
             this.rdbt1 = new System.Windows.Forms.RadioButton();
-            this.btnXem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnThongke.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +73,16 @@
             this.pnThongke.Name = "pnThongke";
             this.pnThongke.Size = new System.Drawing.Size(813, 344);
             this.pnThongke.TabIndex = 40;
+            // 
+            // btnXem
+            // 
+            this.btnXem.Location = new System.Drawing.Point(647, 226);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(111, 57);
+            this.btnXem.TabIndex = 9;
+            this.btnXem.Text = "Xem";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // cbbNam
             // 
@@ -175,39 +186,42 @@
             this.rdbt1.Text = "Tiền chi tiêu trong tháng";
             this.rdbt1.UseVisualStyleBackColor = true;
             // 
-            // btnXem
-            // 
-            this.btnXem.Location = new System.Drawing.Point(647, 226);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(111, 57);
-            this.btnXem.TabIndex = 9;
-            this.btnXem.Text = "Xem";
-            this.btnXem.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(876, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 438);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(765, 344);
+            this.dataGridView1.Size = new System.Drawing.Size(1345, 344);
             this.dataGridView1.TabIndex = 41;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(887, 119);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(460, 30);
+            this.textBox1.TabIndex = 42;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Thongke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pnThongke);
             this.Controls.Add(this.lbQuanly);
             this.Name = "Thongke";
             this.Size = new System.Drawing.Size(1644, 920);
-            this.Load += new System.EventHandler(this.Thongke_Load);
             this.pnThongke.ResumeLayout(false);
             this.pnThongke.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -225,5 +239,6 @@
         private System.Windows.Forms.ComboBox cbbThang;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

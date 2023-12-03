@@ -43,13 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDonBanDAL.cs" />
+    <Compile Include="ThongKeDAL.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="HoaDonDAL.cs" />
-
     <Compile Include="KhachHangDAL.cs" />
-
     <Compile Include="HoaDonNhapDAL.cs" />
-
     <Compile Include="LoaiNhanVienDAL.cs" />
     <Compile Include="LoaiSanPhamDAL.cs" />
     <Compile Include="NCCDAL.cs" />

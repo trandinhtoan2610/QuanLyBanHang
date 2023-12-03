@@ -36,10 +36,13 @@ namespace BLL
         {   
             return qlhdDAL.CheckoutBill(id);
         }
-        
         public int GetIdHDB(int idKhachHang)
         {
             return qlhdDAL.GetIdHDB(idKhachHang);
+        }
+        public bool deleteHoaDon(int hoaDonID)
+        {
+            return qlhdDAL.deleteHoaDon(hoaDonID);
         }
     }
 }

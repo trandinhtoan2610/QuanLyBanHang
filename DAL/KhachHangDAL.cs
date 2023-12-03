@@ -13,7 +13,38 @@ namespace DAL
     {
         SqlConnection conn = SqlConnectionData.Connect();
         private List<KhachHangDTO> dskh, found;
+        public KhachHangDTO findbyPhone(string phone) 
+            {
+            KhachHangDTO kh = new KhachHangDTO();
+            try
+                {
+                    conn.Open();
+                    
+                    string sql = "SELECT * FROM KhachHang WHERE sodienthoai like '" + phone + "'";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    SqlDataReader read = cmd.ExecuteReader();
+                    while (read.Read())
+                {
+                    
+                    kh.Id = read.GetInt32(0);
+                    kh.TenKhachHang = read.GetString(1);
+                    kh.SoDienThoai = read.GetString(2);
+                    kh.GioiTinh = read.GetString(3);
+                    kh.Ghichu = read.GetString(4);
+                }
+                    conn.Close();
+                return kh;
 
+
+            }
+                catch (SqlException ex) {
+                    MessageBox.Show("Error : " + ex);
+
+                }
+                finally { conn.Close(); }
+
+            return null;
+            } 
         public List<KhachHangDTO> readDB()
         {
             try
@@ -126,24 +157,24 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = "UPDATE KhachHang SET "
-                    + "tenkhachhang =  @TenKhachHang ,sodienthoai = @SoDienThoai ,gioitinh = @GioiTinh , ghichu = @ghichu where id = " + k.Id;
+                string query = "UPDATE KhachHang SET tenkhachhang =  @TenKhachHang ,sodienthoai = @SoDienThoai ,gioitinh = @GioiTinh ,ghichu = @ghichu where id = " + k.Id;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@TenKhachHang", k.TenKhachHang);
                 cmd.Parameters.AddWithValue("@SoDienThoai", k.SoDienThoai);
                 cmd.Parameters.AddWithValue("@GioiTinh", k.GioiTinh);
                 cmd.Parameters.AddWithValue("@ghichu", k.Ghichu);
                 cmd.ExecuteNonQuery();
+                conn.Close();
                 return true;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error: " + ex);    //Hiển thị lỗi nếu có
+                MessageBox.Show("Error: " + ex);   
                 return false;
             }
             finally
             {
-                conn.Close();   //Đóng kết nối
+                conn.Close();   
             }
 
         }

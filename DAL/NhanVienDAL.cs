@@ -59,8 +59,12 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"Insert into NhanVien (tennhanvien, ngaysinh, IdLoainhanvien, sodienthoai, cmnd, email, gioitinh, diachi, matkhau) values ('{nv.Tennhanvien}', '{nv.Ngaysinh}', {nv.IdLoainhanvien},'{nv.Sodienthoai}','{nv.Cmnd}','{nv.Email}','{nv.Gioitinh}','{nv.Diachi}', '{nv.Matkhau}')"; ;
+                string query = $"Insert into NhanVien (tennhanvien, ngaysinh, IdLoainhanvien, sodienthoai, cmnd, email, gioitinh, diachi, matkhau) values (@TenNhanVien, '{nv.Ngaysinh}', {nv.IdLoainhanvien}, @SoDienThoai,'{nv.Cmnd}','{nv.Email}', @GioiTinh , @DiaChi, '{nv.Matkhau}')"; ;
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@TenNhanVien", nv.Tennhanvien);
+                cmd.Parameters.AddWithValue("@SoDienThoai", nv.Sodienthoai);
+                cmd.Parameters.AddWithValue("@GioiTinh", nv.Gioitinh);
+                cmd.Parameters.AddWithValue("@DiaChi", nv.Diachi);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -75,7 +79,37 @@ namespace DAL
             }
         }
 
+        public NhanVienDTO findbyPhone(string phone)
+        {
+            NhanVienDTO nv = new NhanVienDTO();
+            try
+            {
+                conn.Open();
 
+                string sql = "SELECT * FROM NhanVien WHERE sodienthoai like '" + phone + "'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader read = cmd.ExecuteReader();
+                while (read.Read())
+                {
+
+                    
+                    nv.Sodienthoai = read.GetString(2);
+                    
+                }
+                conn.Close();
+                return nv;
+
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error : " + ex);
+
+            }
+            finally { conn.Close(); }
+
+            return null;
+        }
 
         public bool UpdateNV(int id, string tennhanvien, string ngaysinh, int IdLoainhanvien, string sodienthoai, string cmnd, string email, string gioitinh, string diachi, string matkhau)
         {
@@ -83,18 +117,22 @@ namespace DAL
             try
             {
                 string query = "UPDATE NhanVien SET "
-                    + "tennhanvien = '" + tennhanvien
-                    + "',ngaysinh = '" + ngaysinh
+                    + "tennhanvien = @TenNhanVien"
+                    + ",ngaysinh = '" + ngaysinh
                     + "',IdLoainhanvien = '" + IdLoainhanvien
-                    + "',sodienthoai = '" + sodienthoai
-                    + "',cmnd = '" + cmnd
+                    + "',sodienthoai = @SoDienThoai"
+                    + ",cmnd = '" + cmnd
                     + "',email = '" + email
-                    + "',gioitinh = '" + gioitinh
-                    + "',diachi = '" + diachi
-                    + "',matkhau = '" + matkhau
+                    + "',gioitinh = @GioiTinh"
+                    + ",diachi = @DiaChi"
+                    + ",matkhau = '" + matkhau
                     + "' where id = " + id;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 //Thực hiện câu lệnh cập nhật nhân viên trong CSDL
+                cmd.Parameters.AddWithValue("@TenNhanVien", tennhanvien);
+                cmd.Parameters.AddWithValue("@SoDienThoai", sodienthoai);
+                cmd.Parameters.AddWithValue("@GioiTinh", gioitinh);
+                cmd.Parameters.AddWithValue("@DiaChi", diachi);
                 cmd.ExecuteNonQuery();
                 return true;
             }

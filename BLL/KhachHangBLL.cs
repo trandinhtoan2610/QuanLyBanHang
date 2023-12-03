@@ -39,9 +39,6 @@ namespace BLL
         }
         public bool UpdateKH(KhachHangDTO k)
         {
-            dskh = readDB();
-
-            
             return qlkhDAL.UpdateKH(k);
         }
         public List<KhachHangDTO> Search(string text)
@@ -49,7 +46,6 @@ namespace BLL
 
             return qlkhDAL.Search(text);
         }
-
         public static KhachHangDTO khachdto = new KhachHangDTO();
         KhachHangDAL khachdal = new KhachHangDAL();
         public string CheckTimKiemKH(string sodienthoai)
@@ -65,6 +61,10 @@ namespace BLL
                 return "timthaykhachhang";
             }
             return "sai so dien thoai";
+        }
+        public KhachHangDTO finbyphone(string sdt)
+        {
+            return qlkhDAL.findbyPhone(sdt);
         }
     }
 }
