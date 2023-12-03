@@ -77,7 +77,7 @@ namespace DAL
             conn.Open();
             try
             {
-                string query = $"Insert into hoadonbanhang ( idKhachang, idNhanvien) values ({hd.IdKhachhang}, {hd.IdNhanvien})";
+                string query = $"Insert into hoadonbanhang ( idKhachang, idNhanvien, status) values ({hd.IdKhachhang}, {hd.IdNhanvien}, {hd.Status})";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 string queryGetInsertedId = "SELECT SCOPE_IDENTITY()";

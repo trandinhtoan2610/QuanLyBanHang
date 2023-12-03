@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
@@ -19,7 +20,7 @@ namespace GUI
     {
         HoaDonBLL qlhdbll = new HoaDonBLL();
         HoaDonDTO hd = new HoaDonDTO();
-
+        
         List<ChiTietHoaDonBanDTO> cthdb;
         ChiTietHoaDonBanBLL qlcthdb = new ChiTietHoaDonBanBLL();
         public GioHang()
@@ -30,8 +31,13 @@ namespace GUI
 
         private void btnthanhtoan_Click(object sender, EventArgs e)
         {
+            int sumMoney = 0;
+            foreach (var item in Banhang.listCart)
+            {
+                sumMoney += item.Gia * item.Soluong;
+            }
             DateTime ngayHomNay = DateTime.Now;
-            int idhoadon = qlhdbll.InsertHDB(1, ngayHomNay, KhachHangBLL.khachdto.Id , TaiKhoanBLL.user.Id, 0);
+            int idhoadon = qlhdbll.InsertHDB(1, ngayHomNay, KhachHangBLL.khachdto.Id , TaiKhoanBLL.user.Id, sumMoney);
             if(idhoadon == -1 ) 
             {
                 MessageBox.Show("Lỗi");
@@ -40,7 +46,7 @@ namespace GUI
             foreach (var item in Banhang.listCart)
             {
                 qlcthdb.InsertCTHDB(1, idhoadon, item.Id, item.Gia, item.Soluong);
-                MessageBox.Show(item.Id + " ");
+                
             }
             Banhang.listCart.Clear();
             dataGridView2.DataSource = null;

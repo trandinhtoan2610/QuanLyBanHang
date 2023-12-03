@@ -21,7 +21,7 @@ namespace GUI
         
         SanPhamBLL lspbll = new SanPhamBLL();
         List<SanPhamDTO> lsp = new List<SanPhamDTO>();
-        int rowram = -1;
+       
         public static List<SanPhamDTO> listCart = new List<SanPhamDTO>();
         public static List<SanPhamDTO> listProduct = new List<SanPhamDTO>();
 
@@ -47,20 +47,7 @@ namespace GUI
         
        
 
-        private int SelectRowInDataGridView(DataGridView dataGridView, int rowIndex)
-        {
-            // Kiểm tra xem chỉ số hàng hợp lệ
-            if (rowIndex >= 0 && rowIndex < dataGridView.Rows.Count)
-            {
-                // Lấy đối tượng DataGridViewRow của hàng cần chọn
-                DataGridViewRow selectedRow = dataGridView.Rows[rowIndex];
-
-                // Đặt thuộc tính Selected của đối tượng DataGridViewRow thành true
-                selectedRow.Selected = true;
-                return rowIndex;
-            }
-            return -1;
-        }
+        
 
         
 
