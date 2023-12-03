@@ -21,16 +21,19 @@ namespace DAL
                 String query = $"SELECT * FROM hoadonnhaphang where ngaylap BETWEEN '{dateStart}' AND '{dateEnd}'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader read = cmd.ExecuteReader();
-                while (read.Read())
-                {
-                    HoaDonNhapDTO hd = new HoaDonNhapDTO();
-                    hd.id = read.GetInt32(0);
-                    hd.ngaylap = read.GetDateTime(1);
-                    hd.idNhanvien = read.GetInt32(2);
-                    hd.idNhacungcap = read.GetInt32(3);
-                    hd.status = read.GetInt32(4);
-                    list.Add(hd);
+                if (read.HasRows) {
+                    while (read.Read())
+                    {
+                        HoaDonNhapDTO hd = new HoaDonNhapDTO();
+                        hd.id = read.GetInt32(0);
+                        hd.ngaylap = read.GetDateTime(1);
+                        hd.idNhanvien = read.GetInt32(2);
+                        hd.idNhacungcap = read.GetInt32(3);
+                        hd.status = read.GetInt32(4);
+                        list.Add(hd);
+                    }
                 }
+                
                 conn.Close();
             }
             catch (SqlException ex)

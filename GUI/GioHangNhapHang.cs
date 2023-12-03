@@ -56,12 +56,14 @@ namespace GUI
                 }
                 dgv_giohang_nhaphang.DataSource = null;
                 dgv_giohang_nhaphang.DataSource = Nhaphang.listCart;
+
                 int sumMoney = 0;
                 foreach (var item in Nhaphang.listCart)
                 {
                     sumMoney += item.Gia * item.Soluong;
                 }
                 label11.Text = sumMoney+"đ";
+
                 foreach (var item in Nhaphang.listProduct)
                 {
                     if (item.Id == spDTO.Id)
@@ -70,6 +72,8 @@ namespace GUI
                         break;
                     }
                 }
+                Nhaphang.dgv_nhaphang.DataSource = null;
+                Nhaphang.dgv_nhaphang.DataSource = Nhaphang.listProduct;
                 tbId.Text = "";
                 tbtensanpham.Text = "";
                 tbdonvitinh.Text = "";

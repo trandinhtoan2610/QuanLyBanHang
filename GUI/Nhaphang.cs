@@ -23,6 +23,7 @@ namespace GUI
         public event EventHandler DiDenGioHangNhaphang;
         public static int nhaCungCapId = 0;
         SanPhamBLL sp = new SanPhamBLL();
+        int selectRowQuantity = 0;
         public Nhaphang()
         {
             InitializeComponent();
@@ -43,6 +44,11 @@ namespace GUI
                 if (tbId.Text.Trim().Length == 0)
                 {
                     MessageBox.Show("Vui lòng chọn sản phẩm để thêm!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (Convert.ToInt32(tbsoluong.Text) > selectRowQuantity)
+                {
+                    MessageBox.Show("Số lượng vượt quá số lượng sản phẩm của nhà cung cấp!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 foreach (var item in listCart)
@@ -140,6 +146,8 @@ namespace GUI
                 tbsoluong.Text = "1";
                 tbdonvitinh.Text = row.Cells[7].Value.ToString();
                 tbkhuyenmai.Text = row.Cells[8].Value.ToString();
+
+                selectRowQuantity= Convert.ToInt32( row.Cells[6].Value.ToString());
             }
         }
 
@@ -167,6 +175,20 @@ namespace GUI
                 listProduct = nhBLL.getAllProduct(nhaCungCapId, txt_search.Text);
             }
             loadData();
+            tbId.Text = "";
+            tbtensanpham.Text = "";
+            tbdonvitinh.Text = "";
+            tbgia.Text = "";
+            tbsoluong.Text = "";
+            tbhangsanxuat.Text = "";
+            tbkhuyenmai.Text = "";
+            tbidloaisanpham.Text = "";
+            tbtenloai.Text = "";
+        }
+
+        private void dgv_nhaphang_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

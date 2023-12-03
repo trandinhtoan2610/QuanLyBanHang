@@ -42,30 +42,70 @@ namespace GUI
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            if(dateTimePicker1.Value > dateTimePicker2.Value)
+            {
+                MessageBox.Show("Ngày bắt đầu phải trước ngày kết thúc!!!");
+                return;
+            }
             loadData();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            {
+                MessageBox.Show("Ngày bắt đầu phải trước ngày kết thúc!!!");
+                return;
+            }
             loadData();
         }
 
-        /*private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            dgv_hoadon.SelectAll();
-            DataObject copydata = dgv_hoadon.GetClipboardContent();
-            if (copydata != null) Clipboard.SetDataObject(copydata);
+            // Lấy tiêu đề cột
+            List<string> columnHeaders = new List<string>();
+            foreach (DataGridViewColumn column in dgv_hoadon.Columns)
+            {
+                columnHeaders.Add(column.HeaderText);
+            }
+
+            // Lấy dữ liệu từ DataGridView
+            string data = string.Empty;
+            for (int i = 0; i < dgv_hoadon.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgv_hoadon.Columns.Count; j++)
+                {
+                    if (dgv_hoadon.Rows[i].Cells[j].Value != null)
+                    {
+                        data += dgv_hoadon.Rows[i].Cells[j].Value.ToString() + "\t";
+                    }
+                    else
+                    {
+                        data += "\t";
+                    }
+                }
+                data += "\n";
+            }
+
+            // Sao chép tiêu đề cột và dữ liệu vào Clipboard
+            string clipboardData = string.Join("\t", columnHeaders) + "\n" + data;
+            Clipboard.SetText(clipboardData);
+
+            // Tạo ứng dụng Excel và dán dữ liệu
             Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
             xlapp.Visible = true;
+
             Microsoft.Office.Interop.Excel.Workbook xlWbook;
             Microsoft.Office.Interop.Excel.Worksheet xlsheet;
-            object miseddata = System.Reflection.Missing.Value;
-            xlWbook = xlapp.Workbooks.Add(miseddata);
+            object missingData = System.Reflection.Missing.Value;
 
+            xlWbook = xlapp.Workbooks.Add(missingData);
             xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWbook.Worksheets.get_Item(1);
+
             Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
             xlr.Select();
+
             xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-        }*/
+        }
     }
 }
