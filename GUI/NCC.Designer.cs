@@ -52,6 +52,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbDanhsach = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
             this.pnThongtin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtaGVNCC)).BeginInit();
             this.pnThemSuaXoa.SuspendLayout();
@@ -104,7 +105,7 @@
             this.lbGhichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGhichu.Location = new System.Drawing.Point(1209, 85);
             this.lbGhichu.Name = "lbGhichu";
-            this.lbGhichu.Size = new System.Drawing.Size(49, 15);
+            this.lbGhichu.Size = new System.Drawing.Size(59, 18);
             this.lbGhichu.TabIndex = 25;
             this.lbGhichu.Text = "Ghi chú";
             // 
@@ -123,7 +124,7 @@
             this.lbDiachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiachi.Location = new System.Drawing.Point(930, 85);
             this.lbDiachi.Name = "lbDiachi";
-            this.lbDiachi.Size = new System.Drawing.Size(45, 15);
+            this.lbDiachi.Size = new System.Drawing.Size(53, 18);
             this.lbDiachi.TabIndex = 23;
             this.lbDiachi.Text = "Địa chỉ";
             // 
@@ -132,7 +133,7 @@
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.Location = new System.Drawing.Point(548, 227);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(212, 21);
+            this.tbEmail.Size = new System.Drawing.Size(212, 24);
             this.tbEmail.TabIndex = 17;
             // 
             // lbEmail
@@ -141,7 +142,7 @@
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.Location = new System.Drawing.Point(545, 194);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(39, 15);
+            this.lbEmail.Size = new System.Drawing.Size(45, 18);
             this.lbEmail.TabIndex = 16;
             this.lbEmail.Text = "Email";
             // 
@@ -150,7 +151,7 @@
             this.tbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSđt.Location = new System.Drawing.Point(548, 121);
             this.tbSđt.Name = "tbSđt";
-            this.tbSđt.Size = new System.Drawing.Size(212, 21);
+            this.tbSđt.Size = new System.Drawing.Size(212, 24);
             this.tbSđt.TabIndex = 14;
             // 
             // lbSđt
@@ -159,7 +160,7 @@
             this.lbSđt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSđt.Location = new System.Drawing.Point(545, 85);
             this.lbSđt.Name = "lbSđt";
-            this.lbSđt.Size = new System.Drawing.Size(79, 15);
+            this.lbSđt.Size = new System.Drawing.Size(94, 18);
             this.lbSđt.TabIndex = 11;
             this.lbSđt.Text = "Số điện thoại";
             // 
@@ -168,7 +169,7 @@
             this.tbTenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenNCC.Location = new System.Drawing.Point(134, 227);
             this.tbTenNCC.Name = "tbTenNCC";
-            this.tbTenNCC.Size = new System.Drawing.Size(212, 21);
+            this.tbTenNCC.Size = new System.Drawing.Size(212, 24);
             this.tbTenNCC.TabIndex = 7;
             // 
             // tbMaNCC
@@ -176,7 +177,7 @@
             this.tbMaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaNCC.Location = new System.Drawing.Point(134, 121);
             this.tbMaNCC.Name = "tbMaNCC";
-            this.tbMaNCC.Size = new System.Drawing.Size(212, 21);
+            this.tbMaNCC.Size = new System.Drawing.Size(212, 24);
             this.tbMaNCC.TabIndex = 6;
             // 
             // lbTenNCC
@@ -185,7 +186,7 @@
             this.lbTenNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenNCC.Location = new System.Drawing.Point(131, 194);
             this.lbTenNCC.Name = "lbTenNCC";
-            this.lbTenNCC.Size = new System.Drawing.Size(105, 15);
+            this.lbTenNCC.Size = new System.Drawing.Size(125, 18);
             this.lbTenNCC.TabIndex = 4;
             this.lbTenNCC.Text = "Tên nhà cung cấp";
             // 
@@ -195,7 +196,7 @@
             this.lbMaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaNCC.Location = new System.Drawing.Point(131, 85);
             this.lbMaNCC.Name = "lbMaNCC";
-            this.lbMaNCC.Size = new System.Drawing.Size(102, 15);
+            this.lbMaNCC.Size = new System.Drawing.Size(121, 18);
             this.lbMaNCC.TabIndex = 3;
             this.lbMaNCC.Text = "Mã nhà cung cấp";
             // 
@@ -223,6 +224,7 @@
             // pnThemSuaXoa
             // 
             this.pnThemSuaXoa.BackColor = System.Drawing.Color.White;
+            this.pnThemSuaXoa.Controls.Add(this.btnImport);
             this.pnThemSuaXoa.Controls.Add(this.tbTimkiem);
             this.pnThemSuaXoa.Controls.Add(this.btnExport);
             this.pnThemSuaXoa.Controls.Add(this.btnDelete);
@@ -243,7 +245,6 @@
             this.tbTimkiem.Name = "tbTimkiem";
             this.tbTimkiem.Size = new System.Drawing.Size(452, 47);
             this.tbTimkiem.TabIndex = 8;
-            this.tbTimkiem.Text = "Tìm kiếm\r\n\r\n";
             // 
             // btnExport
             // 
@@ -301,6 +302,16 @@
             this.lbDanhsach.TabIndex = 29;
             this.lbDanhsach.Text = "Danh sách nhà cung cấp";
             // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(748, 29);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(82, 47);
+            this.btnImport.TabIndex = 9;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // NCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -346,5 +357,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lbDanhsach;
+        private System.Windows.Forms.Button btnImport;
     }
 }

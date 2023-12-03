@@ -17,7 +17,7 @@ namespace GUI
 {
     public partial class Nhanvien : UserControl
     {
-
+        public event EventHandler Didenfinhoadon;
 
         BindingSource nvlist = new BindingSource();
         NhanVienBLL qlnvBLL = new NhanVienBLL();
@@ -140,7 +140,10 @@ namespace GUI
             loadData();
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Didenfinhoadon?.Invoke(this, EventArgs.Empty);
+        }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
