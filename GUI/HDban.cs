@@ -29,23 +29,19 @@ namespace GUI
         void load()
         {
             loadDataHoaDon();
-
-            addHoaDon();
-
         }
         public void loadDataHoaDon()
         {
             dshd = qlhdBLL.readDB();
-
             dtaGVdanhsachHD.DataSource = dshd;
-            
+            addHoaDon();
             dtaGVdanhsachHD.Columns["IdKhachhang"].Visible = false;
             dtaGVdanhsachHD.Columns["IdNhanvien"].Visible = false;
             dtaGVdanhsachHD.Columns["Id"].HeaderText = "ID";
             dtaGVdanhsachHD.Columns["Ngaylap"].HeaderText = "Ngày lập";
             dtaGVdanhsachHD.Columns["Tenkhachhang"].HeaderText = "Tên khách hàng";
             dtaGVdanhsachHD.Columns["Tennhanvien"].HeaderText = "Tên nhân viên";
-            dtaGVdanhsachHD.Columns["status"].Visible = false;
+            dtaGVdanhsachHD.Columns["status"].HeaderText = "Tổng tiền";
         }
 
 
@@ -69,8 +65,14 @@ namespace GUI
         }
         public void addHoaDon()
         {
-            tbMaHD.DataBindings.Add(new Binding("Text", dtaGVdanhsachHD.DataSource, "Id", true, DataSourceUpdateMode.Never));
-            
+            tbMaHD.DataBindings.Clear();
+            tbTenNV.DataBindings.Clear();
+            tbHoten.DataBindings.Clear();
+            tbTongtien.DataBindings.Clear();
+            tbMaHD.DataBindings.Add(new Binding("Text", dtaGVdanhsachHD.DataSource, "id", true, DataSourceUpdateMode.Never));
+            tbTenNV.DataBindings.Add(new Binding("Text", dtaGVdanhsachHD.DataSource, "tennhanvien", true, DataSourceUpdateMode.Never));
+            tbHoten.DataBindings.Add(new Binding("Text", dtaGVdanhsachHD.DataSource, "tenkhachhang", true, DataSourceUpdateMode.Never));
+            tbTongtien.DataBindings.Add(new Binding("Text", dtaGVdanhsachHD.DataSource, "status", true, DataSourceUpdateMode.Never));
         }
     }
 }
